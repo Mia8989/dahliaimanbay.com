@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<title>OG Image Generator -- AI Agent Blog Post</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Sora:wght@500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .og-canvas {
+    width: 1200px;
+    height: 630px;
+    background: linear-gradient(135deg, #FFF9F5 0%, #F2E8E0 40%, #F2C4C4 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Decorative circles */
+  .og-canvas::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: rgba(184, 169, 212, 0.15);
+  }
+
+  .og-canvas::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -60px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(42, 123, 136, 0.1);
+  }
+
+  .og-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 80px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .og-photo-wrap {
+    flex-shrink: 0;
+  }
+
+  .og-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 6px solid #B8A9D4;
+    box-shadow: 0 8px 32px rgba(123, 45, 59, 0.15);
+  }
+
+  .og-text {
+    flex: 1;
+  }
+
+  .og-tag {
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #2A7B88;
+    margin-bottom: 16px;
+  }
+
+  .og-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 46px;
+    line-height: 1.15;
+    color: #7B2D3B;
+    margin-bottom: 24px;
+  }
+
+  .og-author {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #6B5B6E;
+    font-weight: 500;
+  }
+
+  .og-author strong {
+    color: #7B2D3B;
+    font-weight: 600;
+  }
+
+  /* Bottom accent bar */
+  .og-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #2A7B88, #B8A9D4, #7B2D3B);
+    z-index: 3;
+  }
+
+  /* Site URL watermark */
+  .og-url {
+    position: absolute;
+    bottom: 24px;
+    right: 40px;
+    font-family: 'Sora', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(42, 123, 136, 0.5);
+    letter-spacing: 1px;
+    z-index: 3;
+  }
+</style>
+</head>
+<body style="background: #eee; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+
+<div class="og-canvas">
+  <div class="og-content">
+    <div class="og-photo-wrap">
+      <img class="og-photo" src="newphoto.jpg" alt="Dahlia Imanbay">
+    </div>
+    <div class="og-text">
+      <div class="og-tag">AI Agents &bull; Hands-On Build</div>
+      <h1 class="og-title">I Replaced My Contact Form With an AI Agent. Here's What Happened.</h1>
+      <p class="og-author">by <strong>Dahlia Imanbay</strong></p>
+    </div>
+  </div>
+  <div class="og-bar"></div>
+  <div class="og-url">dahliaimanbay.com</div>
+</div>
+
+</body>
+</html>
