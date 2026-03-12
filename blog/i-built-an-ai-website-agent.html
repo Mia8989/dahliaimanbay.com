@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Replaced My Website's Contact Form With an AI Agent. Here's What Happened. | Dahlia Imanbay</title>
-    <meta name="description" content="A hands-on breakdown of how I built a conversational AI agent to replace a static lead form — the LLM decisions, the prompt architecture, the results, and what I would do differently at enterprise scale.">
+    <meta name="description" content="A hands-on breakdown of how I built a conversational AI agent to replace a static lead form. Covering the LLM decisions, the prompt architecture, the results, and what I would do differently at enterprise scale.">
     <meta name="keywords" content="AI website agent, conversational AI, AI marketing, LLM marketing, website chatbot, AI lead generation, AI-first marketing, marketing director, Dahlia Imanbay">
     <meta name="author" content="Dahlia Imanbay">
     <meta name="robots" content="index, follow">
@@ -12,7 +12,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="I Replaced My Website's Contact Form With an AI Agent. Here's What Happened.">
-    <meta property="og:description" content="A hands-on breakdown of building a conversational AI agent for lead capture — the LLM decisions, prompt architecture, results, and what I'd do differently at enterprise scale.">
+    <meta property="og:description" content="A hands-on breakdown of building a conversational AI agent for lead capture. Covering the LLM decisions, prompt architecture, results, and what I'd do differently at enterprise scale.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://dahliaimanbay.com/blog/i-built-an-ai-website-agent">
     <meta property="og:site_name" content="Dahlia Imanbay">
@@ -37,7 +37,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "I Replaced My Website's Contact Form With an AI Agent. Here's What Happened.",
-        "description": "A hands-on breakdown of how I built a conversational AI agent to replace a static lead form — the LLM decisions, the prompt architecture, the results, and what I would do differently at enterprise scale.",
+        "description": "A hands-on breakdown of how I built a conversational AI agent to replace a static lead form. Covering the LLM decisions, the prompt architecture, the results, and what I would do differently at enterprise scale.",
         "datePublished": "2026-03-11T12:00:00-05:00",
         "dateModified": "2026-03-11T12:00:00-05:00",
         "author": {
@@ -98,7 +98,7 @@
                 "name": "Can AI agents work in regulated industries like healthcare?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, but with additional guardrails. AI agents in healthcare and life sciences need strict compliance boundaries — they should never provide medical advice, must include appropriate disclaimers, and must route clinical questions to qualified professionals."
+                    "text": "Yes, but with additional guardrails. AI agents in healthcare and life sciences need strict compliance boundaries: they should never provide medical advice, must include appropriate disclaimers, and must route clinical questions to qualified professionals."
                 }
             }
         ]
@@ -424,9 +424,9 @@
 
         <p>Six months ago, my agency's website had the same lead capture mechanism as everyone else: a contact form with five fields and a "Submit" button. It converted at about 2.1%. Out of every 1,000 visitors, roughly 21 filled it out. The rest left. I knew exactly what the problem was, because I had spent years watching the same pattern across client sites in healthcare, SaaS, and enterprise services. Forms are friction. And friction kills pipeline.</p>
 
-        <p>So I decided to build the replacement myself. Not evaluate a vendor platform. Not install a chatbot widget. I built a custom AI agent from scratch — chose the LLM, wrote the system prompt, designed the conversation architecture, integrated it with my CRM and calendar, and deployed it live on my own site as the primary conversion path.</p>
+        <p>So I decided to build the replacement myself. Not evaluate a vendor platform. Not install a chatbot widget. I built a custom AI agent from scratch. I chose the LLM, wrote the system prompt, designed the conversation architecture, integrated it with my CRM and calendar, and deployed it live on my own site as the primary conversion path.</p>
 
-        <p>This is the full breakdown: the technical decisions, the prompt engineering, the results after six months, and — critically — what I would architect differently if I were building this for a large enterprise in a regulated industry like healthcare or life sciences.</p>
+        <p>This is the full breakdown: the technical decisions, the prompt engineering, the results after six months, and, critically, what I would architect differently if I were building this for a large enterprise in a regulated industry like healthcare or life sciences.</p>
 
         <div class="stat-callout animate-on-scroll scale-in">
             <span class="stat-number">3.4x</span>
@@ -435,12 +435,12 @@
 
         <h2>Why I Built It Instead of Buying It</h2>
 
-        <p>The market has no shortage of AI chatbot platforms. Drift, Intercom, Qualified, and dozens of newer entrants offer drop-in solutions. But I wanted something different. I wanted an agent that understood my specific positioning, could qualify leads against my exact criteria, and spoke in my brand voice — not a generic chatbot voice with my logo on it.</p>
+        <p>The market has no shortage of AI chatbot platforms. Drift, Intercom, Qualified, and dozens of newer entrants offer drop-in solutions. But I wanted something different. I wanted an agent that understood my specific positioning, could qualify leads against my exact criteria, and spoke in my brand voice, not a generic chatbot voice with my logo on it.</p>
 
-        <p>More importantly, I wanted to understand the system at the architecture level. If you are going to lead AI-driven marketing strategy for any company, you need to know how these systems actually work — not just how to configure someone else's dashboard. The difference between a marketer who uses AI tools and an AI-first marketer is the difference between someone who drives a car and someone who understands the engine.</p>
+        <p>More importantly, I wanted to understand the system at the architecture level. If you are going to lead AI-driven marketing strategy for any company, you need to know how these systems actually work, not just how to configure someone else's dashboard. The difference between a marketer who uses AI tools and an AI-first marketer is the difference between someone who drives a car and someone who understands the engine.</p>
 
         <blockquote class="animate-on-scroll fade-in">
-            <p>If you are going to own AI-driven customer experiences, you need to understand LLMs at the architecture level — not just the dashboard level.</p>
+            <p>If you are going to own AI-driven customer experiences, you need to understand LLMs at the architecture level, not just the dashboard level.</p>
         </blockquote>
 
         <h2>The Architecture: How the Agent Works</h2>
@@ -450,13 +450,13 @@
         <div class="layer-card animate-on-scroll fade-up">
             <span class="layer-label">Layer 1</span>
             <h3>The LLM Core</h3>
-            <p>I use Claude as the primary language model. The decision came down to response quality in professional services conversations, instruction-following reliability, and the ability to stay within defined guardrails. For marketing and lead qualification conversations, I found that Claude consistently produces more natural, less "chatbot-sounding" responses compared to alternatives I tested. The model handles nuance well — when a visitor asks a question that is partially about pricing and partially about process, it addresses both without losing either thread.</p>
+            <p>I use Claude as the primary language model. The decision came down to response quality in professional services conversations, instruction-following reliability, and the ability to stay within defined guardrails. For marketing and lead qualification conversations, I found that Claude consistently produces more natural, less "chatbot-sounding" responses compared to alternatives I tested. The model handles nuance well: when a visitor asks a question that is partially about pricing and partially about process, it addresses both without losing either thread.</p>
         </div>
 
         <div class="layer-card animate-on-scroll fade-up">
             <span class="layer-label">Layer 2</span>
             <h3>The System Prompt (The Brain)</h3>
-            <p>This is where most AI agent implementations fail. They use a generic prompt or a short instruction set. My system prompt is approximately 2,000 tokens and includes: the agent's role and personality definition, my complete service offerings with descriptions, qualification criteria mapped to my sales process (budget range, timeline, company size, decision authority), explicit rules about what the agent should NOT do (no pricing commitments, no guarantees, no medical or legal advice), and tone guidelines that match my brand voice — direct, data-informed, zero fluff.</p>
+            <p>This is where most AI agent implementations fail. They use a generic prompt or a short instruction set. My system prompt is approximately 2,000 tokens and includes: the agent's role and personality definition, my complete service offerings with descriptions, qualification criteria mapped to my sales process (budget range, timeline, company size, decision authority), explicit rules about what the agent should NOT do (no pricing commitments, no guarantees, no medical or legal advice), and tone guidelines that match my brand voice: direct, data-informed, zero fluff.</p>
         </div>
 
         <div class="layer-card animate-on-scroll fade-up">
@@ -468,7 +468,7 @@
         <div class="layer-card animate-on-scroll fade-up">
             <span class="layer-label">Layer 4</span>
             <h3>The Integration Layer</h3>
-            <p>Every conversation triggers downstream actions. Qualified leads are automatically created in my CRM with the full conversation transcript attached. If the visitor wants to book a call, the agent checks my calendar availability in real time and books the meeting directly. If the lead is not yet ready, it captures their email and triggers a nurture sequence. All of this happens within the conversation — no redirects, no separate forms, no friction.</p>
+            <p>Every conversation triggers downstream actions. Qualified leads are automatically created in my CRM with the full conversation transcript attached. If the visitor wants to book a call, the agent checks my calendar availability in real time and books the meeting directly. If the lead is not yet ready, it captures their email and triggers a nurture sequence. All of this happens within the conversation: no redirects, no separate forms, no friction.</p>
         </div>
 
         <h2>The Prompt Engineering That Actually Matters</h2>
@@ -479,15 +479,15 @@
 
         <h3>1. Qualification as Conversation, Not Interrogation</h3>
 
-        <p>Instead of asking direct qualification questions ("What is your budget?"), I designed the prompt to weave qualification into natural conversation. The agent picks up on signals — when someone mentions they are "evaluating options for Q3," that is timeline information. When they reference their "team of 12," that is company size. The system prompt instructs the agent to capture these signals passively and only ask direct qualification questions when specific gaps remain after the first few exchanges.</p>
+        <p>Instead of asking direct qualification questions ("What is your budget?"), I designed the prompt to weave qualification into natural conversation. The agent picks up on signals. When someone mentions they are "evaluating options for Q3," that is timeline information. When they reference their "team of 12," that is company size. The system prompt instructs the agent to capture these signals passively and only ask direct qualification questions when specific gaps remain after the first few exchanges.</p>
 
         <h3>2. Explicit Guardrails for Regulated Contexts</h3>
 
-        <p>Because I work with healthcare and life sciences clients, I built compliance guardrails directly into the prompt architecture. The agent will never provide medical advice, will never make claims about treatment outcomes, and will always route clinical questions to appropriate professionals. For marketing leaders in regulated industries, this is not optional — it is a core architecture requirement. I included specific examples of conversations the agent should redirect, not just abstract rules.</p>
+        <p>Because I work with healthcare and life sciences clients, I built compliance guardrails directly into the prompt architecture. The agent will never provide medical advice, will never make claims about treatment outcomes, and will always route clinical questions to appropriate professionals. For marketing leaders in regulated industries, this is not optional; it is a core architecture requirement. I included specific examples of conversations the agent should redirect, not just abstract rules.</p>
 
         <h3>3. Brand Voice Calibration</h3>
 
-        <p>The agent speaks in my brand's voice — direct, knowledgeable, and helpful without being pushy. I calibrated this by including example exchanges in the system prompt that demonstrate the right tone. The LLM mirrors these examples remarkably well. The result: visitors frequently do not realize they are talking to an AI until I tell them. That is the benchmark. If your customers can tell they are talking to a bot, your prompt engineering is not done.</p>
+        <p>The agent speaks in my brand's voice: direct, knowledgeable, and helpful without being pushy. I calibrated this by including example exchanges in the system prompt that demonstrate the right tone. The LLM mirrors these examples remarkably well. The result: visitors frequently do not realize they are talking to an AI until I tell them. That is the benchmark. If your customers can tell they are talking to a bot, your prompt engineering is not done.</p>
 
         <div class="stat-callout animate-on-scroll scale-in">
             <span class="stat-number">73%</span>
@@ -510,23 +510,23 @@
 
         <h2>What I Would Do Differently at Enterprise Scale</h2>
 
-        <p>Building an AI agent for my own agency is one thing. Designing one for a large enterprise — especially in healthcare, life sciences, or a company where the product itself is AI — requires a fundamentally different architecture. Here is what changes:</p>
+        <p>Building an AI agent for my own agency is one thing. Designing one for a large enterprise, especially in healthcare, life sciences, or a company where the product itself is AI, requires a fundamentally different architecture. Here is what changes:</p>
 
         <h3>Corporate Narrative Integration</h3>
 
-        <p>At an enterprise level, the AI agent is not just a lead capture tool. It is a brand ambassador that must communicate the company's positioning narrative consistently. For a company like a precision medicine platform, the agent needs to understand and articulate complex value propositions across different audience segments — oncologists, hospital administrators, health system CTOs, and patients — each with different language, different concerns, and different decision criteria. The system prompt becomes a living document that must be maintained in lockstep with corporate positioning updates.</p>
+        <p>At an enterprise level, the AI agent is not just a lead capture tool. It is a brand ambassador that must communicate the company's positioning narrative consistently. For a company like a precision medicine platform, the agent needs to understand and articulate complex value propositions across different audience segments (oncologists, hospital administrators, health system CTOs, and patients), each with different language, different concerns, and different decision criteria. The system prompt becomes a living document that must be maintained in lockstep with corporate positioning updates.</p>
 
         <h3>Multi-Audience Routing</h3>
 
-        <p>Enterprise sites serve multiple audience types. A healthcare AI company might have visitors ranging from clinicians to investors to potential employees. The agent needs sophisticated routing logic — detect the visitor's persona within the first 2-3 exchanges and dynamically adjust the conversation flow, knowledge base retrieval, and qualification criteria. This is a fundamentally different architecture than a single-persona agent.</p>
+        <p>Enterprise sites serve multiple audience types. A healthcare AI company might have visitors ranging from clinicians to investors to potential employees. The agent needs sophisticated routing logic: detect the visitor's persona within the first 2-3 exchanges and dynamically adjust the conversation flow, knowledge base retrieval, and qualification criteria. This is a fundamentally different architecture than a single-persona agent.</p>
 
         <h3>Compliance at Scale</h3>
 
-        <p>In healthcare and life sciences, compliance is not a feature. It is a non-negotiable foundation. Every agent response needs to be auditable. Certain claims require specific disclaimers. Some information cannot be shared without verification. At scale, this means building a compliance layer that sits between the LLM and the user — every response passes through a validation pipeline before reaching the visitor. The prompt alone is not enough. You need architectural compliance, not just instructional compliance.</p>
+        <p>In healthcare and life sciences, compliance is not a feature. It is a non-negotiable foundation. Every agent response needs to be auditable. Certain claims require specific disclaimers. Some information cannot be shared without verification. At scale, this means building a compliance layer that sits between the LLM and the user: every response passes through a validation pipeline before reaching the visitor. The prompt alone is not enough. You need architectural compliance, not just instructional compliance.</p>
 
         <h3>Internal AI Agents for Marketing Teams</h3>
 
-        <p>Beyond customer-facing agents, enterprise marketing teams need internal AI agents — systems that help marketers access brand guidelines, generate on-brand content, pull competitive intelligence, and maintain messaging consistency across dozens of campaigns and channels. The same architectural principles apply: LLM core, system prompt, knowledge base, integration layer. But the use case shifts from lead generation to operational efficiency and brand consistency.</p>
+        <p>Beyond customer-facing agents, enterprise marketing teams need internal AI agents: systems that help marketers access brand guidelines, generate on-brand content, pull competitive intelligence, and maintain messaging consistency across dozens of campaigns and channels. The same architectural principles apply: LLM core, system prompt, knowledge base, integration layer. But the use case shifts from lead generation to operational efficiency and brand consistency.</p>
 
         <blockquote class="animate-on-scroll fade-in">
             <p>The companies that win will not be the ones that use AI for marketing. They will be the ones whose marketing leaders can build, deploy, and govern AI agents as a core competency.</p>
@@ -537,20 +537,20 @@
         <p>Building AI agents for marketing is not a developer skill. It is not a pure marketing skill either. It is a new hybrid discipline that sits at the intersection of:</p>
 
         <ul>
-            <li><strong>LLM architecture</strong> — understanding how models process instructions, context windows, and retrieval</li>
-            <li><strong>Prompt engineering</strong> — designing system prompts for customer-facing reliability, not just creative output</li>
-            <li><strong>Marketing strategy</strong> — qualification frameworks, sales process alignment, brand voice</li>
-            <li><strong>Compliance and governance</strong> — especially critical in healthcare, pharma, and financial services</li>
-            <li><strong>Integration design</strong> — CRM, calendar, email automation, analytics pipelines</li>
+            <li><strong>LLM architecture:</strong> understanding how models process instructions, context windows, and retrieval</li>
+            <li><strong>Prompt engineering:</strong> designing system prompts for customer-facing reliability, not just creative output</li>
+            <li><strong>Marketing strategy:</strong> qualification frameworks, sales process alignment, brand voice</li>
+            <li><strong>Compliance and governance:</strong> especially critical in healthcare, pharma, and financial services</li>
+            <li><strong>Integration design:</strong> CRM, calendar, email automation, analytics pipelines</li>
         </ul>
 
         <p>This is what "AI-first marketing" actually means. Not using ChatGPT to write email subject lines. It means understanding LLM architecture well enough to build customer-facing AI experiences, and understanding marketing strategy well enough to make those experiences drive real business outcomes.</p>
 
         <h2>What Comes Next</h2>
 
-        <p>The next evolution is multi-modal agents that can handle voice, video, and document sharing within the conversation. Imagine a visitor uploads a brief, and the agent analyzes it in real time, asks clarifying questions, and proposes an approach — all before a human marketer touches the conversation. The technology exists today. The bottleneck is having marketing leaders who understand how to architect and deploy these systems.</p>
+        <p>The next evolution is multi-modal agents that can handle voice, video, and document sharing within the conversation. Imagine a visitor uploads a brief, and the agent analyzes it in real time, asks clarifying questions, and proposes an approach, all before a human marketer touches the conversation. The technology exists today. The bottleneck is having marketing leaders who understand how to architect and deploy these systems.</p>
 
-        <p>The contact form had a good run. But the future of customer engagement is conversational, intelligent, and always-on. And the marketing leaders who know how to build these systems — not just evaluate vendor platforms, but actually architect and deploy them — are going to define the next era of B2B marketing.</p>
+        <p>The contact form had a good run. But the future of customer engagement is conversational, intelligent, and always-on. And the marketing leaders who know how to build these systems, not just evaluate vendor platforms, but actually architect and deploy them, are going to define the next era of B2B marketing.</p>
 
         <!-- FAQ -->
         <div class="faq-section animate-on-scroll fade-up">
@@ -582,7 +582,7 @@
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Yes, but with additional guardrails. AI agents in healthcare and life sciences need strict compliance boundaries — they should never provide medical advice, must include appropriate disclaimers, and must route clinical questions to qualified professionals. The system prompt needs explicit compliance rules, and all conversations should be logged for audit purposes.</p>
+                    <p>Yes, but with additional guardrails. AI agents in healthcare and life sciences need strict compliance boundaries: they should never provide medical advice, must include appropriate disclaimers, and must route clinical questions to qualified professionals. The system prompt needs explicit compliance rules, and all conversations should be logged for audit purposes.</p>
                 </div>
             </div>
         </div>
@@ -594,7 +594,7 @@
                 <li>Anthropic Claude documentation on system prompts and guardrails</li>
                 <li>HubSpot 2025 State of Marketing Report on chatbot and conversational AI adoption</li>
                 <li>Gartner 2025 report on AI in B2B Marketing</li>
-                <li>Author's own analytics data from aipowereddahlia.com (September 2025 — March 2026)</li>
+                <li>Author's own analytics data from aipowereddahlia.com (September 2025 to March 2026)</li>
             </ul>
         </div>
 
