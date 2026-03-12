@@ -3,176 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1200">
-<title>OG Image Generator -- Claude's Surge Blog Post</title>
+<title>OG Image -- Claude Surge Blog Post v2</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=Sora:wght@500;600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   .og-canvas {
     width: 1200px;
     height: 630px;
-    background: linear-gradient(135deg, #F0ECF6 0%, #FFF9F5 50%, #E8F5F7 100%);
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: center;
   }
 
-  /* Decorative circle top-right */
-  .og-canvas::before {
-    content: '';
-    position: absolute;
-    top: -100px;
-    right: -100px;
+  /* LEFT: B&W photo panel */
+  .og-photo-panel {
     width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    background: rgba(42, 123, 136, 0.08);
-  }
-
-  /* Decorative circle bottom-left */
-  .og-canvas::after {
-    content: '';
-    position: absolute;
-    bottom: -80px;
-    left: -60px;
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    background: rgba(184, 169, 212, 0.12);
-  }
-
-  .og-content {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    padding: 60px 80px;
-    position: relative;
-    z-index: 2;
-    width: 100%;
-  }
-
-  .og-photo-wrap {
     flex-shrink: 0;
     position: relative;
+    overflow: hidden;
   }
 
-  .og-photo {
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
+  .og-photo-panel img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    object-position: center top;
-    border: 6px solid #B8A9D4;
-    box-shadow: 0 8px 32px rgba(123, 45, 59, 0.15);
+    object-position: top center;
+    filter: contrast(1.08);
   }
 
-  /* Stat badge floating on photo */
-  .og-stat-badge {
+  /* Gradient fade from photo into dark panel */
+  .og-photo-panel::after {
+    content: '';
     position: absolute;
-    bottom: -10px;
-    right: -20px;
-    background: linear-gradient(135deg, #2A7B88, #8E7BB8);
-    border-radius: 14px;
-    padding: 12px 18px;
-    text-align: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  }
-  .og-stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 30px;
-    color: white;
-    display: block;
-    line-height: 1;
-  }
-  .og-stat-lbl {
-    font-family: 'Sora', sans-serif;
-    font-size: 10px;
-    color: rgba(255,255,255,0.85);
-    letter-spacing: 1px;
-    display: block;
-    margin-top: 3px;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, #1A1726);
   }
 
-  .og-text {
+  /* RIGHT: dark text panel */
+  .og-text-panel {
     flex: 1;
+    background: #1A1726;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 52px 60px 52px 36px;
+    position: relative;
+  }
+
+  /* Subtle glow behind text */
+  .og-text-panel::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    right: 80px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(42,123,136,0.12) 0%, transparent 70%);
   }
 
   .og-tag {
     font-family: 'Sora', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 2.5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    color: #2A7B88;
-    margin-bottom: 18px;
+    color: #5BC4D2;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
   }
 
   .og-title {
     font-family: 'DM Serif Display', serif;
-    font-size: 43px;
-    line-height: 1.2;
-    color: #7B2D3B;
-    margin-bottom: 28px;
+    font-size: 40px;
+    line-height: 1.18;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
   }
 
-  .og-author {
+  .og-title em {
+    font-style: normal;
+    background: linear-gradient(90deg, #5BC4D2, #B8A9D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Stat chips row */
+  .og-stats {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .og-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 7px 16px;
+  }
+
+  .og-chip-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    background: linear-gradient(135deg, #5BC4D2, #B8A9D4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .og-chip-label {
+    font-family: 'Sora', sans-serif;
+    font-size: 9.5px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  }
+
+  /* Author row */
+  .og-author-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .og-author-name {
     font-family: 'Inter', sans-serif;
-    font-size: 17px;
-    color: #6B5B6E;
-    font-weight: 500;
-  }
-
-  .og-author strong {
-    color: #7B2D3B;
+    font-size: 14px;
     font-weight: 600;
+    color: rgba(255,255,255,0.75);
   }
 
-  /* Bottom accent bar */
-  .og-bar {
+  .og-author-sep {
+    color: rgba(255,255,255,0.2);
+    font-size: 13px;
+  }
+
+  .og-author-site {
+    font-family: 'Sora', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(91,196,210,0.5);
+    letter-spacing: 0.5px;
+  }
+
+  /* Top accent bar */
+  .og-bar-top {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
-    height: 6px;
-    background: linear-gradient(90deg, #2A7B88, #B8A9D4, #7B2D3B);
-    z-index: 3;
-  }
-
-  /* Site URL watermark */
-  .og-url {
-    position: absolute;
-    bottom: 22px;
-    right: 40px;
-    font-family: 'Sora', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(42, 123, 136, 0.5);
-    letter-spacing: 1px;
-    z-index: 3;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, #5BC4D2 35%, #B8A9D4 65%, #9E3E50 100%);
+    z-index: 10;
   }
 </style>
 </head>
-<body style="background: #ddd; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+<body style="background: #111; display: flex; justify-content: center; align-items: center; min-height: 100vh;">
 
 <div class="og-canvas">
-  <div class="og-content">
-    <div class="og-photo-wrap">
-      <img class="og-photo" src="/Users/dahlia.imanbay/dahlia-ai-brain/brands/AI_Powered_Dahlia/website/dahlia-website-assets/newphoto.jpg" alt="Dahlia Imanbay">
-      <div class="og-stat-badge">
-        <span class="og-stat-num">3x</span>
-        <span class="og-stat-lbl">Claude DAU growth</span>
+  <div class="og-bar-top"></div>
+
+  <!-- LEFT: B&W photo -->
+  <div class="og-photo-panel">
+    <img src="/Users/dahlia.imanbay/dahlia-ai-brain/brands/AI_Powered_Dahlia/website/dahlia-website-assets/bw-profile.jpg" alt="Dahlia Imanbay">
+  </div>
+
+  <!-- RIGHT: text content -->
+  <div class="og-text-panel">
+    <div class="og-tag">AI Tools &amp; Strategy</div>
+    <h1 class="og-title">I've Been Building on Claude for a Year. Here's Why <em>the Numbers</em> Don't Surprise Me.</h1>
+    <div class="og-stats">
+      <div class="og-chip">
+        <span class="og-chip-num">3x</span>
+        <span class="og-chip-label">DAU Growth</span>
+      </div>
+      <div class="og-chip">
+        <span class="og-chip-num">200K</span>
+        <span class="og-chip-label">Context</span>
+      </div>
+      <div class="og-chip">
+        <span class="og-chip-num">2x</span>
+        <span class="og-chip-label">Subscribers</span>
       </div>
     </div>
-    <div class="og-text">
-      <div class="og-tag">AI Tools &amp; Strategy</div>
-      <h1 class="og-title">I've Been Building on Claude for a Year. Here's Why the Numbers Don't Surprise Me.</h1>
-      <p class="og-author">by <strong>Dahlia Imanbay</strong></p>
+    <div class="og-author-row">
+      <span class="og-author-name">Dahlia Imanbay</span>
+      <span class="og-author-sep">/</span>
+      <span class="og-author-site">dahliaimanbay.com</span>
     </div>
   </div>
-  <div class="og-bar"></div>
-  <div class="og-url">dahliaimanbay.com</div>
 </div>
 
 </body>
