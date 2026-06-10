@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXLWM0TJK8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NXLWM0TJK8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Dahlia Imanbay</title>
+    <meta name="description" content="Writing on AI strategy, AI agents, automation, and AI search (AEO and GEO) for small businesses and mission-driven teams. Practical, honest, and grounded in real work.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dahliaimanbay.com/blog">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog | Dahlia Imanbay">
+    <meta property="og:description" content="Writing on AI strategy, AI agents, automation, and AI search (AEO and GEO) for small businesses and mission-driven teams.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dahliaimanbay.com/blog">
+    <meta property="og:site_name" content="Dahlia Imanbay">
+    <meta property="og:image" content="https://dahliaimanbay.com/dahlia-website-assets/og-get-cited-by-ai-search-aeo-geo.png">
+
+    <!-- Schema: Blog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Dahlia Imanbay Blog",
+        "url": "https://dahliaimanbay.com/blog",
+        "author": { "@type": "Person", "name": "Dahlia Imanbay", "url": "https://dahliaimanbay.com" }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blush: #F2C4C4; --blush-light: #FDF0F0; --teal: #2A7B88; --teal-dark: #1D5A63;
+            --maroon: #7B2D3B; --maroon-light: #9E3E50; --maroon-dark: #5C1F2B;
+            --lilac: #B8A9D4; --lilac-light: #DDD5EE; --lilac-dark: #8E7BB8; --lilac-bg: #F0ECF6;
+            --cream: #FFF9F5; --warm-white: #FFFCFA; --dark: #2C2C2C; --gray: #6B6B6B;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--warm-white); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        nav {
+            display: flex; justify-content: center; align-items: center; padding: 22px 60px;
+            background: rgba(255,252,250,0.95); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000; transition: box-shadow 0.3s ease;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+        .nav-links a {
+            font-family: 'Sora', sans-serif; font-size: 0.76rem; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase; color: var(--maroon);
+            transition: color 0.3s; position: relative;
+        }
+        .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--lilac-dark); transition: width 0.3s; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover, .nav-links a.active { color: var(--lilac-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: absolute; right: 30px; }
+        .hamburger span { width: 28px; height: 2px; background: var(--maroon); }
+
+        .breadcrumb { max-width: 1080px; margin: 0 auto; padding: 24px 40px 0; font-family: 'Sora', sans-serif; font-size: 0.72rem; letter-spacing: 1px; color: var(--gray); }
+        .breadcrumb a { color: var(--teal); }
+        .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+        .blog-header { max-width: 1080px; margin: 0 auto; padding: 40px 40px 10px; }
+        .blog-header .eyebrow { font-family: 'Sora', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; }
+        .blog-header h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5vw, 3.4rem); color: var(--maroon); line-height: 1.1; margin-bottom: 16px; }
+        .blog-header p { font-size: 1.05rem; line-height: 1.8; color: var(--gray); max-width: 640px; }
+
+        .blog-wrap { max-width: 1080px; margin: 0 auto; padding: 40px 40px 80px; }
+
+        /* Featured */
+        .featured { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; background: var(--cream); border: 1px solid rgba(0,0,0,0.06); border-radius: 22px; overflow: hidden; margin-bottom: 48px; }
+        .featured img { width: 100%; height: 100%; object-fit: cover; min-height: 280px; }
+        .featured-body { padding: 40px 44px 40px 8px; }
+        .featured-cat { font-family: 'Sora', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+        .badge { background: var(--teal); color: #fff; font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; }
+        .featured-body h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: var(--maroon); line-height: 1.18; margin-bottom: 14px; }
+        .featured-body p { font-size: 0.98rem; line-height: 1.75; color: var(--gray); margin-bottom: 20px; }
+        .read-link { font-family: 'Sora', sans-serif; font-size: 0.74rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); }
+
+        .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .post-card { background: var(--cream); border: 1px solid rgba(0,0,0,0.06); border-radius: 18px; padding: 28px 30px; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; gap: 10px; }
+        .post-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+        .post-card .thumb { font-size: 1.6rem; }
+        .post-card .cat { font-family: 'Sora', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); }
+        .post-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--maroon); line-height: 1.25; font-weight: 400; }
+        .post-card p { font-size: 0.9rem; line-height: 1.65; color: var(--gray); margin-top: 2px; }
+        .post-card .meta { font-family: 'Sora', sans-serif; font-size: 0.68rem; letter-spacing: 1px; color: var(--gray); margin-top: auto; padding-top: 10px; }
+
+        footer { background: var(--dark); color: white; padding: 70px 60px 36px; margin-top: 40px; }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 50px; flex-wrap: wrap; gap: 40px; }
+        .footer-brand h2 { font-family: 'DM Serif Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
+        .footer-brand p { font-size: 0.9rem; opacity: 0.6; max-width: 300px; line-height: 1.6; }
+        .footer-links-group h4 { font-family: 'Sora', sans-serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 18px; color: var(--blush); }
+        .footer-links-group ul { list-style: none; }
+        .footer-links-group li { margin-bottom: 12px; }
+        .footer-links-group a { font-size: 0.9rem; opacity: 0.6; transition: opacity 0.3s; }
+        .footer-links-group a:hover { opacity: 1; color: var(--lilac-light); }
+        .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.5; }
+
+        @media (max-width: 900px) {
+            .featured { grid-template-columns: 1fr; }
+            .featured img { min-height: 220px; }
+            .featured-body { padding: 8px 32px 36px; }
+        }
+        @media (max-width: 968px) {
+            nav { padding: 20px 30px; }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--warm-white); flex-direction: column; padding: 30px; gap: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .footer-top { flex-direction: column; }
+        }
+        @media (max-width: 640px) {
+            .blog-grid { grid-template-columns: 1fr; }
+            .blog-header, .blog-wrap, .breadcrumb { padding-left: 24px; padding-right: 24px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            footer { padding: 56px 24px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#expertise">Expertise</a></li>
+            <li><a href="/#journey">Journey</a></li>
+            <li><a href="/#tedx">Brands</a></li>
+            <li><a href="/blog/" class="active">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb"><a href="/">Home</a> <span>/</span> Blog</div>
+
+    <!-- HEADER -->
+    <header class="blog-header">
+        <div class="eyebrow">Writing</div>
+        <h1>Notes on AI That Actually Work</h1>
+        <p>Practical, honest writing on AI strategy, AI agents, automation, and getting found in AI search. Built from real client work, not hype.</p>
+    </header>
+
+    <div class="blog-wrap">
+
+        <!-- FEATURED -->
+        <a class="featured" href="/blog/get-cited-by-ai-search-aeo-geo">
+            <img src="/dahlia-website-assets/seo-2026-simplified.jpg" alt="SEO in 2026 simplified: how to get cited by AI search with AEO and GEO, by Dahlia Imanbay" width="1600" height="892" loading="eager">
+            <div class="featured-body">
+                <span class="featured-cat">AEO &amp; GEO <span class="badge">New</span></span>
+                <h2>How to Get Cited by AI Search: AEO and GEO</h2>
+                <p>A top-10 Google ranking once earned a citation 67% of the time. Now it is closer to 38%. Watch the video and get the five-step AEO and GEO playbook I use to get my clients quoted by Google AI mode and the major assistants.</p>
+                <span class="read-link">Read the guide &rarr;</span>
+            </div>
+        </a>
+
+        <!-- GRID -->
+        <div class="blog-grid">
+
+            <a class="post-card" href="/blog/what-an-ai-agent-actually-costs-2026">
+                <span class="thumb">&#128176;</span>
+                <span class="cat">AI Agents</span>
+                <h3>What an AI Agent Actually Costs a Small Business in 2026</h3>
+                <p>The subscription is the smallest line item. Here is the real all-in cost once you add integration, monitoring, training data, and rework.</p>
+                <span class="meta">April 28, 2026 &bull; 5 min read</span>
+            </a>
+
+            <a class="post-card" href="/blog/ai-roi-paradox-2026">
+                <span class="thumb">&#128200;</span>
+                <span class="cat">AI Strategy</span>
+                <h3>The AI ROI Paradox: 88% Use AI, Only 29% See Results</h3>
+                <p>Most businesses have adopted AI. Far fewer can point to a result. Here is where the value leaks out, and how to close the gap.</p>
+                <span class="meta">AI Strategy &bull; 6 min read</span>
+            </a>
+
+            <a class="post-card" href="/blog/ai-burnout-productivity-trap">
+                <span class="thumb">&#128293;</span>
+                <span class="cat">AI Strategy</span>
+                <h3>The AI Productivity Trap: Why Your Team Is More Burned Out, Not Less</h3>
+                <p>AI was supposed to lighten the load. For many teams it added a new one. What the productivity trap looks like, and how to avoid it.</p>
+                <span class="meta">AI Strategy &bull; 6 min read</span>
+            </a>
+
+            <a class="post-card" href="/blog/ai-consultant-for-nonprofits">
+                <span class="thumb">&#127919;</span>
+                <span class="cat">AI Strategy</span>
+                <h3>What Nonprofits Actually Need From an AI Consultant</h3>
+                <p>Most nonprofits get sold the wrong thing. Here is what genuinely moves the needle for mission-driven teams on a real budget.</p>
+                <span class="meta">AI Strategy &bull; 5 min read</span>
+            </a>
+
+            <a class="post-card" href="/blog/ai-auto-mode-small-business-nonprofits">
+                <span class="thumb">&#128187;</span>
+                <span class="cat">AI Agents</span>
+                <h3>I Gave an AI Agent Full Computer Access. Here Is How It Helps.</h3>
+                <p>What changes when an AI agent can actually use the computer, and where it helps small businesses and nonprofits the most.</p>
+                <span class="meta">AI Agents &bull; 6 min read</span>
+            </a>
+
+            <a class="post-card" href="/blog/why-claudes-surge-doesnt-surprise-me">
+                <span class="thumb">&#128202;</span>
+                <span class="cat">AI Tools &amp; Strategy</span>
+                <h3>I've Built on Claude for a Year. February's Numbers Don't Surprise Me.</h3>
+                <p>A year of building on Claude, and why the recent surge in adoption tracks exactly with what practitioners already felt.</p>
+                <span class="meta">AI Tools &bull; 5 min read</span>
+            </a>
+
+            <a class="post-card" href="/blog/i-built-an-ai-website-agent">
+                <span class="thumb">&#129302;</span>
+                <span class="cat">AI Agents</span>
+                <h3>I Replaced My Website's Contact Form With an AI Agent</h3>
+                <p>What happened when I swapped a static contact form for an AI agent that talks to visitors, qualifies, and routes in real time.</p>
+                <span class="meta">AI Agents &bull; 5 min read</span>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2>Dahlia Imanbay</h2>
+                <p>AI strategist, fractional CMO, and builder of systems that actually work.</p>
+            </div>
+            <div class="footer-links-group">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><a href="/#expertise">Expertise</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>Writing</h4>
+                <ul>
+                    <li><a href="/blog/">All Posts</a></li>
+                    <li><a href="https://substack.com/@dahliaimanbay" target="_blank" rel="noopener">Substack</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dahlia Imanbay. All rights reserved.</span>
+            <span>AI Strategist &amp; Fractional CMO</span>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
+
+</body>
+</html>
