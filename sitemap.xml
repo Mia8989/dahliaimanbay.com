@@ -3,14 +3,56 @@
 
   <url>
     <loc>https://dahliaimanbay.com/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://dahliaimanbay.com/blog/i-built-an-ai-website-agent</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://dahliaimanbay.com/blog</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dahliaimanbay.com/blog/get-cited-by-ai-search-aeo-geo</loc>
+    <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://dahliaimanbay.com/blog/what-an-ai-agent-actually-costs-2026</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dahliaimanbay.com/blog/ai-roi-paradox-2026</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dahliaimanbay.com/blog/ai-burnout-productivity-trap</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dahliaimanbay.com/blog/ai-consultant-for-nonprofits</loc>
+    <lastmod>2026-03-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dahliaimanbay.com/blog/ai-auto-mode-small-business-nonprofits</loc>
+    <lastmod>2026-03-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -18,6 +60,13 @@
   <url>
     <loc>https://dahliaimanbay.com/blog/why-claudes-surge-doesnt-surprise-me</loc>
     <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dahliaimanbay.com/blog/i-built-an-ai-website-agent</loc>
+    <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
