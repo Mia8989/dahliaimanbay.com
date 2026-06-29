@@ -102,13 +102,22 @@
 
   /* ---- trust ---- */
   .trust{margin-top:44px; text-align:center; animation:rise .6s .16s ease both;}
-  .trust p{
+  .trust .eyebrow2{
     font-family:'Sora',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.12em;
     text-transform:uppercase; color:var(--gray); margin-bottom:18px;
   }
-  .logos{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:26px 34px;}
-  .logos img{height:26px; width:auto; opacity:.62; filter:grayscale(100%); transition:opacity .2s ease, filter .2s ease;}
-  .logos img:hover{opacity:1; filter:grayscale(0%);}
+  .logos{display:flex; flex-wrap:wrap; align-items:stretch; justify-content:center; gap:14px;}
+  .logos .chip{
+    background:#fff; border:1px solid var(--light-gray); border-radius:14px;
+    box-shadow:0 6px 16px rgba(44,44,44,.06);
+    height:72px; min-width:132px; padding:14px 20px;
+    display:flex; align-items:center; justify-content:center;
+    transition:transform .15s ease, box-shadow .2s ease;
+  }
+  .logos .chip:hover{transform:translateY(-3px); box-shadow:0 10px 22px rgba(44,44,44,.10);}
+  .logos .chip img{max-height:38px; max-width:108px; width:auto; object-fit:contain;}
+  .career{margin:20px auto 0; font-size:.9rem; color:var(--gray); max-width:540px;}
+  .career b{color:var(--dark); font-weight:600;}
 
   .foot{margin-top:40px; text-align:center; font-family:'Sora',sans-serif; font-size:.82rem; color:var(--gray);}
   .foot a{color:var(--teal); text-decoration:none; font-weight:600;}
@@ -117,7 +126,8 @@
   @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
   @media (max-width:520px){
     h1{font-size:1.75rem;} .apply h2{font-size:1.4rem;}
-    .logos img{height:22px;} .logos{gap:20px 24px;}
+    .logos .chip{height:62px; min-width:116px; padding:10px 14px;}
+    .logos .chip img{max-height:30px; max-width:90px;}
   }
 </style>
 </head>
@@ -156,15 +166,18 @@
     </section>
 
     <section class="trust">
-      <p>Brands and teams I have worked with</p>
+      <p class="eyebrow2">Trusted by healthcare and mission-driven organizations</p>
       <div class="logos">
-        <img src="/dahlia-website-assets/logo-gap-logo.png" alt="Gap" loading="lazy">
-        <img src="/dahlia-website-assets/logo-marks-n-spencer.png" alt="Marks &amp; Spencer" loading="lazy">
-        <img src="/dahlia-website-assets/logo-john-lewis-partners-logo.png" alt="John Lewis &amp; Partners" loading="lazy">
-        <img src="/dahlia-website-assets/logo-steve-madden.png" alt="Steve Madden" loading="lazy">
-        <img src="/dahlia-website-assets/logo-aldo.png" alt="Aldo" loading="lazy">
-        <img src="/dahlia-website-assets/logo-topshop.png" alt="Topshop" loading="lazy">
+        <span class="chip"><img src="/dahlia-website-assets/logo-pawsic.png" alt="PAWSIC" loading="lazy"></span>
+        <span class="chip"><img src="/dahlia-website-assets/logo-cars.png" alt="Coalition for At-Risk Skin (CARS)" loading="lazy"></span>
+        <span class="chip"><img src="/dahlia-website-assets/logo-franklizzie.png" alt="The Frank and Lizzie Show" loading="lazy"></span>
+        <span class="chip"><img src="/dahlia-website-assets/logo-saveleg.png" alt="Save a Leg, Save a Life (SALSAL)" loading="lazy"></span>
+        <span class="chip"><img src="/dahlia-website-assets/logo-inspac.svg" alt="INSPAC" loading="lazy"></span>
+        <span class="chip"><img src="/dahlia-website-assets/logo-community-builders-alliance-logo.png" alt="Community Builders Alliance" loading="lazy"></span>
+        <span class="chip"><img src="/dahlia-website-assets/logo-tedxmarvila-logo.png" alt="TEDxMarvila" loading="lazy"></span>
+        <span class="chip"><img src="/dahlia-website-assets/logo-keepuspstd-logo.png" alt="KeepUsPostd" loading="lazy"></span>
       </div>
+      <p class="career">Earlier in my career, I worked with global brands including <b>Gap, Marks &amp; Spencer, John Lewis, Aldo, Steve Madden,</b> and <b>Topshop</b>.</p>
     </section>
 
     <p class="foot"><a href="/link">&larr; Back to all links</a> &nbsp;·&nbsp; <a href="https://dahliaimanbay.com">dahliaimanbay.com</a></p>
