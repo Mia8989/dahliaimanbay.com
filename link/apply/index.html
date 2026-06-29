@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work with Dahlia · Apply</title>
+<meta name="description" content="Watch the short video, then apply. I help healthcare and mission-driven brands grow with AI-assisted marketing, websites, and social systems.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Work with Dahlia Imanbay">
+<meta property="og:description" content="Watch the short video, then apply to work together.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://dahliaimanbay.com/dahlia-website-assets/hero-new.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- GA4 (dahliaimanbay.com) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NXLWM0TJK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NXLWM0TJK8');
+</script>
+
+<style>
+  :root{
+    --blush:#F2C4C4; --blush-light:#FDF0F0; --blush-dark:#E8A5A5;
+    --teal:#2A7B88; --teal-light:#3A9DAD; --teal-dark:#1D5A63;
+    --maroon:#7B2D3B; --maroon-light:#9E3E50; --maroon-dark:#5C1F2B;
+    --lilac:#B8A9D4; --lilac-light:#DDD5EE; --lilac-dark:#8E7BB8; --lilac-bg:#F0ECF6;
+    --cream:#FFF9F5; --warm-white:#FFFCFA; --dark:#2C2C2C; --gray:#6B6B6B; --light-gray:#F5F0ED;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Inter',sans-serif; color:var(--dark);
+    background:
+      radial-gradient(circle at 15% 0%, var(--blush-light) 0%, transparent 40%),
+      radial-gradient(circle at 90% 12%, var(--lilac-bg) 0%, transparent 42%),
+      var(--warm-white);
+    min-height:100vh; -webkit-font-smoothing:antialiased; line-height:1.5;
+  }
+  .wrap{width:100%; max-width:760px; margin:0 auto; padding:40px 20px 64px;}
+
+  /* ---- top / hero ---- */
+  .top{text-align:center; animation:rise .6s ease both;}
+  .avatar{
+    width:84px; height:84px; border-radius:50%; object-fit:cover; object-position:50% 18%;
+    border:3px solid var(--warm-white); box-shadow:0 8px 22px rgba(123,45,59,.18);
+    margin:0 auto 16px; display:block;
+  }
+  .eyebrow{
+    font-family:'Sora',sans-serif; font-size:.74rem; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--teal); margin-bottom:12px;
+  }
+  h1{
+    font-family:'DM Serif Display',serif; font-size:2.15rem; line-height:1.14;
+    color:var(--maroon); margin:0 auto 14px; max-width:14ch;
+  }
+  .sub{font-size:1.05rem; color:var(--gray); max-width:540px; margin:0 auto;}
+  .sub b{color:var(--dark); font-weight:600;}
+
+  /* ---- video ---- */
+  .video{
+    margin:30px 0 8px; border-radius:20px; overflow:hidden; position:relative;
+    box-shadow:0 18px 44px rgba(44,44,44,.16); background:#000; animation:rise .6s .08s ease both;
+  }
+  .video .ratio{position:relative; width:100%; padding-top:56.25%;}
+  .video .ratio>*{position:absolute; inset:0; width:100%; height:100%;}
+  .poster{object-fit:cover; object-position:50% 22%;}
+  .play{
+    display:flex; align-items:center; justify-content:center; cursor:pointer; border:0;
+    background:linear-gradient(180deg, rgba(44,44,44,.05), rgba(44,44,44,.45));
+  }
+  .play .ring{
+    width:78px; height:78px; border-radius:50%;
+    background:rgba(255,252,250,.92); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 26px rgba(0,0,0,.3); transition:transform .15s ease;
+  }
+  .play:hover .ring{transform:scale(1.07);}
+  .play .ring svg{width:30px; height:30px; margin-left:4px; color:var(--maroon);}
+  .play .tag{
+    position:absolute; left:50%; bottom:18px; transform:translateX(-50%);
+    font-family:'Sora',sans-serif; font-size:.82rem; font-weight:600; color:#fff;
+    background:rgba(42,123,136,.92); padding:8px 16px; border-radius:999px; white-space:nowrap;
+    box-shadow:0 6px 16px rgba(0,0,0,.25);
+  }
+  .vcap{text-align:center; font-size:.86rem; color:var(--gray); margin:12px 0 0;}
+
+  /* ---- apply ---- */
+  .apply{margin-top:40px; animation:rise .6s .12s ease both;}
+  .apply h2{
+    font-family:'DM Serif Display',serif; font-size:1.7rem; color:var(--maroon);
+    text-align:center; margin-bottom:8px;
+  }
+  .apply .lead{text-align:center; color:var(--gray); max-width:520px; margin:0 auto 22px;}
+  .card{
+    background:var(--warm-white); border:1px solid var(--light-gray); border-radius:22px;
+    box-shadow:0 16px 40px rgba(123,45,59,.10); padding:14px 14px 6px;
+  }
+  iframe.jf{width:1px; min-width:100%; border:0; background:transparent; display:block;}
+
+  /* ---- trust ---- */
+  .trust{margin-top:44px; text-align:center; animation:rise .6s .16s ease both;}
+  .trust p{
+    font-family:'Sora',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--gray); margin-bottom:18px;
+  }
+  .logos{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:26px 34px;}
+  .logos img{height:26px; width:auto; opacity:.62; filter:grayscale(100%); transition:opacity .2s ease, filter .2s ease;}
+  .logos img:hover{opacity:1; filter:grayscale(0%);}
+
+  .foot{margin-top:40px; text-align:center; font-family:'Sora',sans-serif; font-size:.82rem; color:var(--gray);}
+  .foot a{color:var(--teal); text-decoration:none; font-weight:600;}
+
+  @keyframes rise{from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);}}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;}}
+  @media (max-width:520px){
+    h1{font-size:1.75rem;} .apply h2{font-size:1.4rem;}
+    .logos img{height:22px;} .logos{gap:20px 24px;}
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <section class="top">
+      <img class="avatar" src="/dahlia-website-assets/hero-new.webp" alt="Dahlia Imanbay">
+      <p class="eyebrow">Work with Dahlia</p>
+      <h1>Watch this first, then apply</h1>
+      <p class="sub">I help <b>healthcare and mission-driven brands</b> grow with AI-assisted marketing, websites, and social systems. Watch the short video, then tell me about your brand. If we are a fit, you will pick a time on the next screen.</p>
+    </section>
+
+    <!-- VIDEO: swap data-video with the YouTube/Vimeo EMBED url after recording -->
+    <section class="video" id="video" data-video="">
+      <div class="ratio">
+        <img class="poster" src="/dahlia-website-assets/hero-new.webp" alt="Video preview">
+        <button class="play" id="playBtn" type="button" aria-label="Play video">
+          <span class="ring"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="tag" id="videoTag">New video dropping this week</span>
+        </button>
+      </div>
+    </section>
+    <p class="vcap">A short look at how I would grow your brand. Then apply below.</p>
+
+    <section class="apply" id="apply">
+      <h2>Apply to work with me</h2>
+      <p class="lead">It takes under a minute. I read every application personally.</p>
+      <div class="card">
+        <iframe class="jf" id="JotFormIFrame-261788385882174" title="Work With Dahlia - Quick Application"
+                onload="window.parent.scrollTo(0,0)"
+                allow="geolocation; microphone; camera; fullscreen; payment"
+                src="https://form.jotform.com/261788385882174"
+                scrolling="no" style="height:900px;"></iframe>
+      </div>
+    </section>
+
+    <section class="trust">
+      <p>Brands and teams I have worked with</p>
+      <div class="logos">
+        <img src="/dahlia-website-assets/logo-gap-logo.png" alt="Gap" loading="lazy">
+        <img src="/dahlia-website-assets/logo-marks-n-spencer.png" alt="Marks &amp; Spencer" loading="lazy">
+        <img src="/dahlia-website-assets/logo-john-lewis-partners-logo.png" alt="John Lewis &amp; Partners" loading="lazy">
+        <img src="/dahlia-website-assets/logo-steve-madden.png" alt="Steve Madden" loading="lazy">
+        <img src="/dahlia-website-assets/logo-aldo.png" alt="Aldo" loading="lazy">
+        <img src="/dahlia-website-assets/logo-topshop.png" alt="Topshop" loading="lazy">
+      </div>
+    </section>
+
+    <p class="foot"><a href="/link">&larr; Back to all links</a> &nbsp;·&nbsp; <a href="https://dahliaimanbay.com">dahliaimanbay.com</a></p>
+
+  </main>
+
+<script>
+(function(){
+  // ---- UTM pass-through ----
+  // The Jotform embed handler below forwards the parent page's query string
+  // (?utm_source=...) into the embedded form automatically, so the hidden utm
+  // fields get captured and ride through to the result page. No manual append
+  // needed here (doing so would duplicate the params).
+
+  // ---- video facade ----
+  var vsec = document.getElementById('video');
+  var url = (vsec.getAttribute('data-video') || '').trim();
+  var tag = document.getElementById('videoTag');
+  if(!url && tag){ tag.textContent = 'New video dropping this week'; }
+  document.getElementById('playBtn').addEventListener('click', function(){
+    gtag('event', 'video_play_click', { has_video: !!url });
+    if(url){
+      var ifr = document.createElement('iframe');
+      ifr.setAttribute('src', url + (url.indexOf('?')>-1?'&':'?') + 'autoplay=1');
+      ifr.setAttribute('title', 'Work with Dahlia video');
+      ifr.setAttribute('allow', 'autoplay; encrypted-media; fullscreen; picture-in-picture');
+      ifr.setAttribute('allowfullscreen', 'true');
+      ifr.style.border = '0';
+      var ratio = vsec.querySelector('.ratio');
+      while(ratio.firstChild){ ratio.removeChild(ratio.firstChild); }
+      ratio.appendChild(ifr);
+    } else {
+      document.getElementById('apply').scrollIntoView({behavior:'smooth'});
+    }
+  });
+})();
+</script>
+<!-- Jotform embed handler: auto-resize + redirect-to-parent on submit -->
+<script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261788385882174']", "https://form.jotform.com");</script>
+</body>
+</html>
