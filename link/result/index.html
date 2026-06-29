@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanks for applying · Dahlia Imanbay</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- GA4 (dahliaimanbay.com) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NXLWM0TJK8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NXLWM0TJK8');
+</script>
+
+<style>
+  :root{
+    --blush:#F2C4C4; --blush-light:#FDF0F0; --blush-dark:#E8A5A5;
+    --teal:#2A7B88; --teal-light:#3A9DAD; --teal-dark:#1D5A63;
+    --maroon:#7B2D3B; --maroon-light:#9E3E50; --maroon-dark:#5C1F2B;
+    --lilac:#B8A9D4; --lilac-light:#DDD5EE; --lilac-dark:#8E7BB8; --lilac-bg:#F0ECF6;
+    --cream:#FFF9F5; --warm-white:#FFFCFA; --dark:#2C2C2C; --gray:#6B6B6B; --light-gray:#F5F0ED;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Inter',sans-serif; color:var(--dark);
+    background:
+      radial-gradient(circle at 20% 0%, var(--blush-light) 0%, transparent 45%),
+      radial-gradient(circle at 85% 100%, var(--lilac-bg) 0%, transparent 50%),
+      var(--warm-white);
+    min-height:100vh; display:flex; justify-content:center;
+    padding:48px 20px 64px; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{width:100%; max-width:640px; text-align:center;}
+  [hidden]{display:none !important;}
+  .badge{
+    font-family:'Sora',sans-serif; font-size:.72rem; font-weight:600; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--teal); margin-bottom:14px;
+  }
+  h1{
+    font-family:'DM Serif Display',serif; font-size:2.1rem; line-height:1.15;
+    color:var(--maroon); margin-bottom:14px;
+  }
+  p.lead{font-size:1.05rem; line-height:1.6; color:var(--gray); max-width:520px; margin:0 auto 26px;}
+  p.lead b{color:var(--dark); font-weight:600;}
+
+  .card{
+    background:var(--warm-white); border:1px solid var(--light-gray); border-radius:20px;
+    box-shadow:0 12px 34px rgba(123,45,59,.10); padding:10px; overflow:hidden;
+  }
+  iframe{width:100%; border:0; border-radius:14px; min-height:760px; display:block;}
+
+  .review{
+    background:var(--warm-white); border:1px solid var(--blush); border-radius:20px;
+    box-shadow:0 12px 30px rgba(232,165,165,.20); padding:34px 28px; text-align:left;
+  }
+  .review .check{
+    width:54px; height:54px; border-radius:50%; background:var(--teal); color:#fff;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 18px;
+    box-shadow:0 8px 20px rgba(42,123,136,.30);
+  }
+  .review .check svg{width:26px; height:26px;}
+  .review h2{font-family:'DM Serif Display',serif; font-size:1.5rem; color:var(--maroon); text-align:center; margin-bottom:12px;}
+  .review p{font-size:1rem; line-height:1.65; color:var(--gray); text-align:center; margin-bottom:14px;}
+  .review .next{
+    margin-top:22px; padding-top:20px; border-top:1px solid var(--light-gray);
+    font-size:.95rem; color:var(--gray); text-align:center;
+  }
+  .review .next b{color:var(--dark);}
+  .links{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:18px;}
+  .links a{
+    font-family:'Sora',sans-serif; font-size:.9rem; font-weight:600; text-decoration:none;
+    padding:11px 18px; border-radius:12px; transition:transform .15s ease;
+  }
+  .links a:hover{transform:translateY(-2px);}
+  .a-teal{background:var(--teal); color:#fff;}
+  .a-soft{background:var(--lilac-bg); color:var(--lilac-dark); border:1.5px solid var(--lilac-light);}
+  .foot{margin-top:28px; font-family:'Sora',sans-serif; font-size:.8rem; color:var(--gray);}
+  .foot a{color:var(--teal); text-decoration:none; font-weight:600;}
+</style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- QUALIFIED branch -->
+    <section id="qualified" hidden>
+      <p class="badge">You’re a great fit</p>
+      <h1 id="q-head">Let’s find a time to talk</h1>
+      <p class="lead" id="q-lead">Pick a slot below for a free 30-minute strategy audit. It lands straight on my calendar and you’ll get a confirmation by email.</p>
+      <div class="card">
+        <iframe id="bookFrame" title="Book your strategy audit" src="about:blank"
+                allow="fullscreen" scrolling="auto"></iframe>
+      </div>
+      <p class="foot">Trouble loading the calendar? <a id="bookLink" href="#" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+    </section>
+
+    <!-- REVIEW branch -->
+    <section id="review" hidden>
+      <div class="review">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <h2 id="r-head">Thank you</h2>
+        <p>Your application is in. I personally review every request and reply within <b>2 business days</b> with honest next steps, whether that’s working together or pointing you to the right resource.</p>
+        <div class="next"><b>While you wait:</b> grab a playbook or two so you can start moving now.
+          <div class="links">
+            <a class="a-teal" href="https://dahliaimanbay.com/blog">Read the blog</a>
+            <a class="a-soft" href="https://substack.com/@dahliaimanbay" target="_blank" rel="noopener">Get the newsletter</a>
+          </div>
+        </div>
+      </div>
+      <p class="foot">Marketing that lasts · <a href="https://dahliaimanbay.com">dahliaimanbay.com</a></p>
+    </section>
+
+  </main>
+
+<script>
+(function(){
+  var p = new URLSearchParams(window.location.search);
+  var dec = function(k){ try{ return decodeURIComponent((p.get(k)||'').replace(/\+/g,' ')); }catch(e){ return (p.get(k)||''); } };
+
+  var budget   = dec('b');
+  var fullName = dec('fn');
+  var email    = dec('e');
+  var first = fullName.split(' ')[0] || '';
+  var last  = fullName.split(' ').slice(1).join(' ') || '';
+
+  // Qualify: $2,500+/mo, $5,000+/mo, or a one-time project ($5,000+).
+  var qualified = /\$2,500|\$5,000|One-time/i.test(budget);
+
+  // ---- GA4 ----
+  gtag('event', 'generate_lead', { lead_source: dec('us') || 'direct', budget_band: budget });
+  gtag('event', qualified ? 'qualified_lead' : 'lead_review', {
+    lead_source: dec('us') || 'direct', medium: dec('um') || '', campaign: dec('uc') || '', budget_band: budget
+  });
+
+  if (qualified) {
+    var book = 'https://form.jotform.com/253487232045153'
+      + '?name[first]=' + encodeURIComponent(first)
+      + '&name[last]='  + encodeURIComponent(last)
+      + '&email='       + encodeURIComponent(email);
+    document.getElementById('bookFrame').setAttribute('src', book);
+    document.getElementById('bookLink').setAttribute('href', book);
+    if (first) document.getElementById('q-lead').firstChild.textContent =
+      'Thanks, ' + first + '. Pick a slot below for a free 30-minute strategy audit. It lands straight on my calendar and you’ll get a confirmation by email.';
+    document.getElementById('qualified').hidden = false;
+  } else {
+    if (first) document.getElementById('r-head').textContent = 'Thank you, ' + first;
+    document.getElementById('review').hidden = false;
+  }
+})();
+</script>
+</body>
+</html>
