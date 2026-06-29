@@ -128,8 +128,9 @@
   var first = fullName.split(' ')[0] || '';
   var last  = fullName.split(' ').slice(1).join(' ') || '';
 
-  // Qualify: $2,500+/mo, $5,000+/mo, or a one-time project ($5,000+).
-  var qualified = /\$2,500|\$5,000|One-time/i.test(budget);
+  // Qualify: every real investment tier books a call; only "Exploring..." (or a
+  // missing value) routes to the personal-review message.
+  var qualified = !!budget && !/exploring/i.test(budget);
 
   // ---- GA4 ----
   gtag('event', 'generate_lead', { lead_source: dec('us') || 'direct', budget_band: budget });
