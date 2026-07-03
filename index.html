@@ -273,6 +273,40 @@
             justify-content: center; overflow: hidden;
             background: linear-gradient(135deg, var(--lilac-light) 0%, var(--blush-light) 30%, var(--lilac-bg) 60%, var(--blush) 100%);
         }
+        /* Drifting cloud atmosphere */
+        .hero-sky { position: absolute; inset: -6% 0 -2% 0; z-index: 0; overflow: hidden; pointer-events: none; will-change: transform, opacity; }
+        .cloud-layer {
+            position: absolute; top: 0; left: 0; width: 200%; height: 100%;
+            background-repeat: repeat-x; background-size: 50% 100%; will-change: transform;
+        }
+        .cloud-1 {
+            top: -6%; height: 78%; opacity: 0.9;
+            background-image:
+                radial-gradient(26% 30% at 12% 22%, rgba(255,255,255,0.9), rgba(255,255,255,0) 64%),
+                radial-gradient(34% 40% at 18% 60%, rgba(255,255,255,0.92), rgba(255,255,255,0) 62%),
+                radial-gradient(28% 34% at 42% 34%, rgba(255,255,255,0.82), rgba(255,255,255,0) 64%),
+                radial-gradient(40% 46% at 70% 58%, rgba(255,255,255,0.9), rgba(255,255,255,0) 60%),
+                radial-gradient(24% 30% at 88% 30%, rgba(253,240,240,0.85), rgba(255,255,255,0) 66%);
+            filter: blur(11px); animation: drift 72s linear infinite;
+        }
+        .cloud-2 {
+            top: 6%; height: 84%; opacity: 0.7;
+            background-image:
+                radial-gradient(30% 26% at 8% 34%, rgba(255,255,255,0.8), rgba(255,255,255,0) 64%),
+                radial-gradient(46% 40% at 30% 64%, rgba(255,255,255,0.82), rgba(255,255,255,0) 62%),
+                radial-gradient(34% 30% at 58% 40%, rgba(240,236,246,0.8), rgba(255,255,255,0) 66%),
+                radial-gradient(50% 44% at 86% 60%, rgba(255,255,255,0.8), rgba(255,255,255,0) 60%);
+            filter: blur(22px); animation: drift 108s linear infinite; animation-delay: -30s;
+        }
+        .cloud-3 {
+            top: 30%; height: 74%; opacity: 0.5;
+            background-image:
+                radial-gradient(52% 50% at 34% 58%, rgba(255,255,255,0.7), rgba(255,255,255,0) 66%),
+                radial-gradient(40% 38% at 76% 50%, rgba(248,238,240,0.68), rgba(255,255,255,0) 68%);
+            filter: blur(38px); animation: drift-rev 140s linear infinite;
+        }
+        @keyframes drift { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
+        @keyframes drift-rev { from { transform: translate3d(-50%,0,0); } to { transform: translate3d(0,0,0); } }
         .hero-content { text-align: center; position: relative; z-index: 2; padding: 0 20px; }
         .hero-name {
             font-family: 'DM Serif Display', serif; font-size: clamp(4rem, 12vw, 11rem);
@@ -741,6 +775,8 @@
             }
             .timeline::before { transform: none; transition: none; }
             .hero-badge svg, .hero-scroll { animation: none !important; }
+            .cloud-layer { animation: none !important; }
+            .hero-sky { transform: none !important; }
             html { scroll-behavior: auto; }
         }
 
@@ -814,6 +850,11 @@
 
     <!-- HERO -->
     <section class="hero" id="home" aria-label="Hero - Dahlia Imanbay AI Strategist">
+        <div class="hero-sky" aria-hidden="true">
+            <div class="cloud-layer cloud-3"></div>
+            <div class="cloud-layer cloud-2"></div>
+            <div class="cloud-layer cloud-1"></div>
+        </div>
         <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">Dahlia Imanbay | AI Strategist, Fractional CMO & Full-Stack Developer | Healthcare Marketing Automation Expert</h1>
         <div class="hero-name" data-px="-0.12" data-px-base="translateY(-50%)"><span class="hero-name-inner">Dahlia Imanbay</span></div>
         <div class="hero-content">
@@ -1412,6 +1453,7 @@
 
         // Navbar: shadow + hide on scroll down, return on scroll up
         const navbar=document.getElementById('navbar');
+        const sky=document.querySelector('.hero-sky');
         let lastY=window.scrollY;
         window.addEventListener('scroll',()=>{
             const y=window.scrollY;
@@ -1425,6 +1467,11 @@
             document.querySelector('.scroll-progress').style.transform='scaleX('+(max>0?y/max:0)+')';
             const hs=document.querySelector('.hero-scroll');
             if(hs&&document.body.classList.contains('loaded'))hs.style.opacity=Math.max(0,1-y/350);
+            // Clouds lift and dissolve as you scroll into the page
+            if(!reducedMotion&&sky&&y<window.innerHeight*1.2){
+                sky.style.transform='translate3d(0,'+(y*0.35).toFixed(1)+'px,0) scale('+(1+y*0.00022).toFixed(4)+')';
+                sky.style.opacity=Math.max(0,1-y/760).toFixed(3);
+            }
         },{passive:true});
 
         // Close mobile menu on click
