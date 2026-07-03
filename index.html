@@ -282,9 +282,11 @@
         .hero-photo-frame::before {
             content: ''; position: absolute; left: 50%; top: 50%;
             width: 940px; height: 940px; margin: -470px; will-change: transform;
-            background: conic-gradient(from 0deg, var(--teal), var(--lilac), var(--teal-light), var(--lilac-dark), var(--teal));
-            animation: ring-rotate 7s linear infinite;
+            background: conic-gradient(from 0deg, var(--blush), var(--lilac-light), var(--lilac), var(--blush-light), var(--blush));
+            opacity: 0; transition: opacity 0.5s ease;
+            animation: ring-rotate 7s linear infinite; animation-play-state: paused;
         }
+        .hero-photo-frame:hover::before { opacity: 1; animation-play-state: running; }
         @keyframes ring-rotate { to { transform: rotate(360deg); } }
         .hero-content { text-align: center; position: relative; z-index: 2; padding: 0 20px; }
         .hero-name {
