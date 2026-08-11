@@ -74,6 +74,17 @@
   .btn small{display:block; font-weight:400; font-size:.74rem; opacity:.85; margin-top:2px;}
   .btn .stack{display:flex; flex-direction:column; line-height:1.2;}
 
+  .btn-hacks{
+    background:linear-gradient(135deg, var(--maroon) 0%, var(--lilac-dark) 100%);
+    color:#fff; box-shadow:0 8px 22px rgba(123,45,59,.30);
+    animation-delay:.16s; position:relative;
+  }
+  .btn-hacks:hover{box-shadow:0 12px 28px rgba(123,45,59,.42);}
+  .btn-hacks .badge{
+    position:absolute; top:-9px; right:14px; background:var(--blush-dark); color:var(--maroon-dark);
+    font-family:'Sora',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.06em;
+    text-transform:uppercase; padding:3px 9px; border-radius:20px; box-shadow:0 3px 8px rgba(0,0,0,.15);
+  }
   .btn-primary{
     background:linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
     color:#fff; box-shadow:0 8px 22px rgba(42,123,136,.32);
@@ -143,6 +154,12 @@
     <p class="roles">AI Strategist · Fractional CMO · Developer</p>
     <p class="promise">I help <b>healthcare and mission-driven brands</b> grow with smart marketing automation, websites, and social systems that actually convert. Start with a free audit below.</p>
 
+    <!-- 30 HACKS: video series entry point, kept first so bio links from any hack video land right here -->
+    <a class="btn btn-hacks" id="hacks" data-cta href="https://dahliaimanbay.com/blog/the-tool-that-reads-my-newsletters-for-me">
+      <span class="badge">New</span>
+      <span class="stack">30 Hacks From Dahlia<small>Hack 31: the tool that reads my newsletters for me</small></span>
+    </a>
+
     <!-- HARD DOOR: the money button -> branded conversion-bridge landing (UTMs pass through via data-cta) -->
     <a class="btn btn-primary" data-cta href="/link/apply">
       <span class="stack">Book a free strategy audit<small>Watch a short video, then apply</small></span>
@@ -156,6 +173,11 @@
     <!-- OFFER: DIY social media system -->
     <a class="btn btn-social" data-cta href="/link/social-system">
       <span class="stack">Run my own social, set up for me<small>Post from your $20 Claude, in your own voice</small></span>
+    </a>
+
+    <!-- GRANT OPPORTUNITY: OpenAI Foundation -->
+    <a class="btn btn-ghost" data-cta href="https://openaifoundation.org/news/2026-people-first-ai-fund" target="_blank">
+      <span class="stack">OpenAI Foundation AI Fund 2026<small>$50M for nonprofits exploring AI. Deadline July 15.</small></span>
     </a>
 
     <!-- SOFT DOOR: email capture / nurture -->
@@ -200,6 +222,18 @@
         u.search = u.search ? (u.search + '&' + qs) : ('?' + qs);
         a.href = u.toString();
       }catch(e){}
+    });
+  })();
+
+  // ===== Land on #hacks when a bio link points there (e.g. /link#hacks) =====
+  // Entrance animations can shift layout after paint, so wait a beat before scrolling.
+  (function(){
+    if(window.location.hash !== '#hacks') return;
+    window.addEventListener('load', function(){
+      setTimeout(function(){
+        var el = document.getElementById('hacks');
+        if(el) el.scrollIntoView({behavior:'smooth', block:'center'});
+      }, 350);
     });
   })();
 </script>
