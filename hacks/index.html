@@ -153,6 +153,36 @@
             font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 700; color: var(--teal-dark);
         }
 
+        .filter-bar {
+            position: sticky; top: 66px; z-index: 500; background: rgba(255,252,250,0.97);
+            backdrop-filter: blur(10px); margin: 8px 0 36px; padding: 14px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .filter-search {
+            width: 100%; padding: 12px 18px; margin-bottom: 12px; border-radius: 12px;
+            border: 1.5px solid var(--light-gray); background: var(--warm-white);
+            font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--dark);
+            transition: border-color 0.2s ease;
+        }
+        .filter-search:focus { outline: none; border-color: var(--lilac-dark); }
+        .filter-search::placeholder { color: var(--gray); }
+        .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+        .filter-pill {
+            font-family: 'Sora', sans-serif; font-size: 0.76rem; font-weight: 600;
+            padding: 8px 15px; border-radius: 20px; border: 1.5px solid var(--light-gray);
+            background: var(--warm-white); color: var(--gray); cursor: pointer;
+            transition: all 0.2s ease; white-space: nowrap;
+        }
+        .filter-pill:hover { border-color: var(--lilac); }
+        .filter-pill.active {
+            background: var(--maroon); border-color: var(--maroon); color: var(--cream);
+        }
+        .filter-empty {
+            display: none; text-align: center; padding: 40px 20px; color: var(--gray); font-size: 0.95rem;
+        }
+        .filter-empty.show { display: block; }
+        .category.hidden, .hack-item.hidden { display: none; }
+
         .category { margin-bottom: 44px; }
         .category-title {
             font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--maroon);
@@ -253,7 +283,20 @@
             </a>
         </div>
 
-        <div class="category">
+        <div class="filter-bar">
+            <input type="text" class="filter-search" id="hackSearch" placeholder="Search all 30 hacks..." aria-label="Search hacks">
+            <div class="filter-pills" id="filterPills">
+                <button class="filter-pill active" data-cat="all">All 30</button>
+                <button class="filter-pill" data-cat="ai-automation">AI &amp; Automation</button>
+                <button class="filter-pill" data-cat="time-operations">Time &amp; Operations</button>
+                <button class="filter-pill" data-cat="marketing-social">Marketing &amp; Social</button>
+                <button class="filter-pill" data-cat="money-growth">Money &amp; Growth</button>
+            </div>
+        </div>
+
+        <p class="filter-empty" id="filterEmpty">No hacks match that search. Try a different word, or clear the filter.</p>
+
+        <div class="category" data-cat="ai-automation">
             <h2 class="category-title">AI &amp; Automation</h2>
             <p class="category-sub">Hacks 1 to 8</p>
 
@@ -315,7 +358,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" data-cat="time-operations">
             <h2 class="category-title">Time &amp; Operations</h2>
             <p class="category-sub">Hacks 9 to 15</p>
 
@@ -370,7 +413,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" data-cat="marketing-social">
             <h2 class="category-title">Marketing &amp; Social</h2>
             <p class="category-sub">Hacks 16 to 22</p>
 
@@ -425,7 +468,7 @@
             </div>
         </div>
 
-        <div class="category">
+        <div class="category" data-cat="money-growth">
             <h2 class="category-title">Money, Grants &amp; Growth</h2>
             <p class="category-sub">Hacks 23 to 30</p>
 
@@ -521,6 +564,50 @@
             document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
         });
         document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+        // ===== Filter + search across the 30 hacks =====
+        (function(){
+            var searchInput = document.getElementById('hackSearch');
+            var pills = document.querySelectorAll('.filter-pill');
+            var categories = document.querySelectorAll('.category[data-cat]');
+            var emptyMsg = document.getElementById('filterEmpty');
+            var activeCat = 'all';
+
+            function applyFilter(){
+                var query = searchInput.value.trim().toLowerCase();
+                var anyVisible = false;
+
+                categories.forEach(function(cat){
+                    var catMatches = activeCat === 'all' || cat.dataset.cat === activeCat;
+                    var itemsVisible = 0;
+
+                    cat.querySelectorAll('.hack-item').forEach(function(item){
+                        var text = item.textContent.toLowerCase();
+                        var searchMatches = !query || text.indexOf(query) !== -1;
+                        var show = catMatches && searchMatches;
+                        item.classList.toggle('hidden', !show);
+                        if (show) itemsVisible++;
+                    });
+
+                    var showCat = itemsVisible > 0;
+                    cat.classList.toggle('hidden', !showCat);
+                    if (showCat) anyVisible = true;
+                });
+
+                emptyMsg.classList.toggle('show', !anyVisible);
+            }
+
+            searchInput.addEventListener('input', applyFilter);
+
+            pills.forEach(function(pill){
+                pill.addEventListener('click', function(){
+                    pills.forEach(function(p){ p.classList.remove('active'); });
+                    pill.classList.add('active');
+                    activeCat = pill.dataset.cat;
+                    applyFilter();
+                });
+            });
+        })();
     </script>
 </body>
 </html>
