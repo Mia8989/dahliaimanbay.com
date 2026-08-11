@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXLWM0TJK8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NXLWM0TJK8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tool That Reads My Newsletters For Me | Dahlia</title>
+    <meta name="description" content="I subscribe to a handful of newsletters that always break industry news first, then let an AI tool with read-only email access read and summarize them for me. Hack 31 of 30.">
+    <meta name="keywords" content="read-only email access AI, Gmail MCP read only, connect email to AI safely, newsletter digest AI, gmail.readonly scope, Microsoft Graph Mail.Read, industry trend tracking, Dahlia Imanbay">
+    <meta name="author" content="Dahlia Imanbay">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://dahliaimanbay.com/blog/the-tool-that-reads-my-newsletters-for-me">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Tool That Reads My Newsletters For Me (So I Don't Have To)">
+    <meta property="og:description" content="I subscribe to the newsletters that break industry news first, then let an AI tool with read-only email access read and summarize them for me. Here's exactly how the connection works.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dahliaimanbay.com/blog/the-tool-that-reads-my-newsletters-for-me">
+    <meta property="og:site_name" content="Dahlia Imanbay">
+    <meta property="og:image" content="https://dahliaimanbay.com/dahlia-website-assets/og-newsletters-mcp.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Blog post: The Tool That Reads My Newsletters For Me by Dahlia Imanbay">
+    <meta property="article:published_time" content="2026-08-11T09:00:00-05:00">
+    <meta property="article:author" content="https://www.linkedin.com/in/dahlia-imanbay/">
+    <meta property="article:section" content="AI Tools & Strategy">
+    <meta property="article:tag" content="Email Automation">
+    <meta property="article:tag" content="MCP">
+    <meta property="article:tag" content="AI Strategy">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dahlia_imanbay">
+    <meta name="twitter:creator" content="@dahlia_imanbay">
+    <meta name="twitter:title" content="The Tool That Reads My Newsletters For Me | Dahlia Imanbay">
+    <meta name="twitter:description" content="I subscribe to the newsletters that break industry news first, then let a read-only AI connection read and summarize them for me. Here's how it actually works.">
+    <meta name="twitter:image" content="https://dahliaimanbay.com/dahlia-website-assets/og-newsletters-mcp.png">
+    <meta name="twitter:image:alt" content="Blog post: The Tool That Reads My Newsletters For Me by Dahlia Imanbay">
+
+    <!-- Schema: Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Tool That Reads My Newsletters For Me (So I Don't Have To)",
+        "description": "I subscribe to a handful of newsletters that consistently break industry news first, then connect my inbox to an AI tool with read-only access so it can find those subscriptions and summarize what changed. Here is exactly how the read-only connection works, and why that limitation is the point.",
+        "datePublished": "2026-08-11T09:00:00-05:00",
+        "dateModified": "2026-08-11T09:00:00-05:00",
+        "author": {
+            "@type": "Person",
+            "name": "Dahlia Imanbay",
+            "url": "https://dahliaimanbay.com",
+            "jobTitle": "AI Strategist & Fractional CMO",
+            "sameAs": [
+                "https://www.linkedin.com/in/dahlia-imanbay/",
+                "https://x.com/dahlia_imanbay",
+                "https://www.instagram.com/dahlia_imanbay/",
+                "https://substack.com/@dahliaimanbay"
+            ]
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Dahlia Imanbay",
+            "url": "https://dahliaimanbay.com"
+        },
+        "mainEntityOfPage": "https://dahliaimanbay.com/blog/the-tool-that-reads-my-newsletters-for-me",
+        "image": "https://dahliaimanbay.com/dahlia-website-assets/og-newsletters-mcp.png",
+        "articleSection": "AI Tools & Strategy",
+        "keywords": ["read-only email access", "MCP", "Gmail API scopes", "Microsoft Graph", "newsletter digest", "AI stack strategy"],
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".article-title", ".answer-box p"]
+        }
+    }
+    </script>
+
+    <!-- Schema: VideoObject -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "Hack 31: The AI Tool That Reads My Newsletters For Me",
+        "description": "Dahlia Imanbay explains the read-only email connection she uses to scan her newsletter subscriptions and summarize industry trends automatically. Hack 31 of the 30 Hacks from Dahlia series.",
+        "thumbnailUrl": "https://dahliaimanbay.com/dahlia-website-assets/og-newsletters-mcp.png",
+        "uploadDate": "2026-08-11T09:00:00-05:00",
+        "contentUrl": "https://www.youtube.com/watch?v=YHPWU9KJu1c",
+        "embedUrl": "https://www.youtube.com/embed/YHPWU9KJu1c",
+        "publisher": {
+            "@type": "Person",
+            "name": "Dahlia Imanbay",
+            "url": "https://dahliaimanbay.com"
+        }
+    }
+    </script>
+
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dahliaimanbay.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dahliaimanbay.com/#blog"},
+            {"@type": "ListItem", "position": 3, "name": "The Tool That Reads My Newsletters For Me"}
+        ]
+    }
+    </script>
+
+    <!-- Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does read-only email access mean for an AI tool?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Read-only access means the connection is scoped so the tool can only view and read your inbox. It cannot send, delete, forward, or modify anything. On Gmail this is the gmail.readonly OAuth scope; on Microsoft 365 it is the Mail.Read Graph API permission. Both are separate, narrower permissions than the ones needed to send or manage mail, and neither one grants that access."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it safe to connect my email to an AI system?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It is safe when the connection is explicitly scoped to read-only and limited to what you actually need it to see. The safety comes from the permission itself, not a promise: a tool authorized only for gmail.readonly or Mail.Read is structurally incapable of sending or deleting anything, regardless of what it is instructed to do. Always check the exact scope you are granting before authorizing any connector."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I know the AI can't send emails on my behalf?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Check the OAuth consent screen when you authorize the connection. Google and Microsoft both display exactly which permission is being granted in plain language, such as 'Read all resources and events on your calendar' versus 'Send email as you.' If the consent screen only mentions reading or viewing, the send and delete actions are not available to the tool no matter what it is asked to do."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What newsletters should I connect first?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start small. Pick the three to five newsletters you already trust to break industry news first, the ones you would actually stop and read if you saw them. A tool that summarizes a handful of high-signal sources is more useful than one drowning in every subscription you have ever signed up for."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blush: #F2C4C4;
+            --blush-light: #FDF0F0;
+            --blush-dark: #E8A5A5;
+            --teal: #2A7B88;
+            --teal-light: #3A9DAD;
+            --teal-dark: #1D5A63;
+            --maroon: #7B2D3B;
+            --maroon-light: #9E3E50;
+            --maroon-dark: #5C1F2B;
+            --lilac: #B8A9D4;
+            --lilac-light: #DDD5EE;
+            --lilac-dark: #8E7BB8;
+            --lilac-bg: #F0ECF6;
+            --cream: #FFF9F5;
+            --warm-white: #FFFCFA;
+            --dark: #2C2C2C;
+            --gray: #6B6B6B;
+            --light-gray: #F5F0ED;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--warm-white); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        nav {
+            display: flex; justify-content: center; align-items: center; padding: 22px 60px;
+            background: rgba(255,252,250,0.95); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000; transition: box-shadow 0.3s ease;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+        .nav-links a {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.76rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--maroon); transition: color 0.3s; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--lilac-dark); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--lilac-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: absolute; right: 30px; }
+        .hamburger span { width: 28px; height: 2px; background: var(--maroon); transition: all 0.3s; }
+
+        .breadcrumb {
+            max-width: 780px; margin: 0 auto; padding: 20px 30px 0;
+            font-family: 'Sora', sans-serif; font-size: 0.72rem; letter-spacing: 1px;
+            color: var(--gray);
+        }
+        .breadcrumb a { color: var(--teal); transition: color 0.3s; }
+        .breadcrumb a:hover { color: var(--teal-dark); }
+        .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+        .article-header {
+            max-width: 780px; margin: 0 auto; padding: 40px 30px 0;
+        }
+        .article-tag {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px;
+            color: var(--teal); margin-bottom: 16px;
+        }
+        .article-meta {
+            font-size: 0.85rem; color: var(--gray); margin-bottom: 24px;
+        }
+        .article-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem); color: var(--maroon);
+            line-height: 1.15; margin-bottom: 10px;
+        }
+
+        .article-body {
+            max-width: 780px; margin: 0 auto; padding: 30px 30px 60px;
+        }
+        .article-body p {
+            font-size: 1.05rem; line-height: 1.9; color: var(--dark); margin-bottom: 24px;
+        }
+        .article-body h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem; color: var(--maroon); margin: 48px 0 20px; line-height: 1.2;
+        }
+        .article-body h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem; color: var(--maroon-dark); margin: 36px 0 14px; font-weight: 400;
+        }
+        .article-body ul {
+            margin: 0 0 24px 24px; font-size: 1.05rem; line-height: 1.9; color: var(--dark);
+        }
+        .article-body li { margin-bottom: 8px; }
+        .article-body blockquote {
+            border-left: 3px solid var(--lilac); margin: 32px 0; padding: 20px 28px;
+            background: var(--lilac-bg); border-radius: 0 12px 12px 0;
+        }
+        .article-body blockquote p {
+            font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+            color: var(--maroon); font-style: italic; margin-bottom: 0; line-height: 1.6;
+        }
+
+        .video-embed { max-width: 320px; margin: 8px auto 12px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; box-shadow: 0 16px 50px rgba(0,0,0,0.18); }
+        .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .video-caption { text-align: center; font-size: 0.78rem; color: var(--gray); letter-spacing: 0.04em; margin-bottom: 36px; }
+
+        .answer-box {
+            background: var(--lilac-bg); border: 1px solid var(--lilac);
+            border-radius: 14px; padding: 24px 28px; margin: 0 0 32px;
+        }
+        .answer-box .answer-label {
+            font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--lilac-dark);
+            display: block; margin-bottom: 10px;
+        }
+        .answer-box p { margin-bottom: 0; font-size: 1.05rem; line-height: 1.75; }
+
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin: 36px 0;
+        }
+        .stat-grid-item {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--lilac-dark) 100%);
+            border-radius: 14px; padding: 24px 20px; text-align: center; color: white;
+        }
+        .stat-grid-number {
+            font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+            display: block; margin-bottom: 6px; line-height: 1;
+        }
+        .stat-grid-label { font-size: 0.82rem; opacity: 0.9; line-height: 1.4; }
+
+        .pro-tip {
+            background: var(--blush-light); border: 1px solid var(--blush);
+            border-radius: 14px; padding: 24px 28px; margin: 32px 0;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .pro-tip-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+        .pro-tip-content { flex: 1; }
+        .pro-tip-label {
+            font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--maroon);
+            display: block; margin-bottom: 6px;
+        }
+        .pro-tip-content p { font-size: 0.98rem; line-height: 1.7; color: var(--dark); margin-bottom: 0; }
+
+        .checklist-section {
+            background: var(--cream); border-radius: 16px; padding: 32px 36px; margin: 32px 0;
+        }
+        .checklist-section h3 {
+            font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+            color: var(--maroon); margin-bottom: 20px; font-weight: 400;
+        }
+        .checklist-item {
+            display: flex; gap: 14px; align-items: flex-start;
+            padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .checklist-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .checklist-check {
+            width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; margin-top: 1px;
+            background: var(--teal); display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 0.75rem;
+        }
+        .checklist-item-text { font-size: 0.98rem; line-height: 1.6; color: var(--dark); }
+        .checklist-item-text strong { color: var(--maroon-dark); }
+
+        .faq-section { background: var(--cream); border-radius: 20px; padding: 48px 40px; margin: 48px 0; }
+        .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--maroon); margin-bottom: 30px; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question-btn {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 22px 0; cursor: pointer; gap: 20px; width: 100%;
+            background: none; border: none; text-align: left;
+        }
+        .faq-question-btn h3 {
+            font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+            color: var(--maroon); font-weight: 400; margin: 0;
+        }
+        .faq-toggle {
+            width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+            background: var(--lilac-bg); display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: var(--lilac-dark); transition: all 0.3s;
+        }
+        .faq-item.open .faq-toggle { background: var(--lilac-dark); color: white; transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p {
+            font-size: 0.98rem; line-height: 1.8; color: var(--gray); padding: 0 0 22px; margin: 0;
+        }
+
+        .sources { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.08); }
+        .sources h3 {
+            font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 16px;
+        }
+        .sources ul { list-style: none; margin: 0; padding: 0; }
+        .sources li { margin-bottom: 10px; font-size: 0.88rem; color: var(--gray); }
+        .sources a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+        .sources a:hover { color: var(--teal-dark); }
+
+        .author-box {
+            display: flex; gap: 24px; align-items: center;
+            background: var(--lilac-bg); border-radius: 16px; padding: 28px 32px;
+            margin-top: 48px;
+        }
+        .author-photo {
+            width: 80px; height: 80px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+            border: 3px solid var(--lilac);
+        }
+        .author-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .author-info h4 {
+            font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--maroon); margin-bottom: 4px;
+        }
+        .author-info p { font-size: 0.9rem; line-height: 1.6; color: var(--gray); margin: 0; }
+
+        footer { background: var(--dark); color: white; padding: 80px 60px 40px; }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; flex-wrap: wrap; gap: 40px; }
+        .footer-brand h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .footer-brand p { font-size: 0.9rem; opacity: 0.6; max-width: 300px; line-height: 1.6; }
+        .footer-links-group h4 {
+            font-family: 'Sora', sans-serif; font-size: 0.7rem; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 20px; color: var(--blush);
+        }
+        .footer-links-group ul { list-style: none; }
+        .footer-links-group li { margin-bottom: 12px; }
+        .footer-links-group a { font-size: 0.9rem; opacity: 0.6; transition: opacity 0.3s; }
+        .footer-links-group a:hover { opacity: 1; color: var(--lilac-light); }
+        .footer-social { display: flex; gap: 20px; margin-top: 15px; }
+        .footer-social a {
+            width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .footer-social a:hover { background: var(--lilac-dark); border-color: var(--lilac-dark); }
+        .footer-bottom {
+            display: flex; justify-content: space-between; padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.5;
+        }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .fade-in { opacity: 0; transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .slide-right { opacity: 0; transform: translateX(-30px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+        .visible { opacity: 1; transform: none; }
+
+        @media (max-width: 968px) {
+            nav { padding: 20px 30px; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--warm-white); flex-direction: column; padding: 30px; gap: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .footer-top { flex-direction: column; }
+        }
+        @media (max-width: 700px) {
+            .stat-grid { grid-template-columns: 1fr; gap: 12px; }
+        }
+        @media (max-width: 600px) {
+            .article-header { padding: 30px 20px 0; }
+            .article-body { padding: 20px 20px 40px; }
+            .breadcrumb { padding: 16px 20px 0; }
+            .faq-section { padding: 32px 24px; }
+            .author-box { flex-direction: column; text-align: center; }
+            .checklist-section { padding: 24px 20px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            footer { padding: 60px 20px 30px; }
+            .video-embed { max-width: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#expertise">Expertise</a></li>
+            <li><a href="/#journey">Journey</a></li>
+            <li><a href="/#tedx">Brands</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> <span>/</span> Blog <span>/</span> The Tool That Reads My Newsletters For Me
+    </div>
+
+    <header class="article-header">
+        <div class="article-tag fade-up">AI Tools &amp; Strategy &bull; 30 Hacks From Dahlia, Hack 31</div>
+        <div class="article-meta fade-up">By Dahlia Imanbay &bull; August 11, 2026 &bull; 7 min read</div>
+        <h1 class="article-title fade-up">The Tool That Reads My Newsletters For Me (So I Don't Have To)</h1>
+    </header>
+
+    <article class="article-body">
+
+        <div class="answer-box fade-up">
+            <span class="answer-label">Direct Answer</span>
+            <p>I subscribe to a small number of newsletters that consistently break industry news first. Instead of opening every one of them by hand, I connect my inbox to an AI tool with read-only access, scoped so it can only view and summarize, never send, delete, or change anything. It scans just those subscriptions and tells me what changed in my industry, and the industries of the clients I work with.</p>
+        </div>
+
+        <p class="fade-up">Every video in my "30 Hacks From Dahlia" series ends with the same line, and this one is the reason I keep saying it: I help small teams do big things, and most of what that actually looks like is quietly automating the parts of the day that don't need me personally. This hack is the one people ask about most once they see it, because it touches something everyone hesitates over: connecting an AI tool to your actual email inbox.</p>
+
+        <div class="video-embed fade-up">
+            <iframe src="https://www.youtube.com/embed/YHPWU9KJu1c" title="Hack 31: The AI tool that reads my newsletters for me, by Dahlia Imanbay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Watch: Hack 31, the tool that reads my newsletters for me</p>
+
+        <h2 class="fade-up">Why I built this in the first place</h2>
+
+        <p class="fade-up">As a small business owner, staying on top of every trend, hack, and tip in my industry is part of the job. I don't chase all of it. I subscribe to the handful of newsletters I already trust, the ones that consistently bring the news first and give genuinely valuable content instead of recycled takes. That part hasn't changed in years.</p>
+
+        <p class="fade-up">What changed is what happens after I subscribe. I used to open each one manually, skim for anything that mattered, and half the time forget I'd read it by the following week. Now I have a tool set up that goes through my email, finds those specific newsletter subscriptions, reads through them, and summarizes what's in them, so I know the latest trends or changes that happened in my industry, or in the industries of the clients I work with, without opening a single one by hand.</p>
+
+        <div class="stat-grid fade-up">
+            <div class="stat-grid-item">
+                <span class="stat-grid-number">3 to 5</span>
+                <span class="stat-grid-label">newsletters I actually connect, not my whole inbox</span>
+            </div>
+            <div class="stat-grid-item">
+                <span class="stat-grid-number">Read-only</span>
+                <span class="stat-grid-label">the only scope the tool is ever granted</span>
+            </div>
+            <div class="stat-grid-item">
+                <span class="stat-grid-number">31 of 30</span>
+                <span class="stat-grid-label">this hack, in the ongoing series</span>
+            </div>
+        </div>
+
+        <h2 class="fade-up">The part everyone asks about: connecting your email safely</h2>
+
+        <p class="fade-up">The question I get every time I mention this is some version of "wait, you gave an AI access to your email?" Not exactly. I gave it read-only access, which is a specific, narrower permission than the one people picture. It is worth understanding the difference, because it's the whole reason I'm comfortable running this unattended.</p>
+
+        <h3 class="fade-up">On Gmail</h3>
+        <p class="fade-up">Gmail's API offers separate, named permission scopes for different levels of access. The one I use is called <code>gmail.readonly</code>. It lets a connected tool view and read messages, and nothing else. It does not include the scopes needed to send mail, delete mail, or modify labels and folders. When you authorize a connector through Google's OAuth screen, it shows you in plain language exactly what you're granting, something like "Read all resources and their metadata," never "Send email as you," unless you've separately approved that broader permission.</p>
+
+        <h3 class="fade-up">On Outlook or Microsoft 365</h3>
+        <p class="fade-up">Microsoft's equivalent lives in the Graph API permission model. The scope is called <code>Mail.Read</code>, and it is deliberately kept apart from <code>Mail.ReadWrite</code> and <code>Mail.Send</code>. If a tool only requests <code>Mail.Read</code>, it is structurally unable to send or modify a message, the same way a read-only database credential cannot run a delete statement no matter what query you send it.</p>
+
+        <div class="pro-tip fade-up">
+            <div class="pro-tip-icon">&#128274;</div>
+            <div class="pro-tip-content">
+                <span class="pro-tip-label">Why the limitation is the point</span>
+                <p>The comfort here doesn't come from trusting the tool to behave. It comes from the permission itself being incapable of the risky action. A connector authorized only for <code>gmail.readonly</code> or <code>Mail.Read</code> cannot send an email or delete one, regardless of what it's instructed to do. That's the property that makes it safe to leave running in the background.</p>
+            </div>
+        </div>
+
+        <blockquote class="fade-in">
+            <p>I didn't need the AI to trust me. I needed the permission to make trust unnecessary.</p>
+        </blockquote>
+
+        <h2 class="fade-up">What the digest actually looks like</h2>
+
+        <p class="fade-up">I'm not opening a dashboard for this. The tool connects through MCP, the same open protocol I use to link most of the AI systems I run, scoped to only the newsletter senders I've chosen. It reads through what came in, pulls out what's actually new or changed, and hands me a plain summary of the trends and shifts worth knowing about, in my industry and in the industries of the clients I work with. If nothing meaningful changed that week, there's nothing to read. That's the whole point: I only spend time on the signal, never the scanning.</p>
+
+        <div class="checklist-section fade-up">
+            <h3>Before you connect anything to your inbox</h3>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>Pick your sources first.</strong> Choose the three to five newsletters you'd actually stop and read. A tool summarizing everything you've ever subscribed to just replaces one kind of noise with another.</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>Check the exact scope on the consent screen.</strong> Google and Microsoft both spell out what you're granting in plain language before you approve it. If it mentions sending or modifying, that's a different, broader permission than what this hack needs.</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>Expect to re-authorize periodically.</strong> Read-only tokens expire like any OAuth token. Re-approving is a feature, not a bug: it means the access isn't standing forever unchecked.</div>
+            </div>
+        </div>
+
+        <h2 class="fade-up">One hack, out of thirty</h2>
+
+        <p class="fade-up">This is hack 31 in a series I never expected to keep going past thirty, because there's always one more piece of the day quietly worth automating. Full step-by-step guide and the rest of the series are linked in my bio. If you run more than one inbox for your business or your clients, the pattern here scales the same way: connect only what you need, only with the access level that matches the job, and let the summary come to you instead of you going to look for it.</p>
+
+        <div class="faq-section fade-up">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>What does read-only email access mean for an AI tool?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Read-only access means the connection is scoped so the tool can only view and read your inbox. It cannot send, delete, forward, or modify anything. On Gmail this is the gmail.readonly OAuth scope; on Microsoft 365 it is the Mail.Read Graph API permission. Both are separate, narrower permissions than the ones needed to send or manage mail, and neither one grants that access.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Is it safe to connect my email to an AI system?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>It is safe when the connection is explicitly scoped to read-only and limited to what you actually need it to see. The safety comes from the permission itself, not a promise: a tool authorized only for gmail.readonly or Mail.Read is structurally incapable of sending or deleting anything, regardless of what it is instructed to do. Always check the exact scope you are granting before authorizing any connector.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>How do I know the AI can't send emails on my behalf?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Check the OAuth consent screen when you authorize the connection. Google and Microsoft both display exactly which permission is being granted in plain language, such as "Read all resources and events on your calendar" versus "Send email as you." If the consent screen only mentions reading or viewing, the send and delete actions are not available to the tool no matter what it is asked to do.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>What newsletters should I connect first?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Start small. Pick the three to five newsletters you already trust to break industry news first, the ones you would actually stop and read if you saw them. A tool that summarizes a handful of high-signal sources is more useful than one drowning in every subscription you have ever signed up for.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sources fade-up">
+            <h3>Sources</h3>
+            <ul>
+                <li><a href="https://developers.google.com/workspace/gmail/api/auth/scopes" target="_blank" rel="noopener">Google for Developers: Gmail API OAuth 2.0 Scopes (including gmail.readonly)</a></li>
+                <li><a href="https://learn.microsoft.com/en-us/graph/permissions-reference" target="_blank" rel="noopener">Microsoft Learn: Microsoft Graph permissions reference (including Mail.Read)</a></li>
+                <li><a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener">Model Context Protocol (MCP): official documentation</a></li>
+            </ul>
+        </div>
+
+        <div class="author-box fade-up">
+            <div class="author-photo">
+                <img src="../dahlia-website-assets/newphoto.jpg" alt="Dahlia Imanbay, AI Strategist and Fractional CMO" width="80" height="80" loading="lazy">
+            </div>
+            <div class="author-info">
+                <h4>Dahlia Imanbay</h4>
+                <p>AI Strategist, Fractional CMO, and Full-Stack Developer with 16+ years of experience building AI systems for healthcare, SaaS, and mission-driven brands. Writes from production experience, not theory.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 48px; padding: 28px 32px; background: var(--cream); border-radius: 16px; border: 1px solid rgba(0,0,0,0.06);">
+            <p style="font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--teal); margin-bottom: 12px;">Prefer the business and agency angle?</p>
+            <a href="https://aipowereddahlia.com/blog/read-only-email-connection-ai-industry-trends" style="text-decoration: none;" target="_blank" rel="noopener">
+                <h4 style="font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--maroon); margin-bottom: 6px;">How to Connect Gmail or Outlook to AI With Read-Only Access</h4>
+                <p style="font-size: 0.88rem; color: var(--gray); line-height: 1.6; margin: 0;">The full step-by-step guide, including the exact Google Cloud Console and Microsoft Graph setup, on the AI Powered Dahlia blog.</p>
+            </a>
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2>Dahlia Imanbay</h2>
+                <p>AI Strategist. Fractional CMO. Full-Stack Developer. Building a future where technology serves everyone.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/dahlia-imanbay/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="https://www.instagram.com/dahlia_imanbay/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg></a>
+                    <a href="https://x.com/dahlia_imanbay" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-6.8-8.4L19.5 4h-2l-5.2 6.4L8 4H4z"/></svg></a>
+                    <a href="https://substack.com/@dahliaimanbay" aria-label="Substack" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M4 4h16M4 8h16M4 12l8 6 8-6"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h4>Navigate</h4>
+                <ul><li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#expertise">Expertise</a></li><li><a href="/#journey">Journey</a></li></ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>More</h4>
+                <ul><li><a href="/#contact">Contact</a></li><li><a href="https://aipowereddahlia.com" target="_blank" rel="noopener">AI Powered Dahlia Agency</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dahlia Imanbay. All rights reserved.</span>
+            <span>Built with purpose &hearts;</span>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll',()=>{
+            document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+        });
+        document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up, .fade-in, .slide-right').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
