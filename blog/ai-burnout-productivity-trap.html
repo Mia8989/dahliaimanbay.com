@@ -127,6 +127,22 @@
                     "@type": "Answer",
                     "text": "Common signals: team members describe feeling like they are 'always on' because AI made everything faster; output volume has increased but job satisfaction has dropped; people skip the AI tools and revert to their old process when under deadline pressure; focused, deep work time has decreased even as total work output has risen. The Microsoft 2026 Work Trend Index found that focused work sessions fell 9% at companies with high AI adoption, despite workers reporting they felt busier than ever."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "How do teams avoid ending up with too many analytics and AI tools?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Run a quarterly tool audit and apply one rule: every tool must own a distinct job with no overlap. Before adopting a new AI or analytics tool, name the existing one it replaces. Cap the active stack at three to four tools, and cancel anything the team bypasses under deadline pressure, because that is the clearest signal it is dead weight rather than help."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can autonomous IT help reduce burnout on my operations team?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It can, but only when it removes work instead of adding oversight. Automating ticket routing, patching, and monitoring cuts the interrupt-driven tasks that fragment an operations team's focus. The trap is autonomous systems that generate alerts a human still has to triage. If a tool needs constant supervision, it moves burnout around rather than reducing it."
+                }
             }
         ]
     }
@@ -160,7 +176,7 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--warm-white); overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; height: auto; display: block; }
+        img { max-width: 100%; display: block; }
 
         /* ===== NAV ===== */
         nav {
@@ -744,6 +760,26 @@
                 </button>
                 <div class="faq-answer">
                     <p>Common signals: team members describe feeling "always on" because AI made everything faster; output volume has increased but job satisfaction has dropped; people skip the AI tools and revert to their old process when under deadline pressure; focused, deep work time has decreased even as total work output has risen. The Microsoft 2026 Work Trend Index found that focused work sessions fell 9% at companies with high AI adoption, despite workers reporting they felt busier than ever.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>How do teams avoid ending up with too many analytics and AI tools?</h3>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>Run a quarterly tool audit and apply one rule: every tool must own a distinct job with no overlap. Before adopting a new AI or analytics tool, name the existing one it replaces. Cap the active stack at three to four tools, and cancel anything the team bypasses under deadline pressure, because that is the clearest signal it is dead weight rather than help.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Can autonomous IT help reduce burnout on my operations team?</h3>
+                    <div class="faq-toggle">+</div>
+                </button>
+                <div class="faq-answer">
+                    <p>It can, but only when it removes work instead of adding oversight. Automating ticket routing, patching, and monitoring cuts the interrupt-driven tasks that fragment an operations team's focus. The trap is autonomous systems that generate alerts a human still has to triage. If a tool needs constant supervision, it moves burnout around rather than reducing it.</p>
                 </div>
             </div>
         </div>
