@@ -68,10 +68,11 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.02e
   background:var(--surface); border:1px solid var(--line); border-radius:var(--r-lg);
   box-shadow:var(--shadow); overflow:hidden;
 }
-@media (max-width:820px){.shell{grid-template-columns:1fr}}
+@media (max-width:820px){.shell{display:block}}
 
 /* left rail */
-.rail{padding:clamp(24px,3.4vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:22px;background:linear-gradient(180deg,var(--panel),transparent 60%)}
+.rail{padding:clamp(24px,3.4vw,40px);border-right:1px solid var(--line);display:flex;flex-direction:column;gap:22px;min-width:0;background:linear-gradient(180deg,var(--panel),transparent 60%)}
+.lede,.host .who,.who span{overflow-wrap:anywhere}
 @media (max-width:820px){.rail{border-right:none;border-bottom:1px solid var(--line)}}
 .host{display:flex;align-items:center;gap:12px}
 .avatar{width:46px;height:46px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:Fraunces,serif;font-size:20px;font-weight:600;flex:none}
@@ -89,7 +90,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.02e
 .rail-foot{margin-top:auto;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line-soft);padding-top:16px}
 
 /* right panel */
-.panel{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:20px;min-height:520px}
+.panel{padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:20px;min-height:520px;min-width:0}
 .panel-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
 .panel-head h2{font-size:19px}
 .tz{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
@@ -97,7 +98,7 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.02e
 
 /* date strip */
 .dates{display:flex;align-items:stretch;gap:8px}
-.date-scroll{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px;flex:1}
+.date-scroll{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px;flex:1 1 0;min-width:0;-webkit-overflow-scrolling:touch}
 .date-scroll::-webkit-scrollbar{height:0}
 .day{scroll-snap-align:start;flex:0 0 auto;width:76px;padding:12px 0;border:1px solid var(--line);border-radius:var(--r-md);background:var(--surface);cursor:pointer;text-align:center;transition:.15s;color:var(--text)}
 .day:hover{border-color:var(--teal)}
@@ -156,6 +157,11 @@ h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.02e
 @keyframes sp{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 [hidden]{display:none!important}
+@media (max-width:820px){
+  .panel-head{flex-direction:column;align-items:flex-start;gap:10px}
+  .tz{width:100%;flex-wrap:wrap;justify-content:flex-start}
+  .tz select{flex:1 1 auto;max-width:none}
+}
 </style>
 </head>
 <body>
@@ -334,19 +340,24 @@ function initTz(){
 /* ---------- render date strip ---------- */
 function renderDays(){
   const scroll=$('dateScroll'); scroll.innerHTML='';
-  const page=state.days.slice(state.pageStart,state.pageStart+CONFIG.daysPerPage);
-  for(const day of page){
+  for(const day of state.days){
     const inst=wallToUtc(day.y,day.m,day.d,12,0,CONFIG.baseTimezone);
     const b=document.createElement('button'); b.className='day'; b.type='button';
-    b.setAttribute('aria-pressed', state.selectedDay && sameDay(day,state.selectedDay));
+    const on=state.selectedDay && sameDay(day,state.selectedDay);
+    b.setAttribute('aria-pressed', on);
     b.innerHTML=`<div class="dow">${new Intl.DateTimeFormat('en-US',{timeZone:state.displayTz,weekday:'short'}).format(inst)}</div>
       <div class="dnum">${new Intl.DateTimeFormat('en-US',{timeZone:state.displayTz,day:'numeric'}).format(inst)}</div>
       <div class="mon">${new Intl.DateTimeFormat('en-US',{timeZone:state.displayTz,month:'short'}).format(inst)}</div>`;
-    b.addEventListener('click',()=>{state.selectedDay=day; state.selectedSlot=null; renderDays(); renderSlots();});
+    b.addEventListener('click',()=>{state.selectedDay=day; state.selectedSlot=null; renderDays(); renderSlots();
+      b.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'});});
     scroll.appendChild(b);
   }
-  $('prevDays').disabled=state.pageStart<=0;
-  $('nextDays').disabled=state.pageStart+CONFIG.daysPerPage>=state.days.length;
+  updateDayNav();
+}
+function updateDayNav(){
+  const s=$('dateScroll');
+  $('prevDays').disabled = s.scrollLeft<=2;
+  $('nextDays').disabled = s.scrollLeft>=s.scrollWidth-s.clientWidth-2;
 }
 function sameDay(a,b){return a.y===b.y&&a.m===b.m&&a.d===b.d;}
 
@@ -395,8 +406,9 @@ function goForm(){
   show('stepForm'); $('formErr').textContent=''; $('fName').focus();
 }
 $('changeTime').addEventListener('click',()=>show('stepPick'));
-$('prevDays').addEventListener('click',()=>{state.pageStart=Math.max(0,state.pageStart-CONFIG.daysPerPage);renderDays();});
-$('nextDays').addEventListener('click',()=>{state.pageStart=Math.min(state.days.length-1,state.pageStart+CONFIG.daysPerPage);renderDays();});
+$('prevDays').addEventListener('click',()=>$('dateScroll').scrollBy({left:-Math.max(180,$('dateScroll').clientWidth*0.8),behavior:'smooth'}));
+$('nextDays').addEventListener('click',()=>$('dateScroll').scrollBy({left:Math.max(180,$('dateScroll').clientWidth*0.8),behavior:'smooth'}));
+$('dateScroll').addEventListener('scroll',()=>updateDayNav(),{passive:true});
 
 /* ---------- submit ---------- */
 $('bookForm').addEventListener('submit',async e=>{
