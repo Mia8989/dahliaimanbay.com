@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NXLWM0TJK8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NXLWM0TJK8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Track Which Social Platform Sends You Clicks | Dahlia</title>
+    <meta name="description" content="Give every social profile its own tracked link so Google Analytics shows which platform sends visitors. Eight steps, nine platforms, prompts to copy.">
+    <meta name="keywords" content="UTM tags, track social media traffic, link in bio tracking, Google Analytics source medium, UTM for Instagram bio, Dahlia Imanbay">
+    <meta name="author" content="Dahlia Imanbay">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://dahliaimanbay.com/blog/track-social-media-clicks">
+
+    <meta property="og:title" content="How to Track Which Social Platform Sends You Clicks">
+    <meta property="og:description" content="My analytics lumped every platform into one pile. Here is the fix: one tagged link per platform, where each one goes, and how to read the report.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dahliaimanbay.com/blog/track-social-media-clicks">
+    <meta property="og:site_name" content="Dahlia Imanbay">
+    <meta property="og:image" content="https://dahliaimanbay.com/dahlia-website-assets/og-track-social-media-clicks.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Blog post: How to Track Which Social Platform Sends You Clicks, by Dahlia Imanbay">
+    <meta property="article:published_time" content="2026-10-11T09:00:00-05:00">
+    <meta property="article:author" content="https://www.linkedin.com/in/dahlia-imanbay/">
+    <meta property="article:section" content="Content Systems">
+    <meta property="article:tag" content="Analytics">
+    <meta property="article:tag" content="Social Media">
+    <meta property="article:tag" content="UTM Tracking">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@dahlia_imanbay">
+    <meta name="twitter:creator" content="@dahlia_imanbay">
+    <meta name="twitter:title" content="How to Track Which Social Platform Sends You Clicks | Dahlia Imanbay">
+    <meta name="twitter:description" content="My analytics lumped every platform into one pile. Here is the fix: one tagged link per platform, where each one goes, and how to read the report.">
+    <meta name="twitter:image" content="https://dahliaimanbay.com/dahlia-website-assets/og-track-social-media-clicks.png">
+    <meta name="twitter:image:alt" content="Blog post: How to Track Which Social Platform Sends You Clicks, by Dahlia Imanbay">
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Track Which Social Platform Sends You Clicks",
+    "description": "A step-by-step guide to tracking which social platform sends website visitors: naming rules, one tagged link per platform, short links, where each link goes on nine platforms, testing, and reading the Google Analytics report.",
+    "datePublished": "2026-10-11T09:00:00-05:00",
+    "dateModified": "2026-10-11T09:00:00-05:00",
+    "author": {
+        "@type": "Person",
+        "name": "Dahlia Imanbay",
+        "url": "https://dahliaimanbay.com",
+        "jobTitle": "AI Strategist & Fractional CMO",
+        "sameAs": [
+            "https://www.linkedin.com/in/dahlia-imanbay/",
+            "https://x.com/dahlia_imanbay",
+            "https://www.instagram.com/dahlia_imanbay/",
+            "https://substack.com/@dahliaimanbay"
+        ]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Dahlia Imanbay",
+        "url": "https://dahliaimanbay.com"
+    },
+    "mainEntityOfPage": "https://dahliaimanbay.com/blog/track-social-media-clicks",
+    "image": "https://dahliaimanbay.com/dahlia-website-assets/og-track-social-media-clicks.png",
+    "articleSection": "Content Systems",
+    "keywords": [
+        "UTM tags",
+        "social media tracking",
+        "link in bio tracking",
+        "Google Analytics source medium",
+        "track Instagram link clicks",
+        "AI prompts"
+    ],
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+            ".article-title",
+            ".answer-box p"
+        ]
+    }
+}
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://dahliaimanbay.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://dahliaimanbay.com/blog"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How to Track Which Social Platform Sends You Clicks"
+        }
+    ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is a UTM tag?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A UTM tag is a short label added to the end of a link, after a question mark, such as utm_source=instagram. It does not change the page that opens. It tells Google Analytics where the visitor came from, so each platform shows up on its own row in your reports."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why does my social media traffic show up as direct?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Links tapped inside social apps open in the app's built-in browser, which often does not pass along where the visitor came from. Analytics then files the visit under direct. A tag inside the link itself solves this because it arrives with the visitor no matter which app opened the page."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What should I use for utm_source and utm_medium on social media?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the plain platform name in lowercase for utm_source, such as instagram, tiktok or linkedin. Use utm_medium for where the link sits: bio, post, story or video. Keep the spelling identical every time, because Analytics treats different capital letters as different sources."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do tracked links look messy in my bio?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "They can, because some platforms show the full address. Create a short address on your own domain, such as yourdomain.com/go/ig, that forwards to the long tagged link. Visitors see the short version and Analytics still receives the tag."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How long until I see the numbers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Realtime report in Google Analytics shows a tagged visit within a few minutes, which is how you test each link. The Traffic acquisition report fills in later the same day or the next, and figures can keep settling for a day or two."
+            }
+        }
+    ]
+}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blush: #F2C4C4;
+            --blush-light: #FDF0F0;
+            --blush-dark: #E8A5A5;
+            --teal: #2A7B88;
+            --teal-light: #3A9DAD;
+            --teal-dark: #1D5A63;
+            --maroon: #7B2D3B;
+            --maroon-light: #9E3E50;
+            --maroon-dark: #5C1F2B;
+            --lilac: #B8A9D4;
+            --lilac-light: #DDD5EE;
+            --lilac-dark: #8E7BB8;
+            --lilac-bg: #F0ECF6;
+            --cream: #FFF9F5;
+            --warm-white: #FFFCFA;
+            --dark: #2C2C2C;
+            --gray: #6B6B6B;
+            --light-gray: #F5F0ED;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--warm-white); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        nav {
+            display: flex; justify-content: center; align-items: center; padding: 22px 60px;
+            background: rgba(255,252,250,0.95); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000; transition: box-shadow 0.3s ease;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+        .nav-links a {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.76rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--maroon); transition: color 0.3s; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--lilac-dark); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--lilac-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: absolute; right: 30px; }
+        .hamburger span { width: 28px; height: 2px; background: var(--maroon); transition: all 0.3s; }
+
+        .breadcrumb {
+            max-width: 780px; margin: 0 auto; padding: 20px 30px 0;
+            font-family: 'Sora', sans-serif; font-size: 0.72rem; letter-spacing: 1px;
+            color: var(--gray);
+        }
+        .breadcrumb a { color: var(--teal); transition: color 0.3s; }
+        .breadcrumb a:hover { color: var(--teal-dark); }
+        .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+        .article-header {
+            max-width: 780px; margin: 0 auto; padding: 40px 30px 0;
+        }
+        .article-tag {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px;
+            color: var(--teal); margin-bottom: 16px;
+        }
+        .article-meta {
+            font-size: 0.85rem; color: var(--gray); margin-bottom: 24px;
+        }
+        .article-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem); color: var(--maroon);
+            line-height: 1.15; margin-bottom: 10px;
+        }
+
+        .article-body {
+            max-width: 780px; margin: 0 auto; padding: 30px 30px 60px;
+        }
+        .article-body p {
+            font-size: 1.05rem; line-height: 1.9; color: var(--dark); margin-bottom: 24px;
+        }
+        .article-body h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem; color: var(--maroon); margin: 48px 0 20px; line-height: 1.2;
+        }
+        .article-body h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem; color: var(--maroon-dark); margin: 36px 0 14px; font-weight: 400;
+        }
+        .article-body ul {
+            margin: 0 0 24px 24px; font-size: 1.05rem; line-height: 1.9; color: var(--dark);
+        }
+        .article-body li { margin-bottom: 8px; }
+        .article-body blockquote {
+            border-left: 3px solid var(--lilac); margin: 32px 0; padding: 20px 28px;
+            background: var(--lilac-bg); border-radius: 0 12px 12px 0;
+        }
+        .article-body blockquote p {
+            font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+            color: var(--maroon); font-style: italic; margin-bottom: 0; line-height: 1.6;
+        }
+
+        .video-embed { max-width: 320px; margin: 8px auto 12px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; box-shadow: 0 16px 50px rgba(0,0,0,0.18); }
+        .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .video-caption { text-align: center; font-size: 0.78rem; color: var(--gray); letter-spacing: 0.04em; margin-bottom: 36px; }
+
+        .answer-box {
+            background: var(--lilac-bg); border: 1px solid var(--lilac);
+            border-radius: 14px; padding: 24px 28px; margin: 0 0 32px;
+        }
+        .answer-box .answer-label {
+            font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--lilac-dark);
+            display: block; margin-bottom: 10px;
+        }
+        .answer-box p { margin-bottom: 0; font-size: 1.05rem; line-height: 1.75; }
+
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin: 36px 0;
+        }
+        .stat-grid-item {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--lilac-dark) 100%);
+            border-radius: 14px; padding: 24px 20px; text-align: center; color: white;
+        }
+        .stat-grid-number {
+            font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+            display: block; margin-bottom: 6px; line-height: 1;
+        }
+        .stat-grid-label { font-size: 0.82rem; opacity: 0.9; line-height: 1.4; }
+
+        .pro-tip {
+            background: var(--blush-light); border: 1px solid var(--blush);
+            border-radius: 14px; padding: 24px 28px; margin: 32px 0;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .pro-tip-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+        .pro-tip-content { flex: 1; }
+        .pro-tip-label {
+            font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--maroon);
+            display: block; margin-bottom: 6px;
+        }
+        .pro-tip-content p { font-size: 0.98rem; line-height: 1.7; color: var(--dark); margin-bottom: 0; }
+
+        .checklist-section {
+            background: var(--cream); border-radius: 16px; padding: 32px 36px; margin: 32px 0;
+        }
+        .checklist-section h3 {
+            font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+            color: var(--maroon); margin-bottom: 20px; font-weight: 400;
+        }
+        .checklist-item {
+            display: flex; gap: 14px; align-items: flex-start;
+            padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .checklist-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .checklist-check {
+            width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; margin-top: 1px;
+            background: var(--teal); display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 0.75rem;
+        }
+        .checklist-item-text { font-size: 0.98rem; line-height: 1.6; color: var(--dark); }
+        .checklist-item-text strong { color: var(--maroon-dark); }
+
+        .faq-section { background: var(--cream); border-radius: 20px; padding: 48px 40px; margin: 48px 0; }
+        .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--maroon); margin-bottom: 30px; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question-btn {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 22px 0; cursor: pointer; gap: 20px; width: 100%;
+            background: none; border: none; text-align: left;
+        }
+        .faq-question-btn h3 {
+            font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+            color: var(--maroon); font-weight: 400; margin: 0;
+        }
+        .faq-toggle {
+            width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+            background: var(--lilac-bg); display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: var(--lilac-dark); transition: all 0.3s;
+        }
+        .faq-item.open .faq-toggle { background: var(--lilac-dark); color: white; transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 640px; }
+        .faq-answer p {
+            font-size: 0.98rem; line-height: 1.8; color: var(--gray); padding: 0 0 22px; margin: 0;
+        }
+
+        .sources { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.08); }
+        .sources h3 {
+            font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 16px;
+        }
+        .sources ul { list-style: none; margin: 0; padding: 0; }
+        .sources li { margin-bottom: 10px; font-size: 0.88rem; color: var(--gray); }
+        .sources a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+        .sources a:hover { color: var(--teal-dark); }
+
+        .author-box {
+            display: flex; gap: 24px; align-items: center;
+            background: var(--lilac-bg); border-radius: 16px; padding: 28px 32px;
+            margin-top: 48px;
+        }
+        .author-photo {
+            width: 80px; height: 80px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+            border: 3px solid var(--lilac);
+        }
+        .author-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .author-info h4 {
+            font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--maroon); margin-bottom: 4px;
+        }
+        .author-info p { font-size: 0.9rem; line-height: 1.6; color: var(--gray); margin: 0; }
+
+        footer { background: var(--dark); color: white; padding: 80px 60px 40px; }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; flex-wrap: wrap; gap: 40px; }
+        .footer-brand h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .footer-brand p { font-size: 0.9rem; opacity: 0.6; max-width: 300px; line-height: 1.6; }
+        .footer-links-group h4 {
+            font-family: 'Sora', sans-serif; font-size: 0.7rem; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 20px; color: var(--blush);
+        }
+        .footer-links-group ul { list-style: none; }
+        .footer-links-group li { margin-bottom: 12px; }
+        .footer-links-group a { font-size: 0.9rem; opacity: 0.6; transition: opacity 0.3s; }
+        .footer-links-group a:hover { opacity: 1; color: var(--lilac-light); }
+        .footer-social { display: flex; gap: 20px; margin-top: 15px; }
+        .footer-social a {
+            width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .footer-social a:hover { background: var(--lilac-dark); border-color: var(--lilac-dark); }
+        .footer-bottom {
+            display: flex; justify-content: space-between; padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.5;
+        }
+
+        /* ---------- step-by-step guide ---------- */
+        .article-body ol { margin: 0 0 24px 24px; font-size: 1.05rem; line-height: 1.8; color: var(--dark); }
+        .article-body ol li { margin-bottom: 8px; padding-left: 4px; }
+        .article-body p a, .article-body li a, .article-body td a, .article-body figcaption a { color: var(--teal-dark); text-decoration: underline; text-underline-offset: 3px; font-weight: 500; }
+        .article-body p a:hover, .article-body li a:hover { color: var(--maroon); }
+        .ui { font-weight: 600; color: var(--maroon-dark); }
+        .article-body code { font-family: inherit; font-weight: 500; font-size: 0.92em; background: var(--light-gray); padding: 2px 6px; border-radius: 4px; word-break: break-word; }
+        .updated-note { font-size: 0.85rem; color: var(--gray); margin: 0 0 24px; }
+
+        .fig { margin: 48px 0; }
+        .fig figcaption { font-size: 0.92rem; line-height: 1.6; color: var(--gray); margin-top: 16px; max-width: 62ch; }
+        .fig-label { font-family: 'Sora', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-dark); display: block; margin-bottom: 16px; }
+
+        /* figure 1: dead end vs front door */
+        .doors { display: grid; grid-template-columns: 5fr 7fr; background: var(--cream); border: 1px solid rgba(92,31,43,0.12); border-radius: 16px; overflow: hidden; }
+        .door { padding: 40px 32px; }
+        .door-front { background: #fff; border-left: 1px solid rgba(92,31,43,0.12); }
+        .article-body .door p { font-size: 0.95rem; line-height: 1.6; margin: 24px 0 0; }
+        .phone { border: 2px solid var(--maroon-dark); border-radius: 24px; padding: 24px 16px; background: #fff; width: 100%; max-width: 216px; min-height: 368px; display: flex; flex-direction: column; gap: 8px; }
+        .phone-bio { text-align: center; font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--gray); margin-bottom: 8px; }
+        .phone-bio::before { content: ''; display: block; width: 40px; height: 40px; border-radius: 50%; background: var(--blush); margin: 0 auto 8px; }
+        .pbtn { height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Sora', sans-serif; font-size: 0.76rem; font-weight: 600; color: var(--teal-dark); }
+        .p1 { background: var(--teal-dark); color: #fff; }
+        .p2 { background: #CFE2E5; }
+        .p3 { background: #DFECEE; }
+        .p4 { background: #ECF4F5; }
+        .p5 { background: #fff; border: 1px solid #CFE2E5; }
+        .pbtn-dead { border: 1px dashed var(--gray); color: var(--gray); }
+        .front-row { display: flex; gap: 24px; align-items: stretch; }
+        .intent { display: flex; flex-direction: column; justify-content: space-between; font-family: 'Sora', sans-serif; font-size: 0.74rem; font-weight: 600; line-height: 1.4; color: var(--maroon); position: relative; padding-left: 16px; margin: 96px 0 56px; }
+        .intent::before { content: ''; position: absolute; left: 0; top: 4px; bottom: 4px; width: 2px; background: linear-gradient(var(--teal-dark), #CFE2E5); }
+
+        /* figure 2: the whole map */
+        .map { display: grid; grid-template-columns: 1fr 40px 1fr 40px 1.15fr; align-items: start; border: 1px solid rgba(92,31,43,0.12); border-radius: 16px; padding: 40px 32px; background: #fff; }
+        .map-arrow { display: flex; justify-content: center; align-self: center; color: var(--maroon); }
+        .article-body .map-list { list-style: none; margin: 0; font-size: 0.9rem; line-height: 1.4; }
+        .article-body .map-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 8px 0; margin: 0; border-bottom: 1px solid var(--light-gray); }
+        .map-list li:last-child { border-bottom: 0; }
+        .map-list span { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 0.72rem; color: var(--teal-dark); }
+        .map-door { border: 2px solid var(--teal-dark); border-radius: 16px; padding: 16px; }
+        .map-door b { display: block; font-family: 'Sora', sans-serif; font-size: 0.78rem; color: var(--teal-dark); margin-bottom: 12px; word-break: break-word; }
+        .map-door i { display: block; font-style: normal; font-size: 0.86rem; padding: 6px 0; border-top: 1px solid var(--light-gray); }
+        .watch { border-left: 3px solid var(--teal-dark); padding: 2px 0 2px 16px; margin-bottom: 16px; font-size: 0.86rem; line-height: 1.5; color: var(--dark); }
+        .watch:last-child { margin-bottom: 0; }
+        .watch strong { display: block; font-size: 0.95rem; color: var(--maroon-dark); }
+        .watch-2 { border-color: var(--lilac-dark); }
+        .watch-3 { border-color: var(--maroon); }
+
+        /* figure 3: anatomy of a tracked link */
+        .url { display: flex; flex-wrap: wrap; gap: 24px 0; background: var(--cream); border: 1px solid rgba(92,31,43,0.12); border-radius: 16px; padding: 32px; }
+        .seg { display: flex; flex-direction: column; gap: 8px; }
+        .article-body .seg code { background: none; padding: 0 0 8px; border-radius: 0; border-bottom: 3px solid var(--maroon); font-size: 1.02rem; font-weight: 600; color: var(--dark); }
+        .seg span { font-family: 'Sora', sans-serif; font-size: 0.74rem; font-weight: 600; color: var(--maroon); padding-right: 16px; }
+        .article-body .seg-b code { border-color: var(--teal); }
+        .seg-b span { color: var(--teal-dark); }
+        .article-body .seg-c code { border-color: var(--lilac-dark); }
+        .seg-c span { color: #5E4B8B; }
+
+        /* reference tables */
+        .where { width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.55; }
+        .where th { text-align: left; font-family: 'Sora', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-dark); padding: 0 16px 12px 0; border-bottom: 2px solid var(--maroon); }
+        .where td { padding: 16px 16px 16px 0; border-bottom: 1px solid rgba(92,31,43,0.12); vertical-align: top; }
+        .where td:first-child { font-family: 'DM Serif Display', serif; font-size: 1.1rem; line-height: 1.3; color: var(--maroon); width: 30%; }
+        .where-links td:first-child { width: 22%; }
+        .where-links td:last-child { padding-right: 0; }
+
+        /* mode switch */
+        .mode { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: var(--light-gray); padding: 8px; border-radius: 16px; margin: 32px 0 16px; }
+        .mode-btn { border: 0; background: transparent; border-radius: 12px; padding: 16px 20px; text-align: left; cursor: pointer; font-family: inherit; color: var(--dark); }
+        .mode-btn strong { display: block; font-family: 'Sora', sans-serif; font-size: 1.02rem; color: var(--maroon-dark); margin-bottom: 4px; }
+        .mode-btn span { font-size: 0.9rem; color: var(--gray); line-height: 1.4; }
+        .mode-btn[aria-pressed="true"] { background: #fff; box-shadow: 0 1px 2px rgba(92,31,43,0.06), 0 8px 24px rgba(92,31,43,0.10); }
+        .mode-btn[aria-pressed="true"] strong { color: var(--teal-dark); }
+        .mode-btn:focus-visible, .copy:focus-visible, .swap:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+        .mode-note { font-size: 0.92rem !important; color: var(--gray) !important; line-height: 1.6 !important; }
+        .guide:not(.js) .mode, .guide:not(.js) .swap, .guide:not(.js) .mode-note { display: none; }
+        .guide.js[data-mode="ai"] .by-hand, .guide.js[data-mode="hand"] .by-ai { display: none; }
+
+        .article-body .jump { columns: 2; column-gap: 40px; margin: 24px 0 0 24px; font-size: 0.98rem; line-height: 1.5; }
+        .article-body .jump li { break-inside: avoid; margin-bottom: 8px; }
+
+        .step { padding-top: 48px; margin-top: 48px; border-top: 1px solid rgba(92,31,43,0.14); scroll-margin-top: 88px; }
+        .step-head { display: grid; grid-template-columns: 64px 1fr; gap: 0 16px; align-items: start; margin-bottom: 24px; }
+        .step-num { font-family: 'DM Serif Display', serif; font-size: 3.5rem; line-height: 0.9; color: var(--teal); }
+        .article-body .step-head h3 { margin: 0 0 8px; font-size: 1.6rem; line-height: 1.2; color: var(--maroon); }
+        .article-body .step-does { margin: 0; font-size: 1rem; line-height: 1.65; }
+        .needs-login { display: inline-flex; gap: 8px; align-items: center; font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--maroon); background: var(--blush-light); border: 1px solid var(--blush); padding: 4px 12px; border-radius: 8px; margin-bottom: 12px; }
+        .step-body { padding-left: 80px; }
+        .article-body .mode-tag { font-family: 'Sora', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-dark); margin: 32px 0 12px; line-height: 1.4; }
+        .article-body .step-body > div > .mode-tag:first-child { margin-top: 0; }
+        .login { background: var(--blush-light); border-left: 3px solid var(--maroon); border-radius: 0 12px 12px 0; padding: 24px 28px 8px; margin: 24px 0; }
+        .login-label { font-family: 'Sora', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--maroon); display: block; margin-bottom: 12px; }
+        .article-body .login ol, .article-body .login p { font-size: 1rem; line-height: 1.7; }
+        .article-body .small { font-size: 0.95rem; line-height: 1.7; color: var(--gray); }
+
+        .prompt { border: 1px solid rgba(92,31,43,0.18); border-radius: 12px; overflow: hidden; margin: 16px 0 24px; background: var(--cream); }
+        .prompt-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 12px 12px 12px 20px; border-bottom: 1px solid rgba(92,31,43,0.12); background: #fff; }
+        .prompt-head span { font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 600; color: var(--maroon-dark); line-height: 1.4; }
+        .copy { font-family: 'Sora', sans-serif; font-size: 0.8rem; font-weight: 600; background: var(--teal-dark); color: #fff; border: 0; border-radius: 8px; padding: 10px 16px; min-height: 40px; cursor: pointer; white-space: nowrap; transition: background 0.2s; }
+        .copy:hover { background: var(--teal); }
+        .prompt pre { margin: 0; padding: 24px; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.65; white-space: pre-wrap; word-break: break-word; color: var(--dark); }
+        .swap { background: none; border: 0; color: var(--teal-dark); text-decoration: underline; text-underline-offset: 3px; font-family: inherit; font-size: 0.92rem; cursor: pointer; padding: 8px 0; margin-bottom: 8px; }
+
+        @media (max-width: 700px) {
+            .doors { grid-template-columns: 1fr; }
+            .door { padding: 32px 24px; }
+            .door-front { border-left: 0; border-top: 1px solid rgba(92,31,43,0.12); }
+            .door-dead .phone { min-height: 0; padding-bottom: 48px; }
+            .map { grid-template-columns: 1fr; padding: 32px 24px; gap: 8px; }
+            .map-arrow { transform: rotate(90deg); padding: 8px 0; }
+            .url { padding: 24px; gap: 16px 0; }
+            .step-head { grid-template-columns: 48px 1fr; gap: 0 12px; }
+            .step-num { font-size: 2.75rem; }
+            .article-body .step-head h3 { font-size: 1.4rem; }
+            .step-body { padding-left: 0; }
+            .mode { grid-template-columns: 1fr; }
+            .article-body .jump { columns: 1; }
+            .login { padding: 24px 20px 8px; }
+            .where thead { display: none; }
+            .where, .where tbody, .where tr, .where td { display: block; width: 100% !important; }
+            .where tr { padding: 16px 0; border-bottom: 1px solid rgba(92,31,43,0.12); }
+            .where td { padding: 0 0 8px; border: 0; }
+            .where td[data-l]::before { content: attr(data-l); display: block; font-family: 'Sora', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal-dark); margin-bottom: 2px; }
+            .prompt-head { padding-left: 16px; }
+            .prompt pre { padding: 16px; font-size: 0.92rem; }
+        }
+
+        /* tracking post extras */
+        .rows { display: flex; flex-direction: column; gap: 16px; }
+        .row span { display: block; font-family: 'Sora', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+        .row i { display: block; height: 12px; border-radius: 4px; background: var(--teal-dark); }
+        .row i.bar-dead { background: #B9B2AE; }
+        .plats { border-top: 1px solid rgba(92,31,43,0.14); margin: 24px 0 32px; }
+        .plat { border-bottom: 1px solid rgba(92,31,43,0.14); }
+        .plat summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 0; font-family: 'DM Serif Display', serif; font-size: 1.25rem; color: var(--maroon); }
+        .plat summary::-webkit-details-marker { display: none; }
+        .plat summary::after { content: '+'; font-family: 'Sora', sans-serif; font-size: 1.4rem; line-height: 1; color: var(--teal-dark); transition: transform 0.2s; }
+        .plat[open] summary::after { transform: rotate(45deg); }
+        .plat summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+        .article-body .plat ol { margin-top: 8px; }
+        .pro-tip { display: block; }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .fade-in { opacity: 0; transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .slide-right { opacity: 0; transform: translateX(-30px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+        .visible { opacity: 1; transform: none; }
+
+        @media (max-width: 968px) {
+            nav { padding: 20px 30px; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--warm-white); flex-direction: column; padding: 30px; gap: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .footer-top { flex-direction: column; }
+        }
+        @media (max-width: 700px) {
+            .stat-grid { grid-template-columns: 1fr; gap: 12px; }
+        }
+        @media (max-width: 600px) {
+            .article-header { padding: 30px 20px 0; }
+            .article-body { padding: 20px 20px 40px; }
+            .breadcrumb { padding: 16px 20px 0; }
+            .faq-section { padding: 32px 24px; }
+            .author-box { flex-direction: column; text-align: center; }
+            .checklist-section { padding: 24px 20px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            footer { padding: 60px 20px 30px; }
+            .video-embed { max-width: 260px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#expertise">Expertise</a></li>
+            <li><a href="/#journey">Journey</a></li>
+            <li><a href="/#tedx">Brands</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> How to Track Which Social Platform Sends You Clicks
+    </div>
+
+    <header class="article-header">
+        <div class="article-tag fade-up">Content Systems</div>
+        <div class="article-meta fade-up">By Dahlia Imanbay &bull; October 11, 2026 &bull; 14 min read</div>
+        <h1 class="article-title fade-up">How to Track Which Social Platform Sends You Clicks</h1>
+    </header>
+
+    <article class="article-body">
+
+        <div class="answer-box fade-up">
+            <span class="answer-label">Direct Answer</span>
+            <p>To see which social platform sends you visitors, give each platform its own version of your link with a small tag on the end, such as <code>?utm_source=instagram&amp;utm_medium=bio</code>. Google Analytics reads the tag and lists every platform on its own row. Below is the full setup in eight steps for nine platforms, with prompts you can paste into your own AI and the exact place each link goes.</p>
+        </div>
+
+        <p class="fade-up">For a long time I could tell you how many people visited my site from social media. I could not tell you which platform they came from. Instagram, TikTok and LinkedIn all landed in one pile, and a good share of it was filed under &ldquo;direct,&rdquo; which is analytics for &ldquo;no idea.&rdquo; I was spending hours a week on six platforms and guessing which ones earned it.</p>
+
+        <p class="fade-up">The fix took one afternoon and cost nothing. Every platform now has its own tagged link, and my report shows one clean row per platform. This post is that setup, written so you can follow it click by click or hand most of it to your AI.</p>
+
+        <div class="pro-tip fade-up">
+            <div class="pro-tip-content">
+                <span class="pro-tip-label">Before you start</span>
+                <p>You need Google Analytics on your website. If you don't have it yet, it takes about ten minutes: follow <a href="https://dahliaimanbay.com/blog/bio-link-front-door#step-4">step 4 of my bio link guide</a>, then come back here.</p>
+            </div>
+        </div>
+
+        <h2 class="fade-up">Why your analytics can't tell platforms apart</h2>
+
+        <p class="fade-up">When someone taps a link inside a social app, the page opens in that app's own built-in browser. Those browsers often don't pass along where the visitor came from. Your analytics receives a visitor with no return address and files them under &ldquo;direct.&rdquo; A tag fixes this because it travels inside the link itself, so it arrives no matter which app opened it.</p>
+
+        <figure class="fig fade-up">
+            <div class="doors">
+                <div class="door door-dead">
+                    <span class="fig-label">Without tags</span>
+                    <div class="rows">
+                        <div class="row"><span>(direct) / (none)</span><i style="width:100%" class="bar-dead"></i></div>
+                        <div class="row"><span>l.instagram.com / referral</span><i style="width:22%" class="bar-dead"></i></div>
+                        <div class="row"><span>(not set)</span><i style="width:12%" class="bar-dead"></i></div>
+                    </div>
+                    <p>One big pile. You can't tell which platform earned the visit.</p>
+                </div>
+                <div class="door door-front">
+                    <span class="fig-label">With a tag on every link</span>
+                    <div class="rows">
+                        <div class="row"><span>instagram / bio</span><i style="width:86%"></i></div>
+                        <div class="row"><span>linkedin / bio</span><i style="width:64%"></i></div>
+                        <div class="row"><span>youtube / bio</span><i style="width:41%"></i></div>
+                        <div class="row"><span>tiktok / bio</span><i style="width:30%"></i></div>
+                        <div class="row"><span>facebook / bio</span><i style="width:14%"></i></div>
+                    </div>
+                    <p>One row per platform. Now you know where to spend your time.</p>
+                </div>
+            </div>
+            <figcaption>An illustration of the same visitors in the same report, before and after tagging. The bar lengths are examples, not real data.</figcaption>
+        </figure>
+
+        <h2 class="fade-up">The three words that do the work</h2>
+
+        <p class="fade-up">A tracked link is your normal link with a few labels added after a question mark. The labels are called UTM tags. You only need to understand three of them.</p>
+
+        <figure class="fig fade-up">
+            <div class="url">
+                <div class="seg seg-a"><code>yourdomain.com/link</code><span>Your page</span></div>
+                <div class="seg seg-b"><code>?utm_source=instagram</code><span>Source: which platform</span></div>
+                <div class="seg seg-c"><code>&amp;utm_medium=bio</code><span>Medium: where on that platform</span></div>
+            </div>
+            <figcaption>The page never changes. The source changes per platform. The medium changes per placement: your bio, a post, a story, a video description.</figcaption>
+        </figure>
+
+        <figure class="fig fade-up">
+            <table class="where">
+                <thead><tr><th>The tag</th><th>The question it answers</th><th>Examples</th></tr></thead>
+                <tbody>
+                    <tr><td>utm_source</td><td data-l="The question it answers">Which platform sent this person?</td><td data-l="Examples">instagram, tiktok, linkedin, youtube</td></tr>
+                    <tr><td>utm_medium</td><td data-l="The question it answers">Where on that platform was the link?</td><td data-l="Examples">bio, post, story, video</td></tr>
+                    <tr><td>utm_campaign</td><td data-l="The question it answers">Optional: which launch or promotion was it part of?</td><td data-l="Examples">spring_workshop, book_launch</td></tr>
+                </tbody>
+            </table>
+        </figure>
+
+        <h2 class="fade-up" id="build">Set it up step by step</h2>
+
+        <p class="fade-up">Eight steps. Pick how you want to work and every step changes to match. The parts where you sign in to a social account are marked, because those are yours to click.</p>
+
+        <div class="guide" id="guide">
+
+            <div class="mode" role="group" aria-label="Choose how you want to work">
+                <button type="button" class="mode-btn" data-set-mode="ai" aria-pressed="true"><strong>My AI does the prep</strong><span>Copy a prompt into ChatGPT, Claude or Gemini. You only do the logins.</span></button>
+                <button type="button" class="mode-btn" data-set-mode="hand" aria-pressed="false"><strong>I'll do it by hand</strong><span>Every click explained, with what each piece does.</span></button>
+            </div>
+            <p class="mode-note">In the prompts, replace anything in [SQUARE BRACKETS] with your own details before you send it. The prompts work in any chat assistant.</p>
+
+            <ol class="jump">
+                <li><a href="#step-1">Write your naming rules</a></li>
+                <li><a href="#step-2">Build one tracked link per platform</a></li>
+                <li><a href="#step-3">Make short links on your own domain</a></li>
+                <li><a href="#step-4">Paste each link into its platform</a></li>
+                <li><a href="#step-5">Tag the links you post, too</a></li>
+                <li><a href="#step-6">Test every link</a></li>
+                <li><a href="#step-7">Read the report</a></li>
+                <li><a href="#step-8">Keep a link log</a></li>
+            </ol>
+
+            <section class="step" id="step-1">
+                <div class="step-head">
+                    <span class="step-num">1</span>
+                    <div>
+                        <h3>Write your naming rules</h3>
+                        <p class="step-does"><strong>What this does:</strong> keeps your report clean. Analytics treats &ldquo;Instagram,&rdquo; &ldquo;instagram&rdquo; and &ldquo;ig&rdquo; as three different sources, so you decide the spelling once and never change it.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <div class="by-ai">
+                        <p class="mode-tag">With your AI</p>
+                        <div class="prompt">
+                            <div class="prompt-head"><span>Prompt 1: write my naming rules</span><button type="button" class="copy" data-name="1_naming_rules">Copy prompt</button></div>
+<pre>I am setting up UTM tracking so Google Analytics 4 shows which social platform sends visitors to my website.
+
+I am active on: [LIST YOUR PLATFORMS]
+I share links in these places: [BIO, POSTS, STORIES, VIDEO DESCRIPTIONS, DIRECT MESSAGES, EMAIL SIGNATURE]
+
+Write me a one-page naming rule sheet:
+1. One utm_source value per platform. Lowercase, no spaces, the plain platform name.
+2. One utm_medium value per placement. Lowercase, one word each.
+3. A simple pattern for utm_campaign that I only use for launches and promotions.
+4. Three rules I must never break, in plain language.
+
+Keep it short enough to print on one page.</pre>
+                        </div>
+                        <button type="button" class="swap" data-set-mode="hand">Show me this step by hand instead</button>
+                    </div>
+                    <div class="by-hand">
+                        <p class="mode-tag">By hand</p>
+                        <p>Use these and you never have to think about it again:</p>
+                        <table class="where where-links">
+                            <thead><tr><th>Rule</th><th>What to do</th></tr></thead>
+                            <tbody>
+                                <tr><td>Source</td><td>The plain platform name: <code>instagram</code>, <code>tiktok</code>, <code>linkedin</code>, <code>youtube</code>, <code>facebook</code>, <code>threads</code>, <code>pinterest</code>, <code>bluesky</code>. For X, pick <code>twitter</code> or <code>x</code> and stay with it.</td></tr>
+                                <tr><td>Medium</td><td>Where the link sits: <code>bio</code>, <code>post</code>, <code>story</code>, <code>video</code>, <code>dm</code>.</td></tr>
+                                <tr><td>Campaign</td><td>Leave it off for everyday links. Add it only for a launch: <code>spring_workshop</code>.</td></tr>
+                                <tr><td>Always</td><td>Lowercase. No spaces (use an underscore). Same spelling forever.</td></tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="swap" data-set-mode="ai" style="margin-top:16px">Show me the AI prompt for this step</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step" id="step-2">
+                <div class="step-head">
+                    <span class="step-num">2</span>
+                    <div>
+                        <h3>Build one tracked link per platform</h3>
+                        <p class="step-does"><strong>What this does:</strong> turns your one link into a set, one for each platform. They all open the same page. Only the tag on the end differs.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <div class="by-ai">
+                        <p class="mode-tag">With your AI</p>
+                        <div class="prompt">
+                            <div class="prompt-head"><span>Prompt 2: build my tracked links</span><button type="button" class="copy" data-name="2_build_links">Copy prompt</button></div>
+<pre>The page I want people to land on is: [https://YOURDOMAIN.COM/link]
+My platforms: [INSTAGRAM, TIKTOK, LINKEDIN, YOUTUBE, X, FACEBOOK, THREADS, PINTEREST, BLUESKY]
+
+Give me a table with one row per platform and these columns:
+- Platform
+- Tracked link, using utm_source=[platform name in lowercase] and utm_medium=bio
+- A short address I could use instead, in the pattern YOURDOMAIN.COM/go/[two or three letters]
+
+Rules: everything lowercase, no spaces, and do not add any other tags. If my page address already contains a question mark, join the tags with an ampersand instead of a second question mark.</pre>
+                        </div>
+                        <button type="button" class="swap" data-set-mode="hand">Show me this step by hand instead</button>
+                    </div>
+                    <div class="by-hand">
+                        <p class="mode-tag">By hand</p>
+                        <p>Copy the rows you need and swap in your own page address:</p>
+                        <table class="where where-links">
+                            <thead><tr><th>Platform</th><th>The link to paste</th></tr></thead>
+                            <tbody>
+                                <tr><td>Instagram</td><td><code>yourdomain.com/link?utm_source=instagram&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>TikTok</td><td><code>yourdomain.com/link?utm_source=tiktok&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>LinkedIn</td><td><code>yourdomain.com/link?utm_source=linkedin&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>YouTube</td><td><code>yourdomain.com/link?utm_source=youtube&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>X</td><td><code>yourdomain.com/link?utm_source=twitter&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>Facebook</td><td><code>yourdomain.com/link?utm_source=facebook&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>Threads</td><td><code>yourdomain.com/link?utm_source=threads&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>Pinterest</td><td><code>yourdomain.com/link?utm_source=pinterest&amp;utm_medium=bio</code></td></tr>
+                                <tr><td>Bluesky</td><td><code>yourdomain.com/link?utm_source=bluesky&amp;utm_medium=bio</code></td></tr>
+                            </tbody>
+                        </table>
+                        <p style="margin-top:24px">Prefer a form to typing? Google has a free one called the Campaign URL Builder. Search for &ldquo;GA4 Campaign URL Builder,&rdquo; type your page address, fill in <span class="ui">utm_source</span> and <span class="ui">utm_medium</span>, leave the other boxes empty, and copy the link it generates at the bottom.</p>
+                        <button type="button" class="swap" data-set-mode="ai">Show me the AI prompt for this step</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step" id="step-3">
+                <div class="step-head">
+                    <span class="step-num">3</span>
+                    <div>
+                        <span class="needs-login">Needs your login</span>
+                        <h3>Make short links on your own domain</h3>
+                        <p class="step-does"><strong>What this does:</strong> hides the long tag behind a tidy address like <code>yourdomain.com/go/ig</code>. Several platforms show your link exactly as typed, and a short one looks cleaner and is easier to say out loud in a video.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <p>This step is optional. A long tagged link works fine. I use short ones because they look like part of my brand.</p>
+                    <div class="by-ai">
+                        <p class="mode-tag">With your AI</p>
+                        <div class="prompt">
+                            <div class="prompt-head"><span>Prompt 3: set up my short links</span><button type="button" class="copy" data-name="3_short_links">Copy prompt</button></div>
+<pre>I want short addresses on my own domain that forward to my tracked links.
+
+My website runs on: [WORDPRESS / SQUARESPACE / WIX / SHOPIFY / PLAIN HTML FILES / OTHER: ___]
+Here are my tracked links: [PASTE THE TABLE FROM PROMPT 2]
+
+1. Tell me the simplest way to create these forwards on my platform, one click at a time. Wait for me to type "done" after each step. Never ask for my password.
+2. If my site is plain HTML files, write a tiny redirect page for each short address instead. Each one needs a meta refresh, a JavaScript redirect, a plain "Continue" link and a noindex tag. Tell me the folder and file name for each.
+3. Remind me how to check that the tag is still on the address after the forward happens.</pre>
+                        </div>
+                        <button type="button" class="swap" data-set-mode="hand">Show me this step by hand instead</button>
+                    </div>
+                    <div class="by-hand">
+                        <p class="mode-tag">By hand</p>
+                        <ol>
+                            <li>Sign in to your website builder and look in settings for <span class="ui">URL redirects</span> (sometimes called URL mappings, or a redirect manager). On WordPress, this usually comes from a redirect plugin.</li>
+                            <li>Create a new redirect. In the &ldquo;from&rdquo; box, type the short path, for example <code>/go/ig</code>.</li>
+                            <li>In the &ldquo;to&rdquo; box, paste the full tracked link for that platform from step 2.</li>
+                            <li>Save, then repeat for each platform: <code>/go/tt</code>, <code>/go/li</code>, <code>/go/yt</code>, <code>/go/x</code>, <code>/go/fb</code>.</li>
+                        </ol>
+                        <button type="button" class="swap" data-set-mode="ai">Show me the AI prompt for this step</button>
+                    </div>
+                    <p><strong>Two cautions.</strong></p>
+                    <ul>
+                        <li><strong>Outside link shorteners.</strong> Paste the full tagged link in as the destination and test it. Some shorteners only carry tags through on paid plans, so never assume.</li>
+                        <li><strong>Link-in-bio tools.</strong> If your bio points to a page on a tool's domain, your own analytics can't see which platform the visitor started on. Use the tool's built-in stats, or move your bio page to your own domain. Also check whether the tool adds its own tags automatically, because those can replace yours.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="step" id="step-4">
+                <div class="step-head">
+                    <span class="step-num">4</span>
+                    <div>
+                        <span class="needs-login">Needs your login</span>
+                        <h3>Paste each link into its platform</h3>
+                        <p class="step-does"><strong>What this does:</strong> puts the right link in the right profile. This is the step that makes everything else work, and it's the one only you can do.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <p>Open the platforms you use. Apps move their menus around, so if a label looks different, look for <span class="ui">Edit profile</span> and then a field called Website, Link or Links.</p>
+
+                    <div class="plats">
+                        <details class="plat">
+                            <summary>Instagram</summary>
+                            <ol>
+                                <li>Open your profile and tap <span class="ui">Edit profile</span>.</li>
+                                <li>Tap <span class="ui">Links</span>, then <span class="ui">Add external link</span>.</li>
+                                <li>Paste your Instagram link. Add a short title if you like, then tap <span class="ui">Done</span>.</li>
+                            </ol>
+                            <p class="small">You can add up to five links. Only the first one shows on your profile; the rest sit behind a small &ldquo;and more&rdquo; tap, so put this one first. Links typed into a caption are not tappable.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>TikTok</summary>
+                            <ol>
+                                <li>In the mobile app, open your profile and tap <span class="ui">Edit profile</span>.</li>
+                                <li>Tap <span class="ui">Website</span>, paste your TikTok link including <code>https://</code>, and save.</li>
+                            </ol>
+                            <p class="small">If you don't see a Website field, your account doesn't qualify yet. The guides I checked say it appears at 1,000 followers or on a Business account (<span class="ui">Settings and privacy</span>, <span class="ui">Account</span>, <span class="ui">Switch to Business Account</span>), and it varies by country. A Business account limits you to commercial sounds, so weigh that first. Until then, type your short link into your bio text. It won't be tappable, which is exactly when a short, easy-to-type link earns its keep.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>LinkedIn (your profile)</summary>
+                            <ol>
+                                <li>Open your profile and click the pencil icon in the top section.</li>
+                                <li>Scroll down to <span class="ui">Website</span>. Paste your LinkedIn link and type the words people should see, such as &ldquo;Work with me.&rdquo;</li>
+                                <li>Click <span class="ui">Save</span>.</li>
+                            </ol>
+                            <p class="small">No Website field? Add the link in two other places instead. Under <span class="ui">Contact info</span>, add it as a website. In the <span class="ui">Featured</span> section, click the plus sign and choose <span class="ui">Add a link</span>. For Featured, use <code>utm_medium=featured</code> so you can tell the two apart.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>LinkedIn (company Page)</summary>
+                            <ol>
+                                <li>Open your Page as an admin and click <span class="ui">Edit page</span>.</li>
+                                <li>Put your link in the Page's website field.</li>
+                                <li>If you see a <span class="ui">Buttons</span> tab, turn on the custom button, choose a label such as &ldquo;Visit website,&rdquo; paste the link, and save.</li>
+                            </ol>
+                            <p class="small">LinkedIn ties the prominent custom button to Premium Company Pages. Without it, the button sits behind the Page's &ldquo;More&rdquo; menu.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>YouTube</summary>
+                            <ol>
+                                <li>On a computer, open YouTube Studio and click <span class="ui">Customization</span>.</li>
+                                <li>Open the <span class="ui">Profile</span> tab and find <span class="ui">Links</span>.</li>
+                                <li>Click <span class="ui">Add link</span>, type a title, paste your YouTube link, and click <span class="ui">Publish</span>.</li>
+                            </ol>
+                            <p class="small">You can add up to 14 links. The first one sits next to the Subscribe button, so make it this one. Links in the description of a regular video are clickable. Links in Shorts descriptions and comments are not.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>X</summary>
+                            <ol>
+                                <li>Open your profile and tap <span class="ui">Edit profile</span>.</li>
+                                <li>Paste your X link into the <span class="ui">Website</span> field and save.</li>
+                            </ol>
+                            <p class="small">One website link per profile. X shows the address itself, so a short link looks best here.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>Facebook (Page or profile)</summary>
+                            <ol>
+                                <li><strong>Page:</strong> open the Page, choose <span class="ui">Edit</span> (it may read Edit Page or Edit Page Info), find <span class="ui">Website</span>, paste your Facebook link, and save.</li>
+                                <li><strong>Personal profile:</strong> tap <span class="ui">Edit profile</span>, open <span class="ui">Contact and basic info</span>, find <span class="ui">Websites and social links</span>, add the link, and save.</li>
+                            </ol>
+                            <p class="small">On a personal profile, check the privacy setting beside the link. If it isn't set to Public, only friends will see it.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>Threads</summary>
+                            <ol>
+                                <li>Open your profile and tap <span class="ui">Edit profile</span>.</li>
+                                <li>Tap <span class="ui">Link</span> (or Links), add your Threads link, and tap <span class="ui">Done</span>.</li>
+                            </ol>
+                            <p class="small">Threads announced up to five profile links in 2025. Some accounts still show a single field.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>Pinterest</summary>
+                            <ol>
+                                <li><strong>On a computer:</strong> click the more options icon at the bottom left, choose <span class="ui">Settings</span>, then <span class="ui">Edit profile</span>.</li>
+                                <li><strong>In the app:</strong> tap your profile picture, open <span class="ui">View profile</span>, then <span class="ui">Edit profile</span>.</li>
+                                <li>Paste your Pinterest link into <span class="ui">Website</span> and save.</li>
+                            </ol>
+                            <p class="small">Claiming your website is a separate step in Pinterest's settings. It unlocks Pinterest's own stats for your site and is worth doing once.</p>
+                        </details>
+                        <details class="plat">
+                            <summary>Bluesky</summary>
+                            <ol>
+                                <li>Open your profile and tap <span class="ui">Edit Profile</span>.</li>
+                                <li>Bluesky has no separate link field. Paste your link into the <span class="ui">Description</span> and save.</li>
+                            </ol>
+                            <p class="small">The description holds 256 characters and shows the link as you typed it. Use your short link here.</p>
+                        </details>
+                    </div>
+
+                    <div class="by-ai">
+                        <p class="mode-tag">With your AI: when a menu has moved</p>
+                        <div class="prompt">
+                            <div class="prompt-head"><span>Prompt 4: walk me through one platform</span><button type="button" class="copy" data-name="4_platform_walkthrough">Copy prompt</button></div>
+<pre>I want to change the website link on my [PLATFORM] [PERSONAL PROFILE / BUSINESS PAGE] using the [iPHONE APP / ANDROID APP / WEBSITE ON A COMPUTER].
+
+Walk me through it one tap at a time and wait for me to type "done" after each step. If I tell you a button is not where you said, ask me what I see on the screen and adjust. Never ask for my password.
+
+When the link is saved, tell me how to check it from a different account or a private browser window.</pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step" id="step-5">
+                <div class="step-head">
+                    <span class="step-num">5</span>
+                    <div>
+                        <h3>Tag the links you post, too</h3>
+                        <p class="step-does"><strong>What this does:</strong> separates &ldquo;they came from my bio&rdquo; from &ldquo;they came from that one post.&rdquo; Same platform name, different medium.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <table class="where">
+                        <thead><tr><th>Where the link goes</th><th>Medium to use</th><th>Is it tappable?</th></tr></thead>
+                        <tbody>
+                            <tr><td>Instagram story</td><td data-l="Medium to use"><code>story</code></td><td data-l="Is it tappable?">Yes, with the Link sticker</td></tr>
+                            <tr><td>Instagram caption</td><td data-l="Medium to use">Skip it</td><td data-l="Is it tappable?">No. Point people to your bio instead</td></tr>
+                            <tr><td>LinkedIn, Facebook or X post</td><td data-l="Medium to use"><code>post</code></td><td data-l="Is it tappable?">Yes</td></tr>
+                            <tr><td>YouTube video description</td><td data-l="Medium to use"><code>video</code></td><td data-l="Is it tappable?">Yes on regular videos, no on Shorts</td></tr>
+                            <tr><td>A direct message</td><td data-l="Medium to use"><code>dm</code></td><td data-l="Is it tappable?">Yes</td></tr>
+                        </tbody>
+                    </table>
+                    <p style="margin-top:24px">For a launch, add a campaign so you can see the whole push in one place: <code>?utm_source=linkedin&amp;utm_medium=post&amp;utm_campaign=spring_workshop</code>.</p>
+                    <div class="by-ai">
+                        <p class="mode-tag">With your AI</p>
+                        <p>Keep this one saved. Use it every time you're about to share a link.</p>
+                        <div class="prompt">
+                            <div class="prompt-head"><span>Prompt 5: tag a link for one post</span><button type="button" class="copy" data-name="5_post_link">Copy prompt</button></div>
+<pre>Here are my naming rules: [PASTE YOUR RULES FROM STEP 1]
+
+I am about to share this link: [PASTE THE PAGE ADDRESS]
+Platform: [PLATFORM]
+Placement: [POST / STORY / VIDEO DESCRIPTION / DIRECT MESSAGE]
+Campaign, if any: [NAME, OR "NONE"]
+
+Give me the tracked link, following my rules exactly. Then give me one line I can paste into my link log: date, platform, placement, campaign, and the link.</pre>
+                        </div>
+                        <button type="button" class="swap" data-set-mode="hand">Show me this step by hand instead</button>
+                    </div>
+                    <div class="by-hand">
+                        <p class="mode-tag">By hand</p>
+                        <p>Take the link you built in step 2 and change one word. For a LinkedIn post, <code>utm_medium=bio</code> becomes <code>utm_medium=post</code>. For a campaign, add <code>&amp;utm_campaign=your_name</code> to the end. That's all there is to it.</p>
+                        <button type="button" class="swap" data-set-mode="ai">Show me the AI prompt for this step</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step" id="step-6">
+                <div class="step-head">
+                    <span class="step-num">6</span>
+                    <div>
+                        <h3>Test every link</h3>
+                        <p class="step-does"><strong>What this does:</strong> proves the tag survives the trip. A link can open the right page and still lose its tag on the way, and you won't know unless you look.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <ol>
+                        <li>On your phone, open each social app and tap the link on your own profile.</li>
+                        <li>When the page opens, look at the address bar. The tag should still be on the end: <code>utm_source=instagram</code>. If it's gone, a redirect or shortener dropped it. Go back to step 3.</li>
+                        <li>On a computer, open Analytics and click <span class="ui">Reports</span>, then <span class="ui">Realtime</span>. Within a few minutes your visit should appear with the source you just used.</li>
+                        <li>Repeat for each platform. It takes about a minute each.</li>
+                    </ol>
+                    <p class="small">Platforms sometimes add their own code to the end of your link. That's normal, and your tag stays alongside it.</p>
+                </div>
+            </section>
+
+            <section class="step" id="step-7">
+                <div class="step-head">
+                    <span class="step-num">7</span>
+                    <div>
+                        <span class="needs-login">Needs your login</span>
+                        <h3>Read the report</h3>
+                        <p class="step-does"><strong>What this does:</strong> shows you the answer you came for: one row per platform, with visitor counts.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <div class="login">
+                        <span class="login-label">You do this part: in Google Analytics</span>
+                        <ol>
+                            <li>Click <span class="ui">Reports</span>, then <span class="ui">Acquisition</span>, then <span class="ui">Traffic acquisition</span>.</li>
+                            <li>Above the first column of the table there's a small dropdown. It usually reads &ldquo;Session primary channel group.&rdquo; Click it and choose <span class="ui">Session source / medium</span>.</li>
+                            <li>Read the rows: &ldquo;instagram / bio,&rdquo; &ldquo;linkedin / post,&rdquo; and so on.</li>
+                            <li>To see campaigns, click the plus sign beside that dropdown and add <span class="ui">Session campaign</span>.</li>
+                            <li>Set the date range at the top right to the last 28 days.</li>
+                        </ol>
+                        <p>Realtime shows a visit within minutes. This report fills in later the same day or the next, and numbers can keep settling for a day or two. Analytics may also sort platforms into groups with names like Organic Social, Organic Video or Unassigned. Ignore the groups and read the source / medium rows.</p>
+                    </div>
+                    <div class="by-ai">
+                        <p class="mode-tag">With your AI: let it read the numbers</p>
+                        <div class="prompt">
+                            <div class="prompt-head"><span>Prompt 6: read my report for me</span><button type="button" class="copy" data-name="6_read_report">Copy prompt</button></div>
+<pre>Here are my last 28 days from Google Analytics, Traffic acquisition report, by session source / medium:
+[PASTE THE ROWS, INCLUDING SESSIONS AND ENGAGED SESSIONS]
+
+Hours I spend per week on each platform: [PLATFORM: HOURS, ...]
+
+Tell me, in plain language:
+1. Which platform sends the most visitors, and which sends the most engaged visitors.
+2. Visitors per hour of my time, for each platform.
+3. One platform to give more time, and one to give less.
+Do not guess beyond these numbers. If there is too little data to decide, say so and tell me how long to wait.</pre>
+                        </div>
+                        <button type="button" class="swap" data-set-mode="hand">Show me this step by hand instead</button>
+                    </div>
+                    <div class="by-hand">
+                        <p class="mode-tag">By hand: what to look for</p>
+                        <ul>
+                            <li><strong>Sessions</strong> tells you how many visits each platform sent.</li>
+                            <li><strong>Engaged sessions</strong> tells you how many of those people stayed and did something. A platform that sends fewer visitors who stay can be worth more than one that sends many who leave.</li>
+                            <li>Compare both against the hours you spend on each platform. That's the decision.</li>
+                        </ul>
+                        <button type="button" class="swap" data-set-mode="ai">Show me the AI prompt for this step</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="step" id="step-8">
+                <div class="step-head">
+                    <span class="step-num">8</span>
+                    <div>
+                        <h3>Keep a link log</h3>
+                        <p class="step-does"><strong>What this does:</strong> stops the system from drifting. Six months from now you'll want to know exactly how you spelled a campaign. A simple sheet remembers so you don't have to.</p>
+                    </div>
+                </div>
+                <div class="step-body">
+                    <div class="by-ai">
+                        <p class="mode-tag">With your AI</p>
+                        <div class="prompt">
+                            <div class="prompt-head"><span>Prompt 7: make my link log</span><button type="button" class="copy" data-name="7_link_log">Copy prompt</button></div>
+<pre>Make me a link log I can paste into Google Sheets or Excel.
+
+Columns: Date added, Platform, Placement, Campaign, Short link, Full tracked link, Where I pasted it, Tested (yes or no), Notes.
+
+Fill in one row for each of these links: [PASTE YOUR TABLE FROM PROMPT 2]
+
+Give it to me as comma-separated text so I can paste it straight into a sheet.</pre>
+                        </div>
+                        <button type="button" class="swap" data-set-mode="hand">Show me this step by hand instead</button>
+                    </div>
+                    <div class="by-hand">
+                        <p class="mode-tag">By hand</p>
+                        <p>Open a new spreadsheet and add these columns: date added, platform, placement, campaign, short link, full tracked link, where you pasted it, and tested (yes or no). Add one row per link. Every time you create a new tagged link, it gets a row before it gets posted.</p>
+                        <button type="button" class="swap" data-set-mode="ai">Show me the AI prompt for this step</button>
+                    </div>
+                    <p>Then set a reminder for 28 days from today: &ldquo;Read my platform report.&rdquo;</p>
+                </div>
+            </section>
+
+        </div>
+
+        <h2 class="fade-up">Five mistakes that quietly break tracking</h2>
+
+        <ul class="fade-up">
+            <li><strong>Mixing capitals.</strong> &ldquo;LinkedIn&rdquo; and &ldquo;linkedin&rdquo; show up as two rows. Lowercase, always.</li>
+            <li><strong>Tagging links inside your own website.</strong> Tags are for links that bring people in from outside. Put a different tag on a button between two of your own pages and it writes over where the visitor really came from.</li>
+            <li><strong>Trusting a shortener without testing it.</strong> Tap the link, check the address bar, every time you make a new one.</li>
+            <li><strong>Changing names halfway.</strong> Switching from <code>twitter</code> to <code>x</code> in June splits your year into two rows. Pick once.</li>
+            <li><strong>Using one link everywhere.</strong> If the same tagged link sits in three bios, you're back to one pile with a nicer name.</li>
+        </ul>
+
+        <h2 class="fade-up">Proof this works: here's mine</h2>
+
+        <p class="fade-up">Every one of my bios points to its own short link. My Instagram bio uses <code>dahliaimanbay.com/go/ig</code>, LinkedIn uses <code>/go/li</code>, YouTube uses <code>/go/yt</code>, and so on. Each one forwards to <a href="https://dahliaimanbay.com/link">my front door page</a> with that platform's tag attached. When I open my report, I see which platform earned the visit, and I plan my week from that.</p>
+
+        <p class="fade-up">If you don't have a page for those links to land on yet, build that first: <a href="https://dahliaimanbay.com/blog/bio-link-front-door">your bio link is a front door, not a dead end</a>. And once you know where your yeses come from, the next habit is <a href="https://dahliaimanbay.com/blog/track-every-no">tracking every &ldquo;no&rdquo;</a>.</p>
+
+        <div class="checklist-section fade-up">
+            <h3>Key takeaways</h3>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>Social apps hide where visitors come from.</strong> A tag inside the link is the reliable way to tell platforms apart.</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>One platform, one link.</strong> Source is the platform, medium is where the link sits.</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>Lowercase, no spaces, same spelling forever.</strong> Naming rules matter more than any tool.</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>Test that the tag survives.</strong> Tap the link on your phone and read the address bar.</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-check">&#10003;</div>
+                <div class="checklist-item-text"><strong>Read source / medium every 28 days.</strong> Then move your hours toward the platform that earns them.</div>
+            </div>
+        </div>
+
+        <div class="faq-section fade-up">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>What is a UTM tag?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>A UTM tag is a short label added to the end of a link, after a question mark, such as utm_source=instagram. It does not change the page that opens. It tells Google Analytics where the visitor came from, so each platform shows up on its own row in your reports.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Why does my social media traffic show up as direct?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Links tapped inside social apps open in the app's built-in browser, which often does not pass along where the visitor came from. Analytics then files the visit under direct. A tag inside the link itself solves this because it arrives with the visitor no matter which app opened the page.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>What should I use for utm_source and utm_medium on social media?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Use the plain platform name in lowercase for utm_source, such as instagram, tiktok or linkedin. Use utm_medium for where the link sits: bio, post, story or video. Keep the spelling identical every time, because Analytics treats different capital letters as different sources.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Do tracked links look messy in my bio?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>They can, because some platforms show the full address. Create a short address on your own domain, such as yourdomain.com/go/ig, that forwards to the long tagged link. Visitors see the short version and Analytics still receives the tag.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>How long until I see the numbers?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>The Realtime report in Google Analytics shows a tagged visit within a few minutes, which is how you test each link. The Traffic acquisition report fills in later the same day or the next, and figures can keep settling for a day or two.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sources fade-up">
+            <h3>Sources</h3>
+            <ul>
+                <li><a href="https://support.google.com/analytics/answer/10917952" target="_blank" rel="noopener">Google Analytics Help: Collect campaign data with custom URLs</a></li>
+                <li><a href="https://support.google.com/analytics/answer/9756891" target="_blank" rel="noopener">Google Analytics Help: Default channel group</a></li>
+                <li><a href="https://support.google.com/analytics/answer/11198161" target="_blank" rel="noopener">Google Analytics Help: Data freshness</a></li>
+                <li><a href="https://support.google.com/youtube/answer/2657964" target="_blank" rel="noopener">YouTube Help: Manage your YouTube channel's profile</a></li>
+                <li><a href="https://www.linkedin.com/help/linkedin/answer/a5993422" target="_blank" rel="noopener">LinkedIn Help: Add a custom call-to-action button to your LinkedIn Page</a></li>
+                <li><a href="https://help.pinterest.com/en/article/add-your-website" target="_blank" rel="noopener">Pinterest Help: Add your website to your profile</a></li>
+                <li><a href="https://searchengineland.com/instagram-now-allows-up-to-5-links-in-bio-395742" target="_blank" rel="noopener">Search Engine Land: Instagram now allows up to 5 links in bio</a></li>
+                <li><a href="https://techcrunch.com/2025/05/15/threads-now-lets-creators-add-up-to-5-links-to-profiles-track-clicks" target="_blank" rel="noopener">TechCrunch: Threads now lets creators add up to 5 links to profiles</a></li>
+            </ul>
+        </div>
+
+        <div class="author-box fade-up">
+            <div class="author-photo">
+                <img src="../dahlia-website-assets/newphoto.jpg" alt="Dahlia Imanbay, AI Strategist and Fractional CMO" width="80" height="80" loading="lazy">
+            </div>
+            <div class="author-info">
+                <h4>Dahlia Imanbay</h4>
+                <p>AI Strategist, Fractional CMO, and Full-Stack Developer with 16+ years of experience building AI systems for healthcare, SaaS, and mission-driven brands. Writes from production experience, not theory.</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 48px; padding: 28px 32px; background: var(--cream); border-radius: 16px; border: 1px solid rgba(0,0,0,0.06);">
+            <p style="font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--teal); margin-bottom: 12px;">More from the series</p>
+            <a href="https://dahliaimanbay.com/hacks" style="text-decoration: none;">
+                <h4 style="font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--maroon); margin-bottom: 6px;">Browse all 30 hacks</h4>
+                <p style="font-size: 0.88rem; color: var(--gray); line-height: 1.6; margin: 0;">Every video in the 30 Hacks From Dahlia series, with a companion post like this one for each.</p>
+            </a>
+        </div>
+
+    </article>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2>Dahlia Imanbay</h2>
+                <p>AI Strategist. Fractional CMO. Full-Stack Developer. Building a future where technology serves everyone.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/dahlia-imanbay/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="https://www.instagram.com/dahlia_imanbay/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg></a>
+                    <a href="https://x.com/dahlia_imanbay" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-6.8-8.4L19.5 4h-2l-5.2 6.4L8 4H4z"/></svg></a>
+                    <a href="https://substack.com/@dahliaimanbay" aria-label="Substack" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M4 4h16M4 8h16M4 12l8 6 8-6"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h4>Navigate</h4>
+                <ul><li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#expertise">Expertise</a></li><li><a href="/#journey">Journey</a></li></ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>More</h4>
+                <ul><li><a href="/#contact">Contact</a></li><li><a href="https://aipowereddahlia.com" target="_blank" rel="noopener">AI Powered Dahlia Agency</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dahlia Imanbay. All rights reserved.</span>
+            <span>Built with purpose &hearts;</span>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll',()=>{
+            document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+        });
+        document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up, .fade-in, .slide-right').forEach(el => observer.observe(el));
+
+        (function(){
+            var guide = document.getElementById('guide');
+            function track(name, params){ if (typeof gtag === 'function') gtag('event', name, params || {}); }
+            function setMode(mode, from){
+                guide.setAttribute('data-mode', mode);
+                guide.querySelectorAll('.mode-btn').forEach(function(b){
+                    b.setAttribute('aria-pressed', b.getAttribute('data-set-mode') === mode ? 'true' : 'false');
+                });
+                try { localStorage.setItem('fd_mode', mode); } catch(e) {}
+                if (from) track('guide_mode', { mode: mode, from: from });
+            }
+            if (guide) {
+                guide.classList.add('js');
+                var start = 'ai';
+                try { start = localStorage.getItem('fd_mode') || 'ai'; } catch(e) {}
+                if (location.hash === '#by-hand') start = 'hand';
+                if (location.hash === '#with-ai') start = 'ai';
+                setMode(start === 'hand' ? 'hand' : 'ai');
+                guide.addEventListener('click', function(e){
+                    var b = e.target.closest('[data-set-mode]');
+                    if (!b) return;
+                    var step = b.closest('.step');
+                    var before = step ? step.getBoundingClientRect().top : 0;
+                    setMode(b.getAttribute('data-set-mode'), step ? 'step' : 'top');
+                    if (step) window.scrollBy({ top: step.getBoundingClientRect().top - before, behavior: 'instant' });
+                });
+            }
+            document.addEventListener('click', function(e){
+                var c = e.target.closest('.copy');
+                if (!c) return;
+                var pre = c.closest('.prompt').querySelector('pre');
+                var label = c.textContent;
+                function done(){ c.textContent = 'Copied'; setTimeout(function(){ c.textContent = label; }, 1800); }
+                function fallback(){
+                    var r = document.createRange(); r.selectNodeContents(pre);
+                    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+                    try { document.execCommand('copy'); done(); } catch(err) {}
+                }
+                if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(pre.textContent).then(done, fallback);
+                else fallback();
+                track('prompt_copy', { prompt_name: c.getAttribute('data-name') });
+            });
+        })();
+    </script>
+</body>
+</html>
