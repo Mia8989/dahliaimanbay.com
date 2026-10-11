@@ -155,41 +155,41 @@
     <p class="promise">I help <b>healthcare and mission-driven brands</b> grow with smart marketing automation, websites, and social systems that actually convert. Start with a free audit below.</p>
 
     <!-- 30 HACKS: video series entry point, kept first so bio links from any hack video land right here -->
-    <a class="btn btn-hacks" id="hacks" data-cta href="https://dahliaimanbay.com/hacks">
+    <a class="btn btn-hacks" id="hacks" data-cta data-name="hacks" href="https://dahliaimanbay.com/hacks">
       <span class="badge">New</span>
       <span class="stack">30 Hacks From Dahlia<small>The full list, one hack at a time</small></span>
     </a>
 
     <!-- HARD DOOR: the money button -> branded conversion-bridge landing (UTMs pass through via data-cta) -->
-    <a class="btn btn-primary" data-cta href="/link/apply">
+    <a class="btn btn-primary" data-cta data-name="apply" href="/link/apply">
       <span class="stack">Book a free strategy audit<small>Watch a short video, then apply</small></span>
     </a>
 
     <!-- OFFER: marketing funnel setup -->
-    <a class="btn btn-funnel" data-cta href="/link/funnel">
+    <a class="btn btn-funnel" data-cta data-name="funnel" href="/link/funnel">
       <span class="stack">Set up my marketing funnel<small>I build it and automate it for you</small></span>
     </a>
 
     <!-- OFFER: DIY social media system -->
-    <a class="btn btn-social" data-cta href="/link/social-system">
+    <a class="btn btn-social" data-cta data-name="social_system" href="/link/social-system">
       <span class="stack">Run my own social, set up for me<small>Post from your $20 Claude, in your own voice</small></span>
     </a>
 
     <!-- GRANT OPPORTUNITY: OpenAI Foundation -->
-    <a class="btn btn-ghost" data-cta href="https://openaifoundation.org/news/2026-people-first-ai-fund" target="_blank">
+    <a class="btn btn-ghost" data-cta data-name="people_first_fund" href="https://openaifoundation.org/news/2026-people-first-ai-fund" target="_blank">
       <span class="stack">OpenAI Foundation AI Fund 2026<small>$50M for nonprofits exploring AI. Deadline July 15.</small></span>
     </a>
 
     <!-- SOFT DOOR: email capture / nurture -->
-    <a class="btn btn-secondary" data-cta href="https://substack.com/@dahliaimanbay">
+    <a class="btn btn-secondary" data-cta data-name="newsletter" href="https://substack.com/@dahliaimanbay">
       <span class="stack">Get my newsletter<small>AI and marketing playbooks, in plain language</small></span>
     </a>
 
-    <a class="btn btn-soft" data-cta href="https://dahliaimanbay.com/blog">Read the blog</a>
-    <a class="btn btn-ghost" data-cta href="https://aipowereddahlia.com">
+    <a class="btn btn-soft" data-cta data-name="blog" href="https://dahliaimanbay.com/blog">Read the blog</a>
+    <a class="btn btn-ghost" data-cta data-name="agency" href="https://aipowereddahlia.com">
       <span class="stack">AI Powered Dahlia<small>My agency: AI and marketing systems for brands</small></span>
     </a>
-    <a class="btn btn-ghost" data-cta href="https://dahliaimanbay.com">Visit my portfolio: dahliaimanbay.com</a>
+    <a class="btn btn-ghost" data-cta data-name="portfolio" href="https://dahliaimanbay.com">Visit my portfolio: dahliaimanbay.com</a>
 
     <p class="divider">Follow along</p>
     <nav class="socials">
@@ -222,6 +222,21 @@
         u.search = u.search ? (u.search + '&' + qs) : ('?' + qs);
         a.href = u.toString();
       }catch(e){}
+    });
+  })();
+
+  // ===== Button tap tracking =====
+  // Sends one GA4 event per tap with the button's name, so the report shows
+  // which door people actually use. Social icons report as social_<platform>.
+  (function(){
+    document.addEventListener('click', function(e){
+      var a = e.target.closest('a');
+      if(!a || typeof gtag !== 'function') return;
+      var name = a.getAttribute('data-name');
+      if(!name && a.getAttribute('aria-label') && a.closest('nav')) name = 'social_' + a.getAttribute('aria-label').toLowerCase().replace(/[^a-z0-9]+/g,'_');
+      if(!name) return;
+      var src = new URLSearchParams(window.location.search).get('utm_source') || '(none)';
+      gtag('event', 'front_door_click', { button_name: name, link_url: a.href, bio_source: src });
     });
   })();
 
