@@ -295,18 +295,20 @@
     <article class="article-body">
 
         <div class="tldr fade-up">
-            <p><strong>The short version:</strong> Google announced WebMCP at I/O 2026, an open standard, backed by Google and Microsoft and discussed at the W3C, that lets a website expose typed tools an AI agent can call directly instead of screenshotting and clicking its way through a page. It is experimental, running in origin trials in Chrome 149, not yet a stable standard. I have spent two years getting sites cited by AI search instead of just ranked by it, and WebMCP reads to me like the next layer of the same shift: the web quietly reorganizing itself around a second kind of visitor that does not have eyes or a mouse.</p>
+            <p><strong>The short version:</strong> If you run a small site, you do not need to rebuild anything for WebMCP yet. Google announced it at I/O 2026 as an open standard, backed by Google and Microsoft and discussed at the W3C. It lets a website expose typed tools an AI agent can call directly instead of screenshotting and clicking its way through a page. It is experimental, running in origin trials in Chrome 149, not yet a stable standard. I have spent two years getting sites cited by AI search instead of just ranked by it, and WebMCP looks to me like the next layer of the same shift: a second kind of visitor with no eyes and no mouse.</p>
         </div>
 
-        <p class="fade-up">I have spent the last two years teaching websites how to talk to AI search: writing the FAQ schema that gets pulled into an AI Overview, structuring pages so ChatGPT and Perplexity can cite them cleanly, building the llms.txt files nobody asked for a year ago and everybody wants now. So when Google announced WebMCP at I/O 2026, my first reaction was not surprise. It was recognition. This is the same shift, one layer down, moving from "can a machine read this page" to "can a machine act on this page."</p>
+        <p class="fade-up">For two years I have been teaching websites how to talk to AI search: writing the FAQ schema that gets pulled into an AI Overview, structuring pages so ChatGPT and Perplexity can cite them cleanly, building the llms.txt files nobody asked for a year ago and everybody wants now. When Google announced WebMCP at I/O 2026, I wasn't surprised. It's the same shift one layer down: from "can a machine read this page" to "can a machine act on this page."</p>
 
-        <p class="fade-up">WebMCP is still young. It is in origin trials in Chrome 149, which means developers can experiment with it on real sites, but it is not stable and it is not widespread. It still has to work through the W3C process before anyone can call it a finished standard. I am not writing this as a how-to, because there is not much to build yet that would survive the standard changing shape under it. I am writing it because the direction is worth sitting with now, while it still tells you something about where building for the web is headed.</p>
+        <p class="fade-up">WebMCP is in origin trials in Chrome 149, which means developers can try it on real sites, but it is not stable or widespread. It still has to work through the W3C process. This isn't a how-to, because there is little to build yet that would survive the standard changing shape. I'm writing about the direction, because it says something about where building for the web is headed.</p>
 
         <h2 class="fade-up">What WebMCP actually changes</h2>
 
-        <p class="fade-up">Right now, when an AI agent uses a website on someone's behalf, it mostly does what a very patient, very literal human would do with no hands: it takes a screenshot, tries to figure out where a button is, clicks a coordinate, waits, takes another screenshot, and reevaluates. It is scraping the DOM and guessing at intent from pixels and markup that were designed for a person's eyes, not a program's parser. WebMCP proposes something more direct. A site can expose a set of tools, each with a name, a plain-language description, and a JSON schema describing exactly what it needs and what it returns. An agent reads that tool list and calls the tool it needs with structured data, the same basic idea behind Anthropic's Model Context Protocol from late 2024, brought down to the browser and the individual website.</p>
+        <p class="fade-up">Right now, when an AI agent uses a website on someone's behalf, it works like a patient, literal human with no hands: it takes a screenshot, works out where a button is, clicks a coordinate, waits, takes another screenshot, and reevaluates. It is scraping the DOM and guessing at intent from pixels and markup designed for a person's eyes.
 
-        <p class="fade-up">There are two ways a site can offer this. The Declarative API adds attributes to HTML you likely already have, like an existing form, so a simple interaction becomes agent-callable without a rewrite. The Imperative API is JavaScript, for anything more dynamic: a booking flow, a filtered search, a multi-step checkout. Neither replaces your site's interface. They sit next to it, as a second, structured way in.</p>
+WebMCP proposes something more direct. A site exposes a set of tools, each with a name, a plain-language description, and a JSON schema describing exactly what it needs and what it returns. An agent reads that list and calls the tool it needs with structured data. It's the same basic idea as Anthropic's Model Context Protocol from late 2024, brought down to the browser and the individual website.</p>
+
+        <p class="fade-up">A site can offer this two ways. The Declarative API adds attributes to HTML you likely already have, like an existing form, so a simple interaction becomes agent-callable without a rewrite. The Imperative API is JavaScript, for anything more dynamic: a booking flow, a filtered search, a multi-step checkout. Neither replaces your interface. They sit next to it as a second, structured way in.</p>
 
         <div class="stat-callout fade-up">
             <span class="stat-num">Chrome 149</span>
@@ -316,7 +318,7 @@
         <div class="process-diagram fade-up">
             <span class="process-eyebrow">How It Actually Works</span>
             <h2 class="process-title">Two Ways an Agent Gets Something Done on a Site</h2>
-            <p class="process-intro">This is the shift in one picture: how an AI agent interacts with a website today, next to what WebMCP proposes instead.</p>
+            <p class="process-intro">How an AI agent interacts with a website today, next to what WebMCP proposes.</p>
             <div class="process-columns">
                 <div class="process-col process-col-old">
                     <div class="process-col-head">
@@ -358,39 +360,38 @@
 
         <h2 class="fade-up">The pattern I keep seeing</h2>
 
-        <p class="fade-up">The pattern I keep seeing in my own AEO and GEO work is that the sites that get cited are not the ones with the cleverest copy. They are the ones with the clearest structure: real heading hierarchy, schema that matches the content, answers written so a system can lift them cleanly instead of interpreting them. When I build a static site for a client now, I do not just ask whether the copy converts a human. I ask whether the markup would make sense to something that has never seen a browser or a mouse cursor. WebMCP takes that instinct one step further, from "can an agent read this" to "can an agent do something here without guessing."</p>
+        <p class="fade-up">In my own AEO and GEO work, the sites that get cited are not the ones with the cleverest copy. They have the clearest structure: real heading hierarchy, schema that matches the content, answers a system can lift cleanly instead of interpreting. When I build a static site for a client now, I ask whether the copy converts a human, and whether the markup would make sense to something that has never seen a browser. WebMCP pushes that one step further, from "can an agent read this" to "can an agent do something here without guessing."</p>
 
-        <p class="fade-up">[PLACEHOLDER: Dahlia adds real detail, e.g. a specific before/after observation from her own AEO/GEO audits on how structured markup changed AI citation behavior on a client or personal site.]</p>
 
-        <p class="fade-up">I run a multi-brand studio, so I am usually building the same kind of infrastructure for several sites at once: consistent schema, consistent semantic HTML, consistent content architecture. None of it was built with WebMCP in mind, because WebMCP did not exist when I built most of it. But it is the same groundwork. A site already legible to a language model reading it is closer to a site that could expose a tool to an agent calling it. The standard changes; the discipline of building something a machine can parse without friction does not.</p>
+        <p class="fade-up">I run a multi-brand studio, so I build the same infrastructure for several sites at once: consistent schema, semantic HTML, content architecture. None of it was built with WebMCP in mind, because WebMCP did not exist yet. It is still the same groundwork. A site a language model can read is closer to a site that could expose a tool to an agent.</p>
 
         <h2 class="fade-up">A traffic number worth reading carefully</h2>
 
-        <p class="fade-up">Here is a number that gets thrown around to make the agent-first web sound more advanced than it currently is: automated traffic passed human traffic on the web for the first time in 2024, at roughly 51 percent, according to Imperva's 2025 Bad Bot Report. It is real, and it is a meaningful marker. But it is easy to misread. Most of that 51 percent is not helpful shopping or booking agents doing errands for people. It is scrapers, credential-stuffing bots, and other bad automated traffic that has nothing to do with the kind of agent WebMCP is designed for.</p>
+        <p class="fade-up">One number gets thrown around to make the agent-first web sound further along than it is: automated traffic passed human traffic for the first time in 2024, at roughly 51 percent, according to Imperva's 2025 Bad Bot Report. It is real. It is also easy to misread. Most of that 51 percent is not shopping or booking agents running errands for people. It is scrapers, credential-stuffing bots and other bad traffic that has nothing to do with the agents WebMCP is built for.</p>
 
         <div class="stat-callout fade-up">
             <span class="stat-num">51%</span>
             <span class="stat-text">Share of web traffic that was automated in 2024, per Imperva's 2025 Bad Bot Report, the first time automated traffic passed human traffic. Most of that share is bad bots, not helpful AI agents.</span>
         </div>
 
-        <p class="fade-up">What that number actually tells me is narrower: the web already spends enormous effort telling bad automated traffic apart from real visitors. WebMCP is not solving that problem directly, but it is an early attempt at giving good automated visitors a sanctioned front door, instead of leaving every agent, helpful or not, to get in the same way: by pretending to be a human clicking around.</p>
+        <p class="fade-up">What it tells me is narrower: the web already spends enormous effort telling bad automated traffic from real visitors. WebMCP doesn't solve that, but it is an early attempt to give good automated visitors a sanctioned front door, instead of every agent getting in the same way, by pretending to be a human clicking around.</p>
 
         <blockquote class="fade-in">
-            <p>The web spent three decades being designed for a person with a mouse. WebMCP is an early, unfinished attempt at also designing it for something with neither.</p>
+            <p>Three decades of the web were designed for a person with a mouse. WebMCP is an early, unfinished attempt to also design it for something with neither.</p>
         </blockquote>
 
         <h2 class="fade-up">What this means for creators and small businesses</h2>
 
-        <p class="fade-up">If you run a small business site or a creator page, the honest answer right now is: do not rebuild anything for WebMCP specifically. It is an origin trial in one browser, not a requirement. What is worth doing is the same thing that has been worth doing since AI search started citing sites instead of just ranking them: clear headings, real FAQ and Article schema, content organized around actual questions, and a structure that does not depend on JavaScript tricks or hidden text to make sense. That foundation is what any future agent-tooling layer, WebMCP or whatever eventually wins, will build on. I wrote the practical version, the actual steps for making a site agent-ready today, as <a class="inline" href="https://aipowereddahlia.com/blog/webmcp-make-your-website-agent-ready" target="_blank" rel="noopener">the practical how-to on making your site agent-ready</a> on the agency site.</p>
+        <p class="fade-up">If you run a small business site or a creator page: do not rebuild anything for WebMCP specifically. It is an origin trial in one browser, not a requirement. What is worth doing is what has been worth doing since AI search started citing sites: clear headings, real FAQ and Article schema, content organized around actual questions, and a structure that makes sense without JavaScript tricks or hidden text. Any future agent layer, WebMCP or whatever wins, will build on that. The actual steps are in <a class="inline" href="https://aipowereddahlia.com/blog/webmcp-make-your-website-agent-ready" target="_blank" rel="noopener">the practical how-to on making your site agent-ready</a> on the agency site.</p>
 
-        <p class="fade-up">For creators specifically, the more interesting shift is psychological before it is technical. For years the mental model was: build something a person will land on, get curious about, and click through. An agent-first web adds a second model running in parallel: build something a program can understand well enough to act on correctly, on the first try, with no one watching over its shoulder to catch a wrong click. Both will coexist for a long time. But the second is new enough that most people building small sites have not started thinking in it yet.</p>
+        <p class="fade-up">For creators, the shift is a way of thinking before it is technical. For years the model was: build something a person lands on, gets curious about and clicks through. The agent-first web adds a second model: build something a program can understand well enough to act on correctly on the first try, with no one watching to catch a wrong click. Both will coexist for a long time, but most people building small sites haven't started on the second.</p>
 
         <h2 class="fade-up">How I am thinking about my own work</h2>
 
-        <p class="fade-up">I am treating WebMCP the way I treated the early AI search shift two years ago: not rebuilding around it yet, because it has not earned that, but paying attention and keeping my own sites structurally honest so they are not starting from zero once the standard, or whatever replaces it, matures. The pattern I trust most from this work is that sites already legible to a machine reader adapt fastest when the next machine-facing standard shows up. Structure now. Specifics later, once there is something stable enough to be specific about.</p>
+        <p class="fade-up">I'm treating WebMCP the way I treated the early AI search shift two years ago. I'm not rebuilding around it yet, because it hasn't earned that. I'm watching it and keeping my own sites structurally clean, so they aren't starting from zero when the standard, or whatever replaces it, matures. In my experience, sites that machines can already read adapt fastest when the next machine-facing standard shows up.</p>
 
         <div class="checklist-section fade-up">
-            <h3>The takeaways, in one place</h3>
+            <h3>The takeaways</h3>
             <div class="checklist-item">
                 <div class="checklist-check">&#10003;</div>
                 <div class="checklist-item-text"><strong>WebMCP is experimental, not standard.</strong> It lives in Chrome 149 origin trials and still has to go through the W3C process.</div>
@@ -409,7 +410,7 @@
             </div>
             <div class="checklist-item">
                 <div class="checklist-check">&#10003;</div>
-                <div class="checklist-item-text"><strong>Do not rebuild yet.</strong> Watch the direction, keep your own sites structurally honest, and get specific once the standard is stable.</div>
+                <div class="checklist-item-text"><strong>Do not rebuild yet.</strong> Watch the direction, keep your sites structurally clean, and get specific once the standard is stable.</div>
             </div>
         </div>
 

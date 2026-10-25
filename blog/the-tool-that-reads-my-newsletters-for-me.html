@@ -459,10 +459,10 @@
 
         <div class="answer-box fade-up">
             <span class="answer-label">Direct Answer</span>
-            <p>I subscribe to a small number of newsletters that consistently break industry news first. Instead of opening every one of them by hand, I connect my inbox to an AI tool with read-only access, scoped so it can only view and summarize, never send, delete, or change anything. It scans just those subscriptions and tells me what changed in my industry, and the industries of the clients I work with.</p>
+            <p>I subscribe to a small number of newsletters that consistently break industry news first. Instead of opening every one by hand, I connect my inbox to an AI tool with read-only access, scoped so it can only view and summarize, never send, delete, or change anything. It scans just those subscriptions and tells me what changed in my industry and my clients' industries.</p>
         </div>
 
-        <p class="fade-up">Every video in my "30 Hacks From Dahlia" series ends with the same line, and this one is the reason I keep saying it: I help small teams do big things, and most of what that actually looks like is quietly automating the parts of the day that don't need me personally. This hack is the one people ask about most once they see it, because it touches something everyone hesitates over: connecting an AI tool to your actual email inbox.</p>
+        <p class="fade-up">Every video in my "30 Hacks From Dahlia" series ends with the same line: I help small teams do big things. A lot of that is automating the parts of the day that don't need me personally. This is the hack people ask about most, because it means connecting an AI tool to your actual email inbox, and everyone hesitates over that.</p>
 
         <div class="video-embed fade-up">
             <iframe src="https://www.youtube.com/embed/YHPWU9KJu1c" title="Hack 31: The AI tool that reads my newsletters for me, by Dahlia Imanbay" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -471,9 +471,9 @@
 
         <h2 class="fade-up">Why I built this in the first place</h2>
 
-        <p class="fade-up">As a small business owner, staying on top of every trend, hack, and tip in my industry is part of the job. I don't chase all of it. I subscribe to the handful of newsletters I already trust, the ones that consistently bring the news first and give genuinely valuable content instead of recycled takes. That part hasn't changed in years.</p>
+        <p class="fade-up">Staying on top of trends in my industry is part of the job. I don't chase all of it. I subscribe to the handful of newsletters I already trust, the ones that bring the news first instead of recycling it. That part hasn't changed in years.</p>
 
-        <p class="fade-up">What changed is what happens after I subscribe. I used to open each one manually, skim for anything that mattered, and half the time forget I'd read it by the following week. Now I have a tool set up that goes through my email, finds those specific newsletter subscriptions, reads through them, and summarizes what's in them, so I know the latest trends or changes that happened in my industry, or in the industries of the clients I work with, without opening a single one by hand.</p>
+        <p class="fade-up">What changed is what happens after I subscribe. I used to open each one, skim for anything that mattered, and half the time forget I'd read it by the following week. Now a tool goes through my email, finds those specific subscriptions, reads them and summarizes what's in them. I find out what changed in my industry, or my clients' industries, without opening a single one.</p>
 
         <div class="stat-grid fade-up">
             <div class="stat-grid-item">
@@ -490,37 +490,39 @@
             </div>
         </div>
 
-        <h2 class="fade-up">The part everyone asks about: connecting your email safely</h2>
+        <h2 class="fade-up">Connecting your email safely</h2>
 
-        <p class="fade-up">The question I get every time I mention this is some version of "wait, you gave an AI access to your email?" Not exactly. I gave it read-only access, which is a specific, narrower permission than the one people picture. It is worth understanding the difference, because it's the whole reason I'm comfortable running this unattended.</p>
+        <p class="fade-up">Every time I mention this, someone asks, "wait, you gave an AI access to your email?" Not exactly. I gave it read-only access, a narrower permission than the one people picture. That difference is why I'm comfortable running this unattended.</p>
 
         <h3 class="fade-up">On Gmail</h3>
-        <p class="fade-up">Gmail's API offers separate, named permission scopes for different levels of access. The one I use is called <code>gmail.readonly</code>. It lets a connected tool view and read messages, and nothing else. It does not include the scopes needed to send mail, delete mail, or modify labels and folders. When you authorize a connector through Google's OAuth screen, it shows you in plain language exactly what you're granting, something like "Read all resources and their metadata," never "Send email as you," unless you've separately approved that broader permission.</p>
+        <p class="fade-up">Gmail's API has separate, named permission scopes. The one I use is <code>gmail.readonly</code>. It lets a connected tool view and read messages, and nothing else: no sending, no deleting, no changing labels or folders. When you authorize a connector, Google's OAuth screen shows in plain language what you're granting, something like "Read all resources and their metadata," not "Send email as you," unless you separately approve that broader permission.</p>
 
         <h3 class="fade-up">On Outlook or Microsoft 365</h3>
-        <p class="fade-up">Microsoft's equivalent lives in the Graph API permission model. The scope is called <code>Mail.Read</code>, and it is deliberately kept apart from <code>Mail.ReadWrite</code> and <code>Mail.Send</code>. If a tool only requests <code>Mail.Read</code>, it is structurally unable to send or modify a message, the same way a read-only database credential cannot run a delete statement no matter what query you send it.</p>
+        <p class="fade-up">Microsoft's equivalent is in the Graph API permission model. The scope is <code>Mail.Read</code>, kept apart from <code>Mail.ReadWrite</code> and <code>Mail.Send</code>. A tool that only requests <code>Mail.Read</code> cannot send or modify a message, the same way a read-only database credential cannot run a delete statement.</p>
 
         <div class="pro-tip fade-up">
             <div class="pro-tip-icon">&#128274;</div>
             <div class="pro-tip-content">
                 <span class="pro-tip-label">Why the limitation is the point</span>
-                <p>The comfort here doesn't come from trusting the tool to behave. It comes from the permission itself being incapable of the risky action. A connector authorized only for <code>gmail.readonly</code> or <code>Mail.Read</code> cannot send an email or delete one, regardless of what it's instructed to do. That's the property that makes it safe to leave running in the background.</p>
+                <p>I'm not relying on the tool to behave. A connector authorized only for <code>gmail.readonly</code> or <code>Mail.Read</code> cannot send or delete an email, whatever it's told to do. That's what makes it safe to leave running in the background.</p>
             </div>
         </div>
 
         <blockquote class="fade-in">
-            <p>I didn't need the AI to trust me. I needed the permission to make trust unnecessary.</p>
+            <p>A read-only permission can't send or delete, no matter what the tool is told.</p>
         </blockquote>
 
         <h2 class="fade-up">What the digest actually looks like</h2>
 
-        <p class="fade-up">I'm not opening a dashboard for this. The tool connects through MCP, the same open protocol I use to link most of the AI systems I run, scoped to only the newsletter senders I've chosen. It reads through what came in, pulls out what's actually new or changed, and hands me a plain summary of the trends and shifts worth knowing about, in my industry and in the industries of the clients I work with. If nothing meaningful changed that week, there's nothing to read. That's the whole point: I only spend time on the signal, never the scanning.</p>
+        <p class="fade-up">There's no dashboard. The tool connects through MCP, the open protocol I use to link most of the AI systems I run, scoped to only the newsletter senders I've chosen. It reads what came in, pulls out what's new or changed, and hands me a plain summary for my industry and my clients' industries.
+
+If nothing meaningful changed that week, there's nothing to read.</p>
 
         <div class="checklist-section fade-up">
             <h3>Before you connect anything to your inbox</h3>
             <div class="checklist-item">
                 <div class="checklist-check">&#10003;</div>
-                <div class="checklist-item-text"><strong>Pick your sources first.</strong> Choose the three to five newsletters you'd actually stop and read. A tool summarizing everything you've ever subscribed to just replaces one kind of noise with another.</div>
+                <div class="checklist-item-text"><strong>Pick your sources first.</strong> Choose the three to five newsletters you'd actually stop and read. A tool summarizing everything you've ever subscribed to swaps one kind of noise for another.</div>
             </div>
             <div class="checklist-item">
                 <div class="checklist-check">&#10003;</div>
@@ -528,13 +530,13 @@
             </div>
             <div class="checklist-item">
                 <div class="checklist-check">&#10003;</div>
-                <div class="checklist-item-text"><strong>Expect to re-authorize periodically.</strong> Read-only tokens expire like any OAuth token. Re-approving is a feature, not a bug: it means the access isn't standing forever unchecked.</div>
+                <div class="checklist-item-text"><strong>Expect to re-authorize periodically.</strong> Read-only tokens expire like any OAuth token. Re-approving is annoying, but it means the access doesn't stand forever unchecked.</div>
             </div>
         </div>
 
-        <h2 class="fade-up">One hack, out of thirty</h2>
+        <h2 class="fade-up">Hack 31 of 30</h2>
 
-        <p class="fade-up">This is hack 31 in a series I never expected to keep going past thirty, because there's always one more piece of the day quietly worth automating. Full step-by-step guide and the rest of the series are linked in my bio. If you run more than one inbox for your business or your clients, the pattern here scales the same way: connect only what you need, only with the access level that matches the job, and let the summary come to you instead of you going to look for it.</p>
+        <p class="fade-up">This is hack 31 in the series, which ran past thirty. The full step-by-step guide and the rest of the series are linked in my bio. If you run more than one inbox for your business or your clients, the pattern is the same: connect only what you need, at the access level the job requires.</p>
 
         <div class="faq-section fade-up">
             <h2>Frequently Asked Questions</h2>

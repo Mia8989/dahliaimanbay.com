@@ -473,9 +473,11 @@
     <!-- ARTICLE BODY -->
     <article class="article-body">
 
-        <p class="fade-up">Last month, Apptopia released data showing Claude's US daily active user market share roughly tripled in a single month, jumping from about 1.5% in January to nearly 4% by February's end. For most people reading the tech headlines, this was a surprise. For me, it was a confirmation.</p>
+        <p class="fade-up">If you're picking which AI model to build on, don't pick from the headlines. Pick from what you see in your own system logs. That's how I ended up on Claude a year before the headlines caught up.
 
-        <p class="fade-up">I have been building marketing systems, AI agents, and content automation workflows on Claude for over a year. Not because it was the popular choice; the popular choice was, and still is, ChatGPT. I chose Claude because of specific qualities I noticed in production environments: instruction-following reliability, nuanced reasoning in professional conversations, and consistent behavior inside complex system prompts. What happened in February is the market catching up to what practitioners building real workflows had already learned.</p>
+Last month, Apptopia released data showing Claude's US daily active user market share roughly tripled in a single month, from about 1.5% in January to nearly 4% by February's end. Most people reading the tech news were surprised. I wasn't.</p>
+
+        <p class="fade-up">I have been building marketing systems, AI agents and content automation workflows on Claude for over a year. It wasn't the popular choice; that was, and still is, ChatGPT. I chose Claude for three things I saw in production: instruction-following reliability, nuanced reasoning in professional conversations, and consistent behavior inside complex system prompts.</p>
 
         <div class="stat-grid fade-up">
             <div class="stat-grid-item">
@@ -494,41 +496,41 @@
 
         <h2 class="fade-up">The Market Shift the Numbers Tell</h2>
 
-        <p class="fade-up">The AI chatbot market is reshuffling fast. Between August 2025 and February 2026, ChatGPT's share of daily active users across the top seven AI chatbot apps fell from 57% to 42% in the US. Google Gemini doubled its US share from around 13% to 25%. Claude went from near-invisible to a share that nearly tripled in a single month.</p>
+        <p class="fade-up">Between August 2025 and February 2026, ChatGPT's share of daily active users across the top seven AI chatbot apps fell from 57% to 42% in the US. Google Gemini doubled its US share from around 13% to 25%. Claude went from near-invisible to a share that nearly tripled in a single month.</p>
 
-        <p class="fade-up">According to Anthropic directly, daily active users tripled since the beginning of 2026, with paid subscriber counts doubling. That is not a viral moment from a single launch announcement; it is momentum with compounding behind it. When practitioners build systems and see them perform, they scale usage and recommend the tool to colleagues. The DAU data is the downstream effect of months of production deployments going well.</p>
+        <p class="fade-up">According to Anthropic directly, daily active users tripled since the beginning of 2026, with paid subscriber counts doubling. That doesn't look like a spike from a single launch announcement. My read is that people who build systems and see them perform scale their usage and recommend the tool to colleagues, and the DAU data is months of production deployments showing up downstream.</p>
 
         <blockquote class="fade-in">
-            <p>The market data tells you what happened. The system prompt logs tell you why.</p>
+            <p>Market data tells you what happened. Your system prompt logs tell you why.</p>
         </blockquote>
 
         <h2 class="fade-up">What I Noticed in Production Before the Headlines</h2>
 
-        <p class="fade-up">The qualities that drove this growth are the same qualities I noticed in my own work 12 months ago. Here is what shows up in actual production deployments that does not show up in general benchmark comparisons:</p>
+        <p class="fade-up">Here is what I noticed in my own work 12 months ago, and what shows up in production deployments but not in general benchmark comparisons:</p>
 
         <h3 class="fade-up">Instruction following in complex system prompts</h3>
 
-        <p class="fade-up">When you build a customer-facing AI agent, your system prompt is not a sentence or two. It is 1,500 to 3,000 tokens of carefully designed instructions: persona definition, guardrails, qualification criteria, tone guidelines, and fallback behaviors. Claude executes these instructions with a consistency that I have not found in alternatives at the same level. When I tell it to never discuss pricing without routing to a human, it does not occasionally break that rule on edge-case phrasings. It holds. In regulated industries like healthcare, this is not a preference; it is a core architecture requirement.</p>
+        <p class="fade-up">A customer-facing AI agent's system prompt is not a sentence or two. It is 1,500 to 3,000 tokens of instructions: persona, guardrails, qualification criteria, tone, fallback behaviors. Claude follows them more consistently than the alternatives I have used at the same level. When I tell it never to discuss pricing without routing to a human, it does not break that rule on edge-case phrasings. In regulated industries like healthcare, that is a core architecture requirement, not a preference.</p>
 
         <h3 class="fade-up">The 200,000 token context window in practice</h3>
 
-        <p class="fade-up">The context window comparison sounds like a spec sheet item. In practice, it changes what is architecturally possible. With a 200K context window, you can pass an entire client brief, a full brand guidelines document, and a conversation history into a single model call. With a smaller window, you make tradeoffs: what do you cut, what do you summarize, how do you chunk the context without losing meaning? I build systems for clients with extensive documentation, complex SOPs, and multi-layered brand rules. The context window is a practical architectural constraint that shapes what you can and cannot build, not a benchmark number.</p>
+        <p class="fade-up">With a 200K context window, you can pass an entire client brief, a full brand guidelines document and a conversation history into a single model call. With a smaller window you make tradeoffs: what to cut, what to summarize, how to chunk without losing meaning. I build systems for clients with extensive documentation, complex SOPs and multi-layered brand rules, so for me the window decides what I can build.</p>
 
         <h3 class="fade-up">Tone calibration for professional services</h3>
 
-        <p class="fade-up">This is harder to quantify but easy to experience in production. Claude calibrates formality and nuance in a way that reads as professional without reading as robotic. When building customer-facing agents for B2B companies in healthcare and life sciences, the difference between "chatbot voice" and "brand voice" is meaningful. Customers disengage from responses that sound scripted or generic. Claude threads this needle consistently better than alternatives in my deployments, especially in long conversations where the tone needs to stay stable.</p>
+        <p class="fade-up">This is harder to quantify. Claude reads as professional without reading as robotic. For B2B agents in healthcare and life sciences, the gap between "chatbot voice" and "brand voice" matters, because customers disengage from responses that sound scripted. In my deployments Claude holds that tone better than the alternatives, especially in long conversations.</p>
 
         <div class="pro-tip fade-up">
             <div class="pro-tip-icon">&#128274;</div>
             <div class="pro-tip-content">
                 <span class="pro-tip-label">Compliance note</span>
-                <p>Claude is built on Anthropic's Constitutional AI framework and offers contractual guarantees that your business data will not be used to train the model. For healthcare and B2B clients concerned about IP leakage, this is a meaningful differentiator that shows up directly in procurement and legal review conversations.</p>
+                <p>Claude is built on Anthropic's Constitutional AI framework and offers contractual guarantees that your business data will not be used to train the model. For healthcare and B2B clients worried about IP leakage, this comes up directly in procurement and legal review.</p>
             </div>
         </div>
 
         <h2 class="fade-up">How Claude Compares for Real Business Use Cases</h2>
 
-        <p class="fade-up">There is no single right answer for which AI model to build on. The best model is the one that solves the specific problem you are building for. Here is how the main options compare on the dimensions that matter in actual production systems:</p>
+        <p class="fade-up">There is no single right model. The best one solves the specific problem you are building for. Here is how the main options compare on what matters in production:</p>
 
         <div class="comparison-table-wrap fade-up">
             <table class="comparison-table">
@@ -589,7 +591,7 @@
 
         <h2 class="fade-up">A Framework for Choosing Your AI Stack</h2>
 
-        <p class="fade-up">Before I recommend a model to any client, I walk through these six questions. The combination of answers usually points clearly in one direction. Use this as a starting checklist before any AI stack decision:</p>
+        <p class="fade-up">Before I recommend a model to a client, I walk through these six questions. The answers usually point in one direction.</p>
 
         <div class="checklist-section fade-up">
             <h3>AI Model Selection Checklist</h3>
@@ -623,11 +625,10 @@
 
         <h2 class="fade-up">What This Actually Means for Your Strategy</h2>
 
-        <p class="fade-up">Claude's February surge is significant not because it changed the market overnight, but because it signals that practitioners building real systems are voting with their usage. The people who drive the early usage data are the ones deploying models in production workflows, not people using a chatbot to rewrite an email. When those practitioners shift, the general user numbers follow months later.</p>
+        <p class="fade-up">The surge didn't change the market overnight. What it suggests is that people deploying models in production workflows, not people using a chatbot to rewrite an email, moved first, and the general user numbers followed months later.</p>
 
-        <p class="fade-up">The lesson is not "switch to Claude." The lesson is to make decisions based on production behavior, not marketing benchmarks or general comparison articles. Pick up the models, build with them, stress-test them in the actual workflows you need them for, and let the data from your own system logs guide you. The headlines will catch up to what your prompt logs already know.</p>
+        <p class="fade-up">I'm not telling you to switch to Claude. I'm telling you to decide from production behavior, not marketing benchmarks or comparison articles. Build with two or three models, stress-test them on the workflows you actually need, and read your own system logs.</p>
 
-        <p class="fade-up">This is what I mean when I talk about being an AI practitioner rather than an AI observer. The people who will build the most effective systems in 2026 are the ones making decisions from first-hand production data, not from whichever model is trending on X this week. Build it. Test it. Let your actual results make the call.</p>
 
         <!-- FAQ -->
         <div class="faq-section fade-up">
@@ -639,7 +640,7 @@
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Several factors converged: the release of Claude 4.6 with improved performance benchmarks, increased developer adoption from practitioners building real AI systems, and sustained word-of-mouth from teams who had already deployed Claude in production workflows. Anthropic confirmed that daily active users tripled since the start of 2026, with paid subscriber counts doubling. The February spike looks less like a novelty bump and more like an inflection point with momentum behind it.</p>
+                    <p>Several factors converged: the release of Claude 4.6 with improved performance benchmarks, increased developer adoption from practitioners building real AI systems, and sustained word-of-mouth from teams who had already deployed Claude in production workflows. Anthropic confirmed that daily active users tripled since the start of 2026, with paid subscriber counts doubling.</p>
                 </div>
             </div>
 
@@ -669,7 +670,7 @@
                     <span class="faq-toggle">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>The trend data suggests momentum rather than a one-time spike. Anthropic's consumer growth has been sustained across multiple months, and new features like Code Review for Claude Code are expanding the addressable market to development teams. That said, the AI market is accelerating across all players. OpenAI, Google, and others are shipping at a pace that makes any competitive analysis 30 days old by the time you read it. Build for your use case, not for who is trending.</p>
+                    <p>The trend data suggests momentum rather than a one-time spike. Anthropic's consumer growth has been sustained across multiple months, and features like Code Review for Claude Code are expanding the addressable market to development teams. But OpenAI, Google and others are shipping fast enough that any competitive analysis is 30 days old by the time you read it. Build for your use case, not for who is trending.</p>
                 </div>
             </div>
         </div>
