@@ -281,6 +281,10 @@ const CONFIG = {
     4: [["09:00","12:00"],["13:00","17:00"]],
     5: [["09:00","12:00"],["13:00","17:00"]]
   },
+  // One-off hours for a specific date; replaces that weekday's windows.
+  dateWindows: {
+    "2026-11-03": [["09:00","12:00"],["13:00","19:00"]]
+  },
   maxGuests: 5,
   minNoticeHours: 12,   // no bookings sooner than this
   maxDaysAhead: 30,     // how far out people can book
@@ -325,7 +329,8 @@ function buildDays(){
 }
 /* candidate slot start-instants for a given day, in baseTimezone windows */
 function slotsForDay(day){
-  const list=[]; const wins=CONFIG.windows[day.dow]||[];
+  const list=[]; const ds=`${day.y}-${String(day.m).padStart(2,'0')}-${String(day.d).padStart(2,'0')}`;
+  const wins=CONFIG.dateWindows[ds]||CONFIG.windows[day.dow]||[];
   for(const [a,b] of wins){
     const [ah,am]=a.split(':').map(Number),[bh,bm]=b.split(':').map(Number);
     let cur=wallToUtc(day.y,day.m,day.d,ah,am,CONFIG.baseTimezone);
