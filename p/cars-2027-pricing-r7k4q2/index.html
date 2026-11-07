@@ -1,0 +1,257 @@
+<!--
+CARS 2027 a la carte rate card. Requested by Cathy Milne and Maria Goddard on the
+Nov 3 2026 call ("this is what a webinar costs, social posts, hourly, phone calls").
+Same editorial system as FNL/fnl-rate-card.html. Rendered HTML to PDF.
+CONFIDENTIAL: Dahlia asked that only Cathy, Maria and the named leadership see it.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>CARS 2027 Services Rate Card</title>
+<style>
+  @page { size: Letter; margin: 0.5in 0.7in; }
+  * { box-sizing: border-box; }
+  :root {
+    --ink: #1a1a1a; --muted: #5f5f5f; --faint: #8a8a8a;
+    --accent: #6d4aa0; --line: #e6e6e6; --panel: #f6f5f8; --dot: #b8b8b8;
+  }
+  body {
+    font-family: -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink); margin: 0 auto; padding: 0; max-width: 680px; font-size: 10.5pt;
+    line-height: 1.55; -webkit-font-smoothing: antialiased; hyphens: none;
+  }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+  h1 { font-size: 24pt; font-weight: 700; margin: 0; letter-spacing: -0.5px; line-height: 1.05; }
+  .logo { height: 36px; display: block; margin-top: 4px; }
+  .sub { color: var(--muted); font-size: 10pt; margin-bottom: 18px; }
+  .intro { max-width: 38em; margin: 0 0 8px 0; }
+  .label {
+    text-transform: uppercase; letter-spacing: 0.1em; font-size: 8.5pt; font-weight: 700;
+    color: var(--ink); margin: 22px 0 0 0; padding-bottom: 8px; break-after: avoid; border-bottom: 1.5px solid var(--ink);
+  }
+  .tier {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 9px 0; border-bottom: 1px solid var(--line); break-inside: avoid;
+  }
+  .tier .body { max-width: 36em; }
+  .tier .name { font-weight: 700; font-size: 11pt; margin-bottom: 2px; }
+  .tier .ex { color: var(--muted); font-size: 9.5pt; line-height: 1.5; }
+  .tier .rate { flex: 0 0 auto; text-align: right; white-space: nowrap; padding-left: 40px; }
+  .tier .rate .num { font-size: 19pt; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; line-height: 1; }
+  .tier .rate .per { font-size: 8.5pt; color: var(--faint); display: block; margin-top: 3px; }
+  .tier.feature .name { font-size: 12pt; }
+  .tier.feature .rate .num { font-size: 24pt; }
+  .free { color: var(--muted) !important; }
+  .section { }
+  .note {
+    margin-top: 20px; padding: 14px 18px; background: var(--panel);
+    border-radius: 6px; font-size: 9.5pt; line-height: 1.6; color: var(--muted); break-inside: avoid;
+  }
+  .note strong { color: var(--ink); }
+  .note p { margin: 0 0 6px 0; }
+  .note p:last-child { margin-bottom: 0; }
+  .foot {
+    margin-top: 16px; padding-top: 10px; border-top: 1px solid var(--line); break-inside: avoid;
+    font-size: 8.5pt; color: var(--muted); line-height: 1.6;
+  }
+  .foot strong { color: var(--ink); }
+  @media screen {
+    html { background: #f4f3f6; }
+    body { background: #fff; padding: 48px 56px 56px; margin: 32px auto; max-width: 760px; border-radius: 10px; box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 32px rgba(0,0,0,.06); }
+  }
+  @media screen and (max-width: 640px) {
+    body { padding: 28px 16px 32px; margin: 0; border-radius: 0; box-shadow: none; }
+    .top { flex-direction: column-reverse; gap: 16px; }
+    h1 { font-size: 22pt; }
+    .tier { flex-direction: column; }
+    .tier .rate { padding-left: 0; margin-top: 6px; text-align: left; }
+    .tier .rate .per { display: inline; margin-left: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <h1>2027 Services, à la carte</h1>
+  <img src="apd-logo.png" alt="Dahlia Imanbay AI-Powered Digital Solutions" class="logo">
+</div>
+<div class="sub">Prepared for the Coalition for At-Risk Skin (CARS) &middot; November 2026 &middot; Confidential</div>
+
+<p class="intro">
+  Pick only what you need, when you need it. There is no retainer to sign: monthly items run month
+  to month and stop with 30 days' notice, and everything else is one time. Nothing is billed without
+  your written approval first.
+</p>
+
+<div class="section">
+<p class="label">Webinars &amp; live events</p>
+
+<div class="tier feature">
+  <div class="body">
+    <div class="name">Webinar or Journal Club, full service</div>
+    <div class="ex">Zoom setup (registration page, branding, reminder emails, recording consent), 8 social posts and 1 email to promote it, a live tech host behind the scenes on the day, and the recording delivered after.</div>
+  </div>
+  <div class="rate"><span class="num">$500</span><span class="per">per event</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Promotion only</div>
+    <div class="ex">Same setup and promotion; your team runs the live session without me.</div>
+  </div>
+  <div class="rate"><span class="num">$400</span><span class="per">per event</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Live stream to LinkedIn</div>
+    <div class="ex">Stream the Q&amp;A segment live to the CARS LinkedIn page (needs 150 page followers).</div>
+  </div>
+  <div class="rate"><span class="num">+$100</span><span class="per">per event</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Registration that adds new supporters</div>
+    <div class="ex">Anyone who registers for a CARS Zoom event and is not yet a supporter becomes a free CARS supporter automatically. Built once, reused for every future event.</div>
+  </div>
+  <div class="rate"><span class="num">$350</span><span class="per">one time</span></div>
+</div>
+</div>
+
+<div class="section">
+<p class="label">Social media</p>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Monthly social media</div>
+    <div class="ex">2 static posts a month, posted to all CARS channels, board share email, monthly snapshot.</div>
+  </div>
+  <div class="rate"><span class="num">$500</span><span class="per">per month</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Single static post</div>
+    <div class="ex">One designed post with captions, posted to all CARS channels.</div>
+  </div>
+  <div class="rate"><span class="num">$75</span><span class="per">per post</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Video snippets</div>
+    <div class="ex">The best moments of a webinar, cut like a podcast clip with captions and CARS branding. Choose as many or as few as you like.</div>
+  </div>
+  <div class="rate"><span class="num">$75</span><span class="per">per snippet</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Evergreen content package</div>
+    <div class="ex">Turn 3 to 4 recorded webinars into 24 snippets, scheduled weekly for 6 months. One payment, nothing to manage.</div>
+  </div>
+  <div class="rate"><span class="num">$1,500</span><span class="per">one time</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Voiceover on a post</div>
+    <div class="ex">Your own recorded voice (a phone voice memo works) added to a static post.</div>
+  </div>
+  <div class="rate"><span class="num">+$25</span><span class="per">per post</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Urgent same-day post</div>
+    <div class="ex">Designed and posted within the same business day.</div>
+  </div>
+  <div class="rate"><span class="num">$50</span><span class="per">per post</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Board member spotlight</div>
+    <div class="ex">Custom posts featuring a board member's talks, articles and appearances.</div>
+  </div>
+  <div class="rate"><span class="num">$125</span><span class="per">per month</span></div>
+</div>
+</div>
+
+<div class="section">
+<p class="label">Google Ad Grant</p>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Setup &amp; application</div>
+    <div class="ex">Google for Nonprofits enrollment, grant approval, tracking, and the first campaigns.</div>
+  </div>
+  <div class="rate"><span class="num">$900</span><span class="per">one time</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Monthly management, months 1 to 6</div>
+    <div class="ex">Keyword research, monthly adjustments and compliance checks. Donated to CARS.</div>
+  </div>
+  <div class="rate"><span class="num free">$0</span><span class="per">$500 value / month</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Monthly management, month 7 onward</div>
+    <div class="ex">Optional. Campaigns pause automatically at month 6 unless you choose to continue.</div>
+  </div>
+  <div class="rate"><span class="num">$500</span><span class="per">per month</span></div>
+</div>
+</div>
+
+<div class="section">
+<p class="label">Hourly work</p>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Admin &amp; coordination</div>
+    <div class="ex">Requests from the Secretary or Treasurer, email accounts, scheduling, budgets.</div>
+  </div>
+  <div class="rate"><span class="num">$65</span><span class="per">per hour</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Design, video editing &amp; website updates</div>
+    <div class="ex">Flyers, graphics, recorded video edits, website content changes.</div>
+  </div>
+  <div class="rate"><span class="num">$75</span><span class="per">per hour</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Planning &amp; consulting calls</div>
+    <div class="ex">Strategy calls like our webinar planning meetings, billed in 30-minute steps.</div>
+  </div>
+  <div class="rate"><span class="num">$125</span><span class="per">per hour</span></div>
+</div>
+
+<div class="tier">
+  <div class="body">
+    <div class="name">Landing pages &amp; automations</div>
+    <div class="ex">New website pages, sign-up flows, tool and API integrations.</div>
+  </div>
+  <div class="rate"><span class="num">$175</span><span class="per">per hour</span></div>
+</div>
+</div>
+
+<div class="note">
+  <p><strong>Software and platform costs</strong> pass through at cost, as listed in the 2027 budget already shared.</p>
+  <p><strong>Pause and restart anytime.</strong> If a sponsor payment is delayed, stop any monthly item with 30 days' notice and pick it back up when funding lands.</p>
+  <p><strong>Dahlia Imanbay Global LLC</strong> &middot; Chicago, Illinois &middot; Zelle to accounting@dahliaimanbay.com &middot; Confidential: CARS executive team only.</p>
+</div>
+
+
+</body>
+</html>
