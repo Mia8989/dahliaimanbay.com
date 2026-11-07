@@ -53,6 +53,23 @@ CONFIDENTIAL: Dahlia asked that only Cathy, Maria and the named leadership see i
   .retainer .label { color: var(--accent); border-bottom-color: var(--accent); margin-top: 14px; }
   .retainer .tier { border-bottom-color: #ddd2ee; }
   .retainer .tier:last-of-type { border-bottom: none; }
+  .rtable { width: 100%; border-collapse: collapse; margin: 6px 0 10px; font-size: 9.5pt; line-height: 1.45; }
+  .rtable th, .rtable td { text-align: left; vertical-align: top; padding: 8px 8px; border-bottom: 1px solid #ddd2ee; }
+  .rtable th:first-child, .rtable td:first-child { padding-left: 0; width: 26%; color: var(--ink); font-weight: 700; }
+  .rtable thead th { border-bottom: 1.5px solid var(--accent); padding-bottom: 10px; }
+  .rtable .tname { display: block; font-size: 11.5pt; font-weight: 700; color: var(--ink); }
+  .rtable .tprice { display: block; font-size: 20pt; font-weight: 700; color: var(--accent); letter-spacing: -0.5px; line-height: 1.1; margin-top: 2px; }
+  .rtable .tper { font-size: 8.5pt; color: var(--faint); font-weight: 400; }
+  .rtable td { color: var(--muted); }
+  .rtable .no { color: var(--faint); }
+  .rtable tr:last-child td { border-bottom: none; }
+  @media screen and (max-width: 640px) {
+    .retainer { padding: 6px 14px 16px; }
+    .rtable { font-size: 10pt; }
+    .rtable th:first-child, .rtable td:first-child { width: 24%; font-size: 9.5pt; }
+    .rtable .tprice { font-size: 17pt; }
+    .rtable th, .rtable td { padding: 8px 5px; }
+  }
   .retainer .rnote { font-size: 9.5pt; color: var(--muted); line-height: 1.6; margin: 6px 0 0; }
   .retainer .rnote strong { color: var(--ink); }
   .note {
@@ -99,23 +116,20 @@ CONFIDENTIAL: Dahlia asked that only Cathy, Maria and the named leadership see i
 <div class="retainer" id="retainer">
 <p class="label">Monthly retainers</p>
 
-<div class="tier feature">
-  <div class="body">
-    <div class="name">Full retainer</div>
-    <div class="ex">5 designed posts a week (about 22 a month) on all CARS channels, 2 supporter emails a month, 4 webinars or Journal Clubs a year, held whenever you are ready (full service, a $2,000 value), the monthly snapshot and the board share email.</div>
-  </div>
-  <div class="rate"><span class="num">$1,750</span><span class="per">per month</span></div>
-</div>
+<table class="rtable">
+<thead><tr><th></th>
+<th><span class="tname">Core</span><span class="tprice">$1,400</span><span class="tper">per month</span></th>
+<th><span class="tname">Full</span><span class="tprice">$1,750</span><span class="tper">per month</span></th></tr></thead>
+<tbody>
+<tr><td>Social posts</td><td>3 designed posts a week (about 12 a month)</td><td>5 a week: 4 designed posts and 1 reel (about 4 reels a month)</td></tr>
+<tr><td>Supporter emails</td><td>2 a month</td><td>2 a month</td></tr>
+<tr><td>Webinars or Journal Clubs</td><td>4 a year, full service, held whenever you are ready ($2,000 value)</td><td>4 a year, full service, held whenever you are ready ($2,000 value)</td></tr>
+<tr><td>Website care</td><td>Plugin and security updates, backups, monthly check</td><td>The same, plus small content edits (text, images, links)</td></tr>
+<tr><td>Budget help</td><td class="no">Not included</td><td>Monthly budget check-in with the Treasurer and help preparing the yearly budget</td></tr>
+<tr><td>Reporting</td><td>Monthly snapshot and board share email</td><td>Monthly snapshot and board share email</td></tr>
+</tbody></table>
 
-<div class="tier feature">
-  <div class="body">
-    <div class="name">Core retainer</div>
-    <div class="ex">3 designed posts a week (about 12 a month) on all CARS channels, 2 supporter emails a month, 4 webinars or Journal Clubs a year, held whenever you are ready (full service, a $2,000 value), the monthly snapshot and the board share email.</div>
-  </div>
-  <div class="rate"><span class="num">$1,400</span><span class="per">per month</span></div>
-</div>
-
-<p class="rnote"><strong>3-month minimum,</strong> then month to month with 30 days' notice.</p><p class="rnote"><strong>When a retainer ends, webinars are settled both ways.</strong> Each month paid puts $167 toward webinars, and every $500 covers one webinar. Used more than you paid for? The difference is billed at $500 per webinar. Paid for more than you used? Hold those webinars within 60 days after the retainer ends.</p><p class="rnote"><strong>One pause a year:</strong> if a sponsor payment is late, pause the retainer once a year for up to 2 months. No work and no billing while paused, and paused months do not count toward the minimum.</p><p class="rnote"><strong>Not included:</strong> the Google Ad Grant, evergreen webinar reels, website work and hourly work, which are billed at the rates below. Extra webinars beyond 4 a year are $500 each.</p>
+<p class="rnote"><strong>3-month minimum,</strong> then month to month with 30 days' notice.</p><p class="rnote"><strong>When a retainer ends, webinars are settled both ways.</strong> Each month paid puts $167 toward webinars, and every $500 covers one webinar. Used more than you paid for? The difference is billed at $500 per webinar. Paid for more than you used? Hold those webinars within 60 days after the retainer ends.</p><p class="rnote"><strong>One pause a year:</strong> if a sponsor payment is late, pause the retainer once a year for up to 2 months. No work and no billing while paused, and paused months do not count toward the minimum.</p><p class="rnote"><strong>Limits:</strong> reels are cut from CARS webinar recordings. Website care does not include new pages, redesigns or sign-up flows ($175 per hour). Budget help is planning and review only, not bookkeeping, payments or tax filing.</p><p class="rnote"><strong>Not included:</strong> the Google Ad Grant, evergreen webinar reel packs and hourly work, which are billed at the rates below. Extra webinars beyond 4 a year are $500 each.</p>
 </div>
 
 <div class="section">
