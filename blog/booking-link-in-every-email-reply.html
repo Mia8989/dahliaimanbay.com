@@ -362,6 +362,17 @@
             footer { padding: 60px 20px 30px; }
             .video-embed { max-width: 260px; }
         }
+        .shot { margin: 8px 0 36px; }
+        .shot img { width: 100%; height: auto; border-radius: 14px; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 12px 36px rgba(123,45,59,0.12); }
+        .shot figcaption { text-align: center; font-size: 0.85rem; color: var(--gray); margin-top: 12px; line-height: 1.5; }
+        .article-body a:not(.copy-btn) { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+        .prompt-block { position: relative; background: #2C2C2C; border-radius: 14px; margin: 8px 0 36px; padding: 56px 24px 24px; }
+        .prompt-block pre { white-space: pre-wrap; word-wrap: break-word; font-family: 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 0.92rem; line-height: 1.7; color: #FFF9F5; margin: 0; }
+        .copy-btn { position: absolute; top: 14px; right: 14px; font-family: 'Sora', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; background: var(--blush); color: var(--maroon-dark); border: none; border-radius: 999px; padding: 9px 16px; cursor: pointer; min-height: 36px; }
+        .copy-btn:hover { background: var(--blush-dark); }
+        .copy-btn.done { background: var(--teal); color: #fff; }
+        @media (max-width: 600px) { .prompt-block { padding: 54px 16px 18px; } .prompt-block pre { font-size: 0.84rem; } }
+    </style>
 </head>
 <body>
 
