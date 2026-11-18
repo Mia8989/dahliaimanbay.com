@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics (GA4) -->
+    <!-- GA4 loads only for real visitors: skips automated browsers, waits for a scroll, tap, key or mouse move, or 3s on a visible tab -->
+    <script>(function(){if(navigator.webdriver||/bot|crawl|spider|slurp|headless|lighthouse|pagespeed|facebookexternalhit/i.test(navigator.userAgent))return;var done=false,t;function load(){if(done)return;done=true;clearTimeout(t);var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=G-NXLWM0TJK8";document.head.appendChild(s);}["scroll","pointerdown","pointermove","keydown","touchstart"].forEach(function(e){addEventListener(e,load,{once:true,passive:true});});function arm(){clearTimeout(t);if(document.visibilityState==="visible")t=setTimeout(load,3000);}arm();document.addEventListener("visibilitychange",arm);})();</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NXLWM0TJK8');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Your Booking Link to Every Gmail Reply | Dahlia</title>
+    <meta name="description" content="How I get my book-a-call link into every email reply automatically with Google Workspace Studio and Gemini, plus a copy-and-paste prompt template. Hack 35 of 30.">
+    <meta name="keywords" content="booking link in Gmail, book a call link, Google Workspace Studio, Gemini email replies, Gmail automation, auto draft replies, appointment booking link, Dahlia Imanbay">
+    <meta name="author" content="Dahlia Imanbay">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://dahliaimanbay.com/blog/booking-link-in-every-email-reply">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How My Book-a-Call Link Shows Up in Every Email Reply">
+    <meta property="og:description" content="A five-step Google Workspace Studio flow that drafts replies with your booking link already in them. Copy-and-paste prompts included.">
+    <meta property="og:image" content="https://dahliaimanbay.com/dahlia-website-assets/og-booking-link-in-every-email-reply.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Dahlia Imanbay">
+    <meta property="og:url" content="https://dahliaimanbay.com/blog/booking-link-in-every-email-reply">
+    <meta property="article:published_time" content="2026-11-17T09:00:00-06:00">
+    <meta property="article:author" content="Dahlia Imanbay">
+    <meta property="article:section" content="AI Tools &amp; Strategy">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How My Book-a-Call Link Shows Up in Every Email Reply | Dahlia Imanbay">
+    <meta name="twitter:description" content="Gemini drafts the reply, the booking link is already in it, and I just hit send. Copy-and-paste prompts included.">
+    <meta name="twitter:image" content="https://dahliaimanbay.com/dahlia-website-assets/og-booking-link-in-every-email-reply.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How My Book-a-Call Link Shows Up in Every Email Reply",
+        "description": "Dahlia Imanbay shows the Google Workspace Studio flow she uses so Gemini drafts every real email reply with her booking link already in it, with copy-and-paste prompt templates. Hack 35 of the 30 Hacks From Dahlia series.",
+        "image": "https://dahliaimanbay.com/dahlia-website-assets/og-booking-link-in-every-email-reply.png",
+        "datePublished": "2026-11-17T09:00:00-06:00",
+        "dateModified": "2026-11-17T09:00:00-06:00",
+        "author": {
+            "@type": "Person",
+            "name": "Dahlia Imanbay",
+            "url": "https://dahliaimanbay.com",
+            "jobTitle": "AI Strategist and Fractional CMO",
+            "sameAs": [
+                "https://www.linkedin.com/in/dahlia-imanbay/",
+                "https://www.instagram.com/dahlia_imanbay/",
+                "https://substack.com/@dahliaimanbay"
+            ]
+        },
+        "publisher": {"@type": "Person", "name": "Dahlia Imanbay", "url": "https://dahliaimanbay.com"},
+        "mainEntityOfPage": "https://dahliaimanbay.com/blog/booking-link-in-every-email-reply",
+        "articleSection": "AI Tools and Strategy",
+        "keywords": ["booking link", "Gmail", "Google Workspace Studio", "Gemini", "email automation"],
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".article-title", ".answer-box p"]
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://dahliaimanbay.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dahliaimanbay.com/blog"},
+            {"@type": "ListItem", "position": 3, "name": "How My Book-a-Call Link Shows Up in Every Email Reply"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Does this flow send emails on its own?",
+             "acceptedAnswer": {"@type": "Answer", "text": "No. The last step is Draft a reply, so Gemini writes a draft that waits in the email thread. You read it, change anything you want, and press send yourself. Nothing leaves your inbox without you."}},
+            {"@type": "Question", "name": "Do I need a paid Google Workspace plan to use Workspace Studio?",
+             "acceptedAnswer": {"@type": "Answer", "text": "For a work account, Google lists Business Starter, Standard and Plus, Enterprise Standard and Plus, and several Education editions as eligible, and your admin has to turn on Gemini. Personal Gmail accounts can use it only if they are in Google Workspace Experiments. If you do not have it, a Gmail signature with your booking link is the simple fallback."}},
+            {"@type": "Question", "name": "Why not just put the booking link in my Gmail signature?",
+             "acceptedAnswer": {"@type": "Answer", "text": "You can, and you should if Workspace Studio is not available to you. The difference is that a signature puts the link at the bottom of every email, where people skim past it. The flow puts the link inside the reply, right after the sentence that invites the person to book, and only when they actually asked to talk."}},
+            {"@type": "Question", "name": "Where do I get a booking link if I do not have one?",
+             "acceptedAnswer": {"@type": "Answer", "text": "Google Calendar has appointment schedules built in. Open Google Calendar, click Create, choose Appointment schedule, set your available hours, and save. Google gives you a booking page link you can paste into the prompt. Calendly, Acuity, or your own website page work the same way."}}
+        ]
+    }
+    </script>
+    <style>
+        :root {
+            --blush: #F2C4C4;
+            --blush-light: #FDF0F0;
+            --blush-dark: #E8A5A5;
+            --teal: #2A7B88;
+            --teal-light: #3A9DAD;
+            --teal-dark: #1D5A63;
+            --maroon: #7B2D3B;
+            --maroon-light: #9E3E50;
+            --maroon-dark: #5C1F2B;
+            --lilac: #B8A9D4;
+            --lilac-light: #DDD5EE;
+            --lilac-dark: #8E7BB8;
+            --lilac-bg: #F0ECF6;
+            --cream: #FFF9F5;
+            --warm-white: #FFFCFA;
+            --dark: #2C2C2C;
+            --gray: #6B6B6B;
+            --light-gray: #F5F0ED;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--warm-white); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        nav {
+            display: flex; justify-content: center; align-items: center; padding: 22px 60px;
+            background: rgba(255,252,250,0.95); backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000; transition: box-shadow 0.3s ease;
+        }
+        nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
+        .nav-links a {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.76rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+            color: var(--maroon); transition: color 0.3s; position: relative;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+            background: var(--lilac-dark); transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--lilac-dark); }
+        .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; position: absolute; right: 30px; }
+        .hamburger span { width: 28px; height: 2px; background: var(--maroon); transition: all 0.3s; }
+
+        .breadcrumb {
+            max-width: 780px; margin: 0 auto; padding: 20px 30px 0;
+            font-family: 'Sora', sans-serif; font-size: 0.72rem; letter-spacing: 1px;
+            color: var(--gray);
+        }
+        .breadcrumb a { color: var(--teal); transition: color 0.3s; }
+        .breadcrumb a:hover { color: var(--teal-dark); }
+        .breadcrumb span { margin: 0 8px; opacity: 0.4; }
+
+        .article-header {
+            max-width: 780px; margin: 0 auto; padding: 40px 30px 0;
+        }
+        .article-tag {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 3px;
+            color: var(--teal); margin-bottom: 16px;
+        }
+        .article-meta {
+            font-size: 0.85rem; color: var(--gray); margin-bottom: 24px;
+        }
+        .article-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem); color: var(--maroon);
+            line-height: 1.15; margin-bottom: 10px;
+        }
+
+        .article-body {
+            max-width: 780px; margin: 0 auto; padding: 30px 30px 60px;
+        }
+        .article-body p {
+            font-size: 1.05rem; line-height: 1.9; color: var(--dark); margin-bottom: 24px;
+        }
+        .article-body h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem; color: var(--maroon); margin: 48px 0 20px; line-height: 1.2;
+        }
+        .article-body h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem; color: var(--maroon-dark); margin: 36px 0 14px; font-weight: 400;
+        }
+        .article-body ul {
+            margin: 0 0 24px 24px; font-size: 1.05rem; line-height: 1.9; color: var(--dark);
+        }
+        .article-body li { margin-bottom: 8px; }
+        .article-body blockquote {
+            border-left: 3px solid var(--lilac); margin: 32px 0; padding: 20px 28px;
+            background: var(--lilac-bg); border-radius: 0 12px 12px 0;
+        }
+        .article-body blockquote p {
+            font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+            color: var(--maroon); font-style: italic; margin-bottom: 0; line-height: 1.6;
+        }
+
+        .video-embed { max-width: 320px; margin: 8px auto 12px; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,0.08); background: #000; box-shadow: 0 16px 50px rgba(0,0,0,0.18); }
+        .video-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .video-caption { text-align: center; font-size: 0.78rem; color: var(--gray); letter-spacing: 0.04em; margin-bottom: 36px; }
+
+        .answer-box {
+            background: var(--lilac-bg); border: 1px solid var(--lilac);
+            border-radius: 14px; padding: 24px 28px; margin: 0 0 32px;
+        }
+        .answer-box .answer-label {
+            font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--lilac-dark);
+            display: block; margin-bottom: 10px;
+        }
+        .answer-box p { margin-bottom: 0; font-size: 1.05rem; line-height: 1.75; }
+
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin: 36px 0;
+        }
+        .stat-grid-item {
+            background: linear-gradient(135deg, var(--teal) 0%, var(--lilac-dark) 100%);
+            border-radius: 14px; padding: 24px 20px; text-align: center; color: white;
+        }
+        .stat-grid-number {
+            font-family: 'DM Serif Display', serif; font-size: 2.2rem;
+            display: block; margin-bottom: 6px; line-height: 1;
+        }
+        .stat-grid-label { font-size: 0.82rem; opacity: 0.9; line-height: 1.4; }
+
+        .pro-tip {
+            background: var(--blush-light); border: 1px solid var(--blush);
+            border-radius: 14px; padding: 24px 28px; margin: 32px 0;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .pro-tip-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+        .pro-tip-content { flex: 1; }
+        .pro-tip-label {
+            font-family: 'Sora', sans-serif; font-size: 0.68rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 3px; color: var(--maroon);
+            display: block; margin-bottom: 6px;
+        }
+        .pro-tip-content p { font-size: 0.98rem; line-height: 1.7; color: var(--dark); margin-bottom: 0; }
+
+        .checklist-section {
+            background: var(--cream); border-radius: 16px; padding: 32px 36px; margin: 32px 0;
+        }
+        .checklist-section h3 {
+            font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+            color: var(--maroon); margin-bottom: 20px; font-weight: 400;
+        }
+        .checklist-item {
+            display: flex; gap: 14px; align-items: flex-start;
+            padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .checklist-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .checklist-check {
+            width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0; margin-top: 1px;
+            background: var(--teal); display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 0.75rem;
+        }
+        .checklist-item-text { font-size: 0.98rem; line-height: 1.6; color: var(--dark); }
+        .checklist-item-text strong { color: var(--maroon-dark); }
+
+        .faq-section { background: var(--cream); border-radius: 20px; padding: 48px 40px; margin: 48px 0; }
+        .faq-section h2 { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--maroon); margin-bottom: 30px; }
+        .faq-item { border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question-btn {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 22px 0; cursor: pointer; gap: 20px; width: 100%;
+            background: none; border: none; text-align: left;
+        }
+        .faq-question-btn h3 {
+            font-family: 'DM Serif Display', serif; font-size: 1.1rem;
+            color: var(--maroon); font-weight: 400; margin: 0;
+        }
+        .faq-toggle {
+            width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+            background: var(--lilac-bg); display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: var(--lilac-dark); transition: all 0.3s;
+        }
+        .faq-item.open .faq-toggle { background: var(--lilac-dark); color: white; transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p {
+            font-size: 0.98rem; line-height: 1.8; color: var(--gray); padding: 0 0 22px; margin: 0;
+        }
+
+        .sources { margin-top: 40px; padding-top: 32px; border-top: 1px solid rgba(0,0,0,0.08); }
+        .sources h3 {
+            font-family: 'Sora', sans-serif; font-size: 0.75rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px; color: var(--teal); margin-bottom: 16px;
+        }
+        .sources ul { list-style: none; margin: 0; padding: 0; }
+        .sources li { margin-bottom: 10px; font-size: 0.88rem; color: var(--gray); }
+        .sources a { color: var(--teal); text-decoration: underline; text-underline-offset: 3px; }
+        .sources a:hover { color: var(--teal-dark); }
+
+        .author-box {
+            display: flex; gap: 24px; align-items: center;
+            background: var(--lilac-bg); border-radius: 16px; padding: 28px 32px;
+            margin-top: 48px;
+        }
+        .author-photo {
+            width: 80px; height: 80px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
+            border: 3px solid var(--lilac);
+        }
+        .author-photo img { width: 100%; height: 100%; object-fit: cover; }
+        .author-info h4 {
+            font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--maroon); margin-bottom: 4px;
+        }
+        .author-info p { font-size: 0.9rem; line-height: 1.6; color: var(--gray); margin: 0; }
+
+        footer { background: var(--dark); color: white; padding: 80px 60px 40px; }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 60px; flex-wrap: wrap; gap: 40px; }
+        .footer-brand h2 { font-family: 'DM Serif Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .footer-brand p { font-size: 0.9rem; opacity: 0.6; max-width: 300px; line-height: 1.6; }
+        .footer-links-group h4 {
+            font-family: 'Sora', sans-serif; font-size: 0.7rem; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 20px; color: var(--blush);
+        }
+        .footer-links-group ul { list-style: none; }
+        .footer-links-group li { margin-bottom: 12px; }
+        .footer-links-group a { font-size: 0.9rem; opacity: 0.6; transition: opacity 0.3s; }
+        .footer-links-group a:hover { opacity: 1; color: var(--lilac-light); }
+        .footer-social { display: flex; gap: 20px; margin-top: 15px; }
+        .footer-social a {
+            width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+            display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+        }
+        .footer-social a:hover { background: var(--lilac-dark); border-color: var(--lilac-dark); }
+        .footer-bottom {
+            display: flex; justify-content: space-between; padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.8rem; opacity: 0.5;
+        }
+
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .fade-in { opacity: 0; transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1); }
+        .slide-right { opacity: 0; transform: translateX(-30px); transition: opacity 0.6s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+        .visible { opacity: 1; transform: none; }
+
+        @media (max-width: 968px) {
+            nav { padding: 20px 30px; }
+            .nav-links {
+                display: none; position: absolute; top: 100%; left: 0; right: 0;
+                background: var(--warm-white); flex-direction: column; padding: 30px; gap: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            }
+            .nav-links.open { display: flex; }
+            .hamburger { display: flex; }
+            .footer-top { flex-direction: column; }
+        }
+        @media (max-width: 700px) {
+            .stat-grid { grid-template-columns: 1fr; gap: 12px; }
+        }
+        @media (max-width: 600px) {
+            .article-header { padding: 30px 20px 0; }
+            .article-body { padding: 20px 20px 40px; }
+            .breadcrumb { padding: 16px 20px 0; }
+            .faq-section { padding: 32px 24px; }
+            .author-box { flex-direction: column; text-align: center; }
+            .checklist-section { padding: 24px 20px; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            footer { padding: 60px 20px 30px; }
+            .video-embed { max-width: 260px; }
+        }
+</head>
+<body>
+
+    <nav id="navbar">
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/">Home</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#expertise">Expertise</a></li>
+            <li><a href="/#journey">Journey</a></li>
+            <li><a href="/#tedx">Brands</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/hacks">30 Hacks</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Home</a> <span>/</span> <a href="/blog/">Blog</a> <span>/</span> Booking Link in Every Email Reply
+    </div>
+
+    <header class="article-header">
+        <div class="article-tag fade-up">AI Tools &amp; Strategy &bull; 30 Hacks From Dahlia, Hack 35</div>
+        <div class="article-meta fade-up">By Dahlia Imanbay &bull; November 17, 2026 &bull; 7 min read</div>
+        <h1 class="article-title fade-up">How My Book-a-Call Link Shows Up in Every Email Reply</h1>
+    </header>
+
+    <article class="article-body">
+
+        <div class="answer-box fade-up">
+            <span class="answer-label">Direct Answer</span>
+            <p>I don't paste my booking link anymore. A Google Workspace Studio flow watches my inbox, asks Gemini whether each new email is from a real person who needs a reply, and if so, Gemini drafts the reply with my book-a-call link already in it. The draft waits in the thread. I read it, tweak it, and hit send. Five steps, two prompts, and you can copy both prompts below.</p>
+        </div>
+
+        <p class="fade-up">Someone asked me this week how my booking link "magically" appears in my replies. It's not magic, and it's not a fancy signature. It's a flow I built in Google Workspace Studio, and it's one of the few automations I've kept running every single day.</p>
+
+        <p class="fade-up">This is for small business owners, consultants, and nonprofit leaders who live in Gmail and keep typing the same "here's my calendar, grab a time" line. If you use Google Workspace for work, you can build this in about 20 minutes.</p>
+
+        <figure class="shot fade-up">
+            <img src="/blog/media/booking-link-studio-flow-overview.jpg" alt="My Draft potential email responses flow in Google Workspace Studio: When I get an email, Decide, Check if the decision is true, Ask Gemini with skills, and Draft a reply" width="1568" height="713" loading="eager" decoding="async">
+            <figcaption>My actual flow in Google Workspace Studio. Five steps, and it's switched on right now.</figcaption>
+        </figure>
+
+        <h2 class="fade-up">Why the link belongs inside the reply</h2>
+
+        <p class="fade-up">Most people put a booking link in their signature and call it done. That works, but signatures are wallpaper. People skim straight past them. The link gets clicked when it sits right after a sentence like "Want to talk it through? Grab a time here," in a reply that actually answers their question.</p>
+
+        <p class="fade-up">The other problem is me. When I write replies by hand at 9pm, I forget the link. Then they write back "sure, when works?" and we lose two days going back and forth. Putting the link in the prompt means it's never forgotten, and it only shows up when the person actually wants to talk.</p>
+
+        <div class="stat-grid fade-up">
+            <div class="stat-grid-item">
+                <span class="stat-grid-number">5</span>
+                <span class="stat-grid-label">steps in the flow, start to finish</span>
+            </div>
+            <div class="stat-grid-item">
+                <span class="stat-grid-number">2</span>
+                <span class="stat-grid-label">prompts to copy and fill in</span>
+            </div>
+            <div class="stat-grid-item">
+                <span class="stat-grid-number">0</span>
+                <span class="stat-grid-label">emails sent without you pressing send</span>
+            </div>
+        </div>
+
+        <h2 class="fade-up">Before you start</h2>
+
+        <div class="checklist-section fade-up">
+            <h3>You need three things</h3>
+            <div class="checklist-item"><span class="checklist-check">&#10003;</span><span class="checklist-item-text"><strong>A Google Workspace account with Studio.</strong> Google lists Business Starter, Standard and Plus, Enterprise Standard and Plus, and several Education editions as eligible. Your admin has to turn on Gemini. Personal Gmail accounts only get it through Google Workspace Experiments.</span></div>
+            <div class="checklist-item"><span class="checklist-check">&#10003;</span><span class="checklist-item-text"><strong>A booking link.</strong> Google Calendar's appointment schedule, Calendly, Acuity, or a page on your own site. Mine is a simple page on this website.</span></div>
+            <div class="checklist-item"><span class="checklist-check">&#10003;</span><span class="checklist-item-text"><strong>Five minutes to describe your voice.</strong> Three words for your tone and a short list of words you never want to see in your emails.</span></div>
+        </div>
+
+        <h2 class="fade-up">The setup, step by step</h2>
+
+        <h3 class="fade-up">Step 1: Start a new flow with "When I get an email"</h3>
+        <p class="fade-up">Go to <a href="https://studio.workspace.google.com" target="_blank" rel="noopener">studio.workspace.google.com</a> and click New flow. For the starter, choose Gmail, then <strong>When I get an email</strong>. Leave it on All emails. The next step does the filtering, and it's much smarter than a keyword rule.</p>
+
+        <h3 class="fade-up">Step 2: Add a Decide step to skip the junk</h3>
+        <p class="fade-up">Click Add step and choose <strong>Decide</strong>. This is where Gemini reads the email and answers one question with true or false: does a real person need a reply here? Without this step, you'd get drafted replies to receipts, newsletters, and calendar notices. Paste Prompt 1 below, then use the Variables button to drop in the sender, subject, and email body from Step 1.</p>
+
+        <figure class="shot fade-up">
+            <img src="/blog/media/booking-link-studio-step2-decide.jpg" alt="The Decide step in Google Workspace Studio with a prompt that returns TRUE for real people and FALSE for spam, newsletters and notifications" width="1568" height="713" loading="lazy" decoding="async">
+            <figcaption>Step 2, Decide. The gray chips are variables pulled from the incoming email.</figcaption>
+        </figure>
+
+        <h3 class="fade-up">Step 3: Add "Check if" so the rest only runs on true</h3>
+        <p class="fade-up">Add a <strong>Check if</strong> step and set it to Step 2: Decision is true. Everything you add inside this box only runs for emails that passed the test. Spam and notifications stop here.</p>
+
+        <h3 class="fade-up">Step 4: Add "Ask Gemini" with your booking link in the prompt</h3>
+        <p class="fade-up">Inside the Check if box, click Add substep and choose <strong>Ask Gemini</strong> (mine says Ask Gemini with skills). This is the step that writes the reply. Paste Prompt 2 below, fill in the brackets, and insert the Email body variable where the prompt says to. Your booking link goes in the prompt once, and from then on it rides along in every reply where someone wants to talk.</p>
+
+        <h3 class="fade-up">Step 5: Add "Draft a reply"</h3>
+        <p class="fade-up">Add one more substep: Gmail, <strong>Draft a reply</strong>. For Email to reply to, pick the Email ID from Step 1. For Message, I type "Hi", add the Sender display name variable and a comma, then add the Step 4 content created by Gemini. That's it. Name the flow, click Test run on a recent email, then click Turn on.</p>
+
+        <figure class="shot fade-up">
+            <img src="/blog/media/booking-link-studio-step5-draft-reply.jpg" alt="The Draft a reply step with Email ID from Step 1 and a message that combines the sender's name with the content Gemini created in Step 4" width="1568" height="713" loading="lazy" decoding="async">
+            <figcaption>Step 5, Draft a reply. The greeting plus Gemini's text becomes a draft in the email thread.</figcaption>
+        </figure>
+
+        <div class="pro-tip fade-up">
+            <span class="pro-tip-icon">&#128161;</span>
+            <div class="pro-tip-content">
+                <span class="pro-tip-label">Why drafts, not sends</span>
+                <p>I would never let this send on its own. Gemini gets the tone right most of the time, but it doesn't know that the person writing is my cousin, or that I already talked to them on the phone. A draft costs me ten seconds to check. A wrong email sent to a client costs a lot more.</p>
+            </div>
+        </div>
+
+        <h2 class="fade-up">Prompt 1: the Decide step</h2>
+        <p class="fade-up">Copy this into Step 2. Replace the brackets. Where it says to insert a variable, delete that text and use the Variables button to add the real chip from Step 1.</p>
+
+        <div class="prompt-block fade-up">
+            <button class="copy-btn" type="button" data-target="prompt1">Copy prompt</button>
+<pre id="prompt1">Determine whether this email needs a personal reply from [YOUR NAME].
+
+From: [insert variable: Step 1 Sender email address]
+Subject: [insert variable: Step 1 Email subject]
+Content: [insert variable: Step 1 Email body]
+
+Return TRUE if the email is from a real person who expects a reply: a client, prospect, partner, vendor, event or podcast host, colleague, friend, or anyone with a direct question or request for [YOUR NAME].
+
+Return FALSE if the email is spam, cold mass outreach, an automated notification, a newsletter, a marketing email, a receipt, a calendar or system notification, a payment notification, or anything else that does not need a human reply.</pre>
+        </div>
+
+        <h2 class="fade-up">Prompt 2: the Ask Gemini step (where the booking link lives)</h2>
+        <p class="fade-up">Copy this into Step 4. Fill in every bracket. The booking link rule is the part that does the magic, so paste your real link there.</p>
+
+        <div class="prompt-block fade-up">
+            <button class="copy-btn" type="button" data-target="prompt2">Copy prompt</button>
+<pre id="prompt2">You are writing as [YOUR NAME], [YOUR ROLE] at [YOUR BUSINESS]. Draft a reply to the email below.
+
+Email: [insert variable: Step 1 Email body]
+
+Tone and style:
+- [THREE WORDS FOR YOUR TONE, e.g. warm, clear, professional]
+- Short sentences. No filler.
+- Conversational but focused on the person's request.
+- Never use these words: [WORDS YOU NEVER USE]
+
+Every reply should:
+- Open with one polite, direct line that fits what the sender wrote.
+- Answer their question or request clearly.
+- Ask a clarifying question only if you truly cannot answer without it.
+- End with one clear next step.
+
+Booking link rule:
+If the sender asks to meet, talk, schedule a call, get a quote, or learn more about working together, invite them to pick a time and put this exact link on its own line: [YOUR BOOKING LINK]
+Use only that link. Never invent a different link and never suggest specific dates or times yourself.
+
+Format:
+- Do not start with a greeting such as "Hi [name]". The flow adds the greeting.
+- End with this sign-off: [YOUR SIGN-OFF, e.g. Best, YOUR NAME]
+- Return only the email text, ready to send.</pre>
+        </div>
+
+        <p class="fade-up">Two small notes from running this on my own inbox. First, the "do not start with a greeting" line matters, because Step 5 already adds "Hi [name]," and without it you get two hellos. Second, when I changed my booking page this year, I updated one line in this prompt and every reply since has used the new link. That's the real win: one place to change it.</p>
+
+        <h2 class="fade-up">What this does not fix</h2>
+
+        <p class="fade-up">Studio has daily run limits. On heavy email days I've seen a "You've reached your daily limit recently" banner in Studio, which means some emails didn't get a draft. Those just need a normal reply from you, so don't assume every email has a draft waiting.</p>
+
+        <p class="fade-up">Gemini also can't know your relationships. It will happily invite your best client to "book a quick intro call." Read every draft before you send it. And if your Workspace plan doesn't include Studio, do the low-tech version: in Gmail, click the gear, See all settings, General, then Signature. Add a line like "Book a call with me" linked to your booking page, set it for new emails and replies, and click Save Changes at the bottom.</p>
+
+        <h2 class="fade-up">Key takeaways</h2>
+        <ul class="fade-up">
+            <li>Put the booking link in the prompt, not in your memory. Gemini adds it only when someone wants to talk.</li>
+            <li>The Decide step keeps the flow from drafting replies to receipts and newsletters.</li>
+            <li>Draft, never auto-send. You stay the last pair of eyes.</li>
+            <li>Change your booking link in one place, and every future reply follows.</li>
+        </ul>
+
+        <h2 class="fade-up">Where this connects</h2>
+
+        <p class="fade-up">This is the grown-up version of <a href="/blog/the-3-email-auto-reply">the 3-email auto-reply</a>, which uses Gmail templates for your most common questions. If you want the morning summary side of your inbox handled too, see <a href="/blog/one-morning-email-digest">one morning email digest</a>. The full list lives on the <a href="/hacks">30 Hacks page</a>.</p>
+
+        <div class="faq-section fade-up">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Does this flow send emails on its own?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>No. The last step is Draft a reply, so Gemini writes a draft that waits in the email thread. You read it, change anything you want, and press send yourself. Nothing leaves your inbox without you.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Do I need a paid Google Workspace plan to use Workspace Studio?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>For a work account, Google lists Business Starter, Standard and Plus, Enterprise Standard and Plus, and several Education editions as eligible, and your admin has to turn on Gemini. Personal Gmail accounts can use it only if they are in Google Workspace Experiments. If you do not have it, a Gmail signature with your booking link is the simple fallback.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Why not just put the booking link in my Gmail signature?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>You can, and you should if Workspace Studio is not available to you. The difference is that a signature puts the link at the bottom of every email, where people skim past it. The flow puts the link inside the reply, right after the sentence that invites the person to book, and only when they actually asked to talk.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question-btn" onclick="this.parentElement.classList.toggle('open')">
+                    <h3>Where do I get a booking link if I do not have one?</h3>
+                    <span class="faq-toggle">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Google Calendar has appointment schedules built in. Open Google Calendar, click Create, choose Appointment schedule, set your available hours, and save. Google gives you a booking page link you can paste into the prompt. Calendly, Acuity, or your own website page work the same way.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sources fade-up">
+            <h3>Sources</h3>
+            <ul>
+                <li><a href="https://support.google.com/workspace-studio/answer/16447954" target="_blank" rel="noopener">Google: Create a flow from scratch in Workspace Studio</a></li>
+                <li><a href="https://support.google.com/workspace-studio/answer/16765661" target="_blank" rel="noopener">Google: Guide to starters and steps in Workspace Studio</a></li>
+                <li><a href="https://support.google.com/workspace-studio/answer/16444479" target="_blank" rel="noopener">Google: Workspace Studio eligibility and account requirements</a></li>
+            </ul>
+        </div>
+
+        <div class="author-box fade-up">
+            <div class="author-photo"><img src="/dahlia-website-assets/dahlia-author-2026.jpg" alt="Dahlia Imanbay" width="80" height="80" loading="lazy"></div>
+            <div class="author-info">
+                <h4>Dahlia Imanbay</h4>
+                <p>AI strategist and fractional CMO. I build the small systems that give small teams their time back, then write up the ones worth copying. Want help setting this up for your team? <a href="/book" style="color:var(--teal);text-decoration:underline;">Book a call with me</a>.</p>
+            </div>
+        </div>
+
+    </article>
+
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2>Dahlia Imanbay</h2>
+                <p>AI Strategist. Fractional CMO. Full-Stack Developer. Building a future where technology serves everyone.</p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/dahlia-imanbay/" aria-label="LinkedIn" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                    <a href="https://www.instagram.com/dahlia_imanbay/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="white"/></svg></a>
+                    <a href="https://x.com/dahlia_imanbay" aria-label="X (Twitter)" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M4 4l6.5 8L4 20h2l5.5-6.8L16 20h4l-6.8-8.4L19.5 4h-2l-5.2 6.4L8 4H4z"/></svg></a>
+                    <a href="https://substack.com/@dahliaimanbay" aria-label="Substack" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M4 4h16M4 8h16M4 12l8 6 8-6"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-links-group">
+                <h4>Navigate</h4>
+                <ul><li><a href="/">Home</a></li><li><a href="/#about">About</a></li><li><a href="/#expertise">Expertise</a></li><li><a href="/blog/">Blog</a></li><li><a href="/hacks">30 Hacks</a></li></ul>
+            </div>
+            <div class="footer-links-group">
+                <h4>More</h4>
+                <ul><li><a href="/#contact">Contact</a></li><li><a href="https://aipowereddahlia.com" target="_blank" rel="noopener">AI Powered Dahlia Agency</a></li></ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Dahlia Imanbay. All rights reserved.</span>
+            <span>Built with purpose &hearts;</span>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll',()=>{
+            document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+        });
+        document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up, .fade-in, .slide-right').forEach(el => observer.observe(el));
+        document.querySelectorAll('.copy-btn').forEach(b=>b.addEventListener('click',()=>{
+            const txt=document.getElementById(b.dataset.target).innerText;
+            const ok=()=>{b.textContent='Copied';b.classList.add('done');setTimeout(()=>{b.textContent='Copy prompt';b.classList.remove('done');},2000);};
+            if(navigator.clipboard){navigator.clipboard.writeText(txt).then(ok,()=>{});}else{const r=document.createRange();r.selectNodeContents(document.getElementById(b.dataset.target));const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');ok();}
+        }));
+    </script>
+</body>
+</html>
