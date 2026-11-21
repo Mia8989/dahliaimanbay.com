@@ -358,8 +358,12 @@
     </style>
     <style>
         .gate-wrap{position:relative;margin:2rem 0}
-        .gated{filter:blur(5px);pointer-events:none;user-select:none;max-height:560px;overflow:hidden;-webkit-mask-image:linear-gradient(#000 35%,transparent 95%);mask-image:linear-gradient(#000 35%,transparent 95%)}
-        .gate-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(92%,520px);background:var(--cream,#FFF9F5);border:2px solid var(--teal,#2A7B88);border-radius:20px;padding:2rem 1.75rem;text-align:center;box-shadow:0 12px 40px rgba(44,44,44,.12)}
+        .gated{position:relative;padding:1.5rem 1.25rem;border-radius:16px;background:rgba(42,123,136,.06);filter:blur(3px);pointer-events:none;user-select:none;-webkit-mask-image:linear-gradient(#000 30%,transparent 100%);mask-image:linear-gradient(#000 30%,transparent 100%)}
+        .lock-head{height:22px;width:40%;border-radius:6px;background:rgba(123,45,59,.35);margin-bottom:1.25rem}
+        .lock-row{display:flex;align-items:center;gap:.75rem;margin:.9rem 0}
+        .lock-box{flex:0 0 18px;height:18px;border:2px solid rgba(42,123,136,.5);border-radius:4px}
+        .lock-line{height:12px;border-radius:6px;background:rgba(44,44,44,.18)}
+        .gate-card{position:relative;margin:-11rem auto 0;width:min(100%,520px);background:var(--cream,#FFF9F5);border:2px solid var(--teal,#2A7B88);border-radius:20px;padding:2rem 1.75rem;text-align:center;box-shadow:0 12px 40px rgba(44,44,44,.12)}
         .gate-card h3{margin:0 0 .5rem;font-size:1.5rem}
         .gate-card p{margin:0 0 1.25rem;font-size:1.1rem}
         .gate-btn{display:inline-block;background:var(--teal,#2A7B88);color:#FFF9F5;padding:.9rem 1.6rem;border-radius:999px;font-weight:700;font-size:1.1rem;text-decoration:none;min-height:44px}
@@ -453,22 +457,15 @@
 
         <div class="gate-wrap fade-up" id="get-the-self-check">
             <div class="gated" aria-hidden="true">
-                <div class="checklist-section">
-                    <h3>Content</h3>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">We skip posting for a week or more when things get busy.</span></div>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">We post the same caption on every channel because writing separate ones takes too long.</span></div>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">Good stories (a program win, a happy customer, a volunteer moment) sit in a folder and never get posted.</span></div>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">We share numbers or claims without having time to check where they came from.</span></div>
-                </div>
-                <div class="checklist-section">
-                    <h3>Admin</h3>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">Follow-ups after meetings go out days later, or not at all.</span></div>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">Pulling together the monthly or board report takes someone most of a day.</span></div>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">Important emails get buried under newsletters, receipts and notifications.</span></div>
-            <div class="checklist-item"><span class="checklist-check">&#9744;</span><span class="checklist-item-text">New members, donors or customers don&#x27;t get a welcome email, or it&#x27;s written fresh every time.</span></div>
-                </div>
-                <h3>Your score</h3>
-                <p>0 to 3: you're in good shape. 4 to 7: marketing is eating time your team needs for the mission. 8 to 12: your team is carrying a lot by hand.</p>
+                <div class="lock-head"></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:88%"></span></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:72%"></span></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:94%"></span></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:66%"></span></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:81%"></span></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:90%"></span></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:70%"></span></div>
+                    <div class="lock-row"><span class="lock-box"></span><span class="lock-line" style="width:85%"></span></div>
             </div>
             <div class="gate-card">
                 <h3>Full self-check coming soon</h3>
